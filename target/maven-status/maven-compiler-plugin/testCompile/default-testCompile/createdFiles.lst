@@ -1,0 +1,6 @@
+stepDefinitions\TestRunner.class
+stepDefinitions\VtLoginSteps_PF.class
+pageFactory\VtCustomerPage_PF.class
+stepDefinitions\positiveEntrySteps.class
+stepDefinitions\TestRunnerUnInstallApps.class
+util\UtilFunctions.class

@@ -1,0 +1,6 @@
+#surefire_0
+#Fri Aug 27 22:26:51 IST 2021
+cucumber.options=src/test/resources/Features/StoreApps/uninstallApp.feature
+basedir=C\:\\Users\\GUNTAS\\IdeaProjects\\VtCustomerProj
+user.dir=C\:\\Users\\GUNTAS\\IdeaProjects\\VtCustomerProj
+localRepository=C\:\\Users\\GUNTAS\\.m2\\repository

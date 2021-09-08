@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: stepDefinitions.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 108.879 sec <<< FAILURE!
+Add Positive Entry Functionality(features to test add positive entry)  Time elapsed: 108.291 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: timeout
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:223)
+	at util.utilFunctions.waitAndClickXpath(utilFunctions.java:20)
+	at pageFactory.PositiveNegativeListPage_PF.clickOnRiskManagementTab(PositiveNegativeListPage_PF.java:38)
+	at stepDefinitions.positiveEntrySteps.click_on_risk_management(positiveEntrySteps.java:35)
+	at ✽.click on Risk Management(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Riskmanagement/Configurations/PositiveList/addPositiveEnrty.feature:10)
+

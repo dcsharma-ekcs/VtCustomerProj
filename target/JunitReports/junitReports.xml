@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="72.724">
+<testcase classname="features to test initiate for digital products transaction and risk management functionality" name="Transaction add to card Functionality" time="72.597">
+<system-out><![CDATA[Given user on my shopify store page.........................................passed
+When user is login in to store with "https://amit-test-04-09-01.myshopify.com/" and "lohyau".passed
+And click on enter button...................................................passed
+When user is navigated to store home page...................................passed
+And click on catalog........................................................passed
+When user search and add digital product in card "digital products 002".....passed
+When click add to card and check out........................................passed
+When user fill billing address from CustomerDetails_XLSX_10.xlsx and 2......passed
+And click on continue to payment............................................passed
+When user fill credit card detail...........................................passed
+And click on pay now button.................................................passed
+Then user is navigated to order detail page.................................passed
+When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "mavejen717@enamelme.com" and password "Dcsharma@2020".passed
+And navigate to risk management list page...................................passed
+And search order with order id..............................................passed
+And click for transaction summary...........................................passed
+And check positive negative attributes......................................passed
+Then user logout............................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
