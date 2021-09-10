@@ -3,11 +3,11 @@ Feature: features to test initiate for digital products transaction functionalit
 
   Background: Transaction Functionality
     Given user on my shopify store page
-    When  user is login in to store with "https://amit-test-04-09-01.myshopify.com/" and "lohyau"
+    When  user is login in to store with "https://dcpulsetxnstg.myshopify.com/" and "plauly"
     And click on enter button
     When user is navigated to store home page
     And click on catalog
-    When user search and add digital product in card "digital products 002"
+    When user search and add digital product in card "digital products X02"
 
   @smoke1
   Scenario Outline: Transaction buy it now Functionality

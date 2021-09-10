@@ -3,11 +3,11 @@ Feature: features to test initiate for digital products transaction and risk man
 
   Background: Transaction Functionality
     Given user on my shopify store page
-    When  user is login in to store with "https://amit-test-04-09-01.myshopify.com/" and "lohyau"
+    When  user is login in to store with "https://dev-regression-s01.myshopify.com/" and "nahfao"
     And click on enter button
     When user is navigated to store home page
     And click on catalog
-    When user search and add digital product in card "digital products 002"
+    When user search and add digital product in card "Blue Silk Tuxedo"
 
   @smoke1
   Scenario Outline: Transaction buy it now Functionality
@@ -33,7 +33,7 @@ Feature: features to test initiate for digital products transaction and risk man
     When user fill credit card detail
     And click on pay now button
     Then user is navigated to order detail page
-    When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "mavejen717@enamelme.com" and password "Dcsharma@2020"
+    When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "kiyeway177@posiklan.com" and password "Dcsharma@2020"
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary

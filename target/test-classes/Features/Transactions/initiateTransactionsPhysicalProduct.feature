@@ -3,7 +3,7 @@ Feature: features to test initiate transaction for physical products functionali
 
   Background: Transaction Functionality
     Given user on my shopify store page
-    When  user is login in to store with "https://amit-test-04-09-01.myshopify.com/" and "lohyau"
+    When  user is login in to store with "https://dcpulsetxnstg.myshopify.com/" and "plauly"
     And click on enter button
     When user is navigated to store home page
     And click on catalog
@@ -22,6 +22,7 @@ Feature: features to test initiate transaction for physical products functionali
 
     Examples:
       | ExcelFileName                | RowNumber |
+      | CustomerDetails_XLSX_10.xlsx | 1         |
       | CustomerDetails_XLSX_10.xlsx | 2         |
 
 

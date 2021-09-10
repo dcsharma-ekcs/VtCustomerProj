@@ -1,23 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="72.724">
-<testcase classname="features to test initiate for digital products transaction and risk management functionality" name="Transaction add to card Functionality" time="72.597">
-<system-out><![CDATA[Given user on my shopify store page.........................................passed
-When user is login in to store with "https://amit-test-04-09-01.myshopify.com/" and "lohyau".passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="42.457">
+<testcase classname="features to test initiate for digital products transaction and risk management functionality" name="Transaction add to card Functionality" time="42.31">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id='checkout_billing_address_first_name']&quot;}&#10;  (Session info: chrome=92.0.4515.159)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-O214AM8', ip: '192.168.103.80', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\GUNTAS\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:54170}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 06d0244b65245456b969379df34525bc&#10;*** Element info: {Using=xpath, value=//input[@id='checkout_billing_address_first_name']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given user on my shopify store page.........................................passed
+When user is login in to store with "https://dev-regression-s01.myshopify.com/" and "nahfao".passed
 And click on enter button...................................................passed
 When user is navigated to store home page...................................passed
 And click on catalog........................................................passed
-When user search and add digital product in card "digital products 002".....passed
+When user search and add digital product in card "Blue Silk Tuxedo".........passed
 When click add to card and check out........................................passed
-When user fill billing address from CustomerDetails_XLSX_10.xlsx and 2......passed
-And click on continue to payment............................................passed
-When user fill credit card detail...........................................passed
-And click on pay now button.................................................passed
-Then user is navigated to order detail page.................................passed
-When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "mavejen717@enamelme.com" and password "Dcsharma@2020".passed
-And navigate to risk management list page...................................passed
-And search order with order id..............................................passed
-And click for transaction summary...........................................passed
-And check positive negative attributes......................................passed
-Then user logout............................................................passed
-]]></system-out>
+When user fill billing address from CustomerDetails_XLSX_10.xlsx and 2......failed
+And click on continue to payment............................................skipped
+When user fill credit card detail...........................................skipped
+And click on pay now button.................................................skipped
+Then user is navigated to order detail page.................................skipped
+When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "kiyeway177@posiklan.com" and password "Dcsharma@2020".skipped
+And navigate to risk management list page...................................skipped
+And search order with order id..............................................skipped
+And click for transaction summary...........................................skipped
+And check positive negative attributes......................................skipped
+Then user logout............................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='checkout_billing_address_first_name']"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-O214AM8', ip: '192.168.103.80', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\GUNTAS\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:54170}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 06d0244b65245456b969379df34525bc
+*** Element info: {Using=xpath, value=//input[@id='checkout_billing_address_first_name']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at stepDefinitions.InitiateTransactionsSteps.user_fill_billing_address_from_and(InitiateTransactionsSteps.java:364)
+	at ✽.user fill billing address from CustomerDetails_XLSX_10.xlsx and 2(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesDP.feature:31)
+]]></failure>
 </testcase>
 </testsuite>

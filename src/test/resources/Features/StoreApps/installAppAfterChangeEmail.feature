@@ -4,7 +4,7 @@ Feature: features to test install app functionality
   Scenario Outline: Install App Functionality
 
     Given user on login partners shopify page
-    When user is enter <email> and <password> and <storename> and <appname>
+    When user is enter <email> and <password> and <storeName> and <appName>
     When user navigated to dashboard
     And click on stores and search and login in store
     When user change store general settings <StoreContactEmail>
@@ -18,5 +18,5 @@ Feature: features to test install app functionality
     Then user is navigated to b2c login page
 
     Examples:
-      | email                      | password      | storename     | appname                      | StoreContactEmail      |
-      | reymundo.paga@ubiquity.com | !Password@123 | test-install-unnistall | payment guarantee by vesta X | dc.dalchandra@gmail.com |
+      | email                      | password      | storeName          | appName                      | StoreContactEmail       |
+      | reymundo.paga@ubiquity.com | !Password@123 | dev-regression-s01 | payment guarantee by vesta X | feranic771@posiklan.com |

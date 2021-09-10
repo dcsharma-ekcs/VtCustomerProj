@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1673415700,
+              "duration": 1656707800,
               "status": "passed"
             },
             "line": 5,
@@ -23,19 +23,19 @@
           },
           {
             "result": {
-              "duration": 1630054900,
+              "duration": 1389552900,
               "status": "passed"
             },
             "line": 6,
-            "name": "user is login in to store with \"https://amit-test-04-09-01.myshopify.com/\" and \"lohyau\"",
+            "name": "user is login in to store with \"https://dev-regression-s01.myshopify.com/\" and \"nahfao\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"https://amit-test-04-09-01.myshopify.com/\"",
+                  "val": "\"https://dev-regression-s01.myshopify.com/\"",
                   "offset": 31
                 },
                 {
-                  "val": "\"lohyau\"",
+                  "val": "\"nahfao\"",
                   "offset": 79
                 }
               ],
@@ -45,7 +45,7 @@
           },
           {
             "result": {
-              "duration": 1383291000,
+              "duration": 1555544900,
               "status": "passed"
             },
             "line": 7,
@@ -68,7 +68,7 @@
           },
           {
             "result": {
-              "duration": 2978057700,
+              "duration": 3079376000,
               "status": "passed"
             },
             "line": 9,
@@ -80,15 +80,15 @@
           },
           {
             "result": {
-              "duration": 11473422700,
+              "duration": 11913914300,
               "status": "passed"
             },
             "line": 10,
-            "name": "user search and add digital product in card \"digital products 002\"",
+            "name": "user search and add digital product in card \"Blue Silk Tuxedo\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"digital products 002\"",
+                  "val": "\"Blue Silk Tuxedo\"",
                   "offset": 44
                 }
               ],
@@ -99,7 +99,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-09-08T11:15:13.593Z",
+        "start_timestamp": "2021-09-09T08:17:48.270Z",
         "line": 45,
         "name": "Transaction add to card Functionality",
         "description": "",
@@ -109,7 +109,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5951945500,
+              "duration": 6711069900,
               "status": "passed"
             },
             "line": 30,
@@ -121,8 +121,9 @@
           },
           {
             "result": {
-              "duration": 2086515500,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@id\u003d\u0027checkout_billing_address_first_name\u0027]\"}\n  (Session info: chrome\u003d92.0.4515.159)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-O214AM8\u0027, ip: \u0027192.168.103.80\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.12\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\GUNTAS\\AppData\\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:54170}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 06d0244b65245456b969379df34525bc\n*** Element info: {Using\u003dxpath, value\u003d//input[@id\u003d\u0027checkout_billing_address_first_name\u0027]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat stepDefinitions.InitiateTransactionsSteps.user_fill_billing_address_from_and(InitiateTransactionsSteps.java:364)\r\n\tat ✽.user fill billing address from CustomerDetails_XLSX_10.xlsx and 2(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesDP.feature:31)\r\n",
+              "duration": 15943591000,
+              "status": "failed"
             },
             "line": 31,
             "name": "user fill billing address from CustomerDetails_XLSX_10.xlsx and 2",
@@ -143,8 +144,7 @@
           },
           {
             "result": {
-              "duration": 5372668400,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 32,
             "name": "click on continue to payment",
@@ -155,8 +155,7 @@
           },
           {
             "result": {
-              "duration": 4247405300,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 33,
             "name": "user fill credit card detail",
@@ -167,8 +166,7 @@
           },
           {
             "result": {
-              "duration": 4074534800,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 34,
             "name": "click on pay now button",
@@ -179,8 +177,8 @@
           },
           {
             "result": {
-              "duration": 5278841700,
-              "status": "passed"
+              "duration": 1001100,
+              "status": "skipped"
             },
             "line": 35,
             "name": "user is navigated to order detail page",
@@ -191,11 +189,10 @@
           },
           {
             "result": {
-              "duration": 12305621600,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 36,
-            "name": "user login to vt customer portal \"https://vt-customer-dev.azurewebsites.net\" user \"mavejen717@enamelme.com\" and password \"Dcsharma@2020\"",
+            "name": "user login to vt customer portal \"https://vt-customer-dev.azurewebsites.net\" user \"kiyeway177@posiklan.com\" and password \"Dcsharma@2020\"",
             "match": {
               "arguments": [
                 {
@@ -203,7 +200,7 @@
                   "offset": 33
                 },
                 {
-                  "val": "\"mavejen717@enamelme.com\"",
+                  "val": "\"kiyeway177@posiklan.com\"",
                   "offset": 82
                 },
                 {
@@ -211,65 +208,65 @@
                   "offset": 121
                 }
               ],
-              "location": "stepDefinitions.riskManagementSteps.user_login_to_vt_customer_portal(java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.RiskManagementSteps.user_login_to_vt_customer_portal(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 9686150200,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 37,
             "name": "navigate to risk management list page",
             "match": {
-              "location": "stepDefinitions.riskManagementSteps.navigate_to_risk_management_list_page()"
+              "location": "stepDefinitions.RiskManagementSteps.navigate_to_risk_management_list_page()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 2187241900,
-              "status": "passed"
+              "duration": 908000,
+              "status": "skipped"
             },
             "line": 38,
             "name": "search order with order id",
             "match": {
-              "location": "stepDefinitions.riskManagementSteps.search_order_with_order_id()"
+              "location": "stepDefinitions.RiskManagementSteps.search_order_with_order_id()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 2228065900,
-              "status": "passed"
+              "duration": 1301000,
+              "status": "skipped"
             },
             "line": 39,
             "name": "click for transaction summary",
             "match": {
-              "location": "stepDefinitions.riskManagementSteps.click_for_transaction_summary()"
+              "location": "stepDefinitions.RiskManagementSteps.click_for_transaction_summary()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "passed"
+              "duration": 1076800,
+              "status": "skipped"
             },
             "line": 40,
             "name": "check positive negative attributes",
             "match": {
-              "location": "stepDefinitions.riskManagementSteps.check_positive_negative_attributes()"
+              "location": "stepDefinitions.RiskManagementSteps.check_positive_negative_attributes()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 41,
             "name": "user logout",
             "match": {
-              "location": "stepDefinitions.riskManagementSteps.user_logout()"
+              "location": "stepDefinitions.RiskManagementSteps.user_logout()"
             },
             "keyword": "Then "
           }

@@ -13,4 +13,4 @@ Feature: features to test uninstall app functionality
 
     Examples:
       | email | password  | storename | appname |
-      | reymundo.paga@ubiquity.com | !Password@123 | test-install-unnistall | Payment Guarantee by Vesta X |
+      | reymundo.paga@ubiquity.com | !Password@123 | dev-regression-s01 | Payment Guarantee by Vesta X |
