@@ -11,31 +11,37 @@
         "steps": [
           {
             "result": {
-              "duration": 1656707800,
+              "duration": 1711932800,
               "status": "passed"
             },
             "line": 5,
-            "name": "user on my shopify store page",
+            "name": "user on my shopify store page \"chrome\"",
             "match": {
-              "location": "stepDefinitions.InitiateTransactionsSteps.user_on_my_shopify_store_page()"
+              "arguments": [
+                {
+                  "val": "\"chrome\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.InitiateTransactionsSteps.user_on_my_shopify_store_page(java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1389552900,
+              "duration": 1825793500,
               "status": "passed"
             },
             "line": 6,
-            "name": "user is login in to store with \"https://dev-regression-s01.myshopify.com/\" and \"nahfao\"",
+            "name": "user is login in to store with \"https://amit-test-04-09-01.myshopify.com/\" and \"lohyau\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"https://dev-regression-s01.myshopify.com/\"",
+                  "val": "\"https://amit-test-04-09-01.myshopify.com/\"",
                   "offset": 31
                 },
                 {
-                  "val": "\"nahfao\"",
+                  "val": "\"lohyau\"",
                   "offset": 79
                 }
               ],
@@ -45,7 +51,7 @@
           },
           {
             "result": {
-              "duration": 1555544900,
+              "duration": 1307760700,
               "status": "passed"
             },
             "line": 7,
@@ -57,6 +63,7 @@
           },
           {
             "result": {
+              "duration": 1108000,
               "status": "passed"
             },
             "line": 8,
@@ -68,7 +75,7 @@
           },
           {
             "result": {
-              "duration": 3079376000,
+              "duration": 3385530400,
               "status": "passed"
             },
             "line": 9,
@@ -77,76 +84,126 @@
               "location": "stepDefinitions.InitiateTransactionsSteps.click_on_catalog()"
             },
             "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 11913914300,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "user search and add digital product in card \"Blue Silk Tuxedo\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Blue Silk Tuxedo\"",
-                  "offset": 44
-                }
-              ],
-              "location": "stepDefinitions.InitiateTransactionsSteps.user_search_and_add_digital_product_in_card(java.lang.String)"
-            },
-            "keyword": "When "
           }
         ]
       },
       {
-        "start_timestamp": "2021-09-09T08:17:48.270Z",
-        "line": 45,
-        "name": "Transaction add to card Functionality",
+        "start_timestamp": "2021-09-17T09:57:04.466Z",
+        "line": 46,
+        "name": "Transaction buy it now Functionality",
         "description": "",
-        "id": "features-to-test-initiate-for-digital-products-transaction-and-risk-management-functionality;transaction-add-to-card-functionality;;2",
+        "id": "features-to-test-initiate-transaction-for-physical-products-functionality;transaction-buy-it-now-functionality;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 6711069900,
+              "duration": 6304427500,
               "status": "passed"
             },
-            "line": 30,
-            "name": "click add to card and check out",
+            "line": 15,
+            "name": "user search and add product in card \"Chequered Red Shirt\" quantity 0",
             "match": {
-              "location": "stepDefinitions.InitiateTransactionsSteps.click_add_to_card_and_check_out()"
+              "arguments": [
+                {
+                  "val": "\"Chequered Red Shirt\"",
+                  "offset": 36
+                },
+                {
+                  "val": "0",
+                  "offset": 67
+                }
+              ],
+              "location": "stepDefinitions.InitiateTransactionsSteps.user_search_and_add_product_in_card(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 136186300,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "click on buy it now",
+            "match": {
+              "location": "stepDefinitions.InitiateTransactionsSteps.click_on_buy_it_now()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@id\u003d\u0027checkout_billing_address_first_name\u0027]\"}\n  (Session info: chrome\u003d92.0.4515.159)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-O214AM8\u0027, ip: \u0027192.168.103.80\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.12\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\GUNTAS\\AppData\\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:54170}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 06d0244b65245456b969379df34525bc\n*** Element info: {Using\u003dxpath, value\u003d//input[@id\u003d\u0027checkout_billing_address_first_name\u0027]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat stepDefinitions.InitiateTransactionsSteps.user_fill_billing_address_from_and(InitiateTransactionsSteps.java:364)\r\n\tat ✽.user fill billing address from CustomerDetails_XLSX_10.xlsx and 2(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesDP.feature:31)\r\n",
-              "duration": 15943591000,
-              "status": "failed"
+              "duration": 3927465000,
+              "status": "passed"
             },
-            "line": 31,
-            "name": "user fill billing address from CustomerDetails_XLSX_10.xlsx and 2",
+            "line": 17,
+            "name": "user fill checkout email or phone from CustomerDetails_XLSX_10.xlsx and 1",
             "match": {
               "arguments": [
                 {
                   "val": "CustomerDetails_XLSX_10.xlsx",
-                  "offset": 31
+                  "offset": 39
                 },
                 {
-                  "val": "2",
-                  "offset": 64
+                  "val": "1",
+                  "offset": 72
                 }
               ],
-              "location": "stepDefinitions.InitiateTransactionsSteps.user_fill_billing_address_from_and(java.lang.String,java.lang.String)"
+              "location": "stepDefinitions.InitiateTransactionsSteps.user_fill_checkout_email_or_phone_from_and(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1154102400,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user fill contact information from CustomerDetails_XLSX_10.xlsx and 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "CustomerDetails_XLSX_10.xlsx",
+                  "offset": 35
+                },
+                {
+                  "val": "1",
+                  "offset": 68
+                }
+              ],
+              "location": "stepDefinitions.InitiateTransactionsSteps.user_fill_contact_information_from_and(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2926125100,
+              "status": "passed"
             },
-            "line": 32,
+            "line": 19,
+            "name": "click on continue to shipping",
+            "match": {
+              "location": "stepDefinitions.InitiateTransactionsSteps.click_on_continue_to_shipping()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3012173300,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "user choose a shipping method",
+            "match": {
+              "location": "stepDefinitions.InitiateTransactionsSteps.user_choose_a_shipping_method()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5054097400,
+              "status": "passed"
+            },
+            "line": 21,
             "name": "click on continue to payment",
             "match": {
               "location": "stepDefinitions.InitiateTransactionsSteps.click_on_continue_to_payment()"
@@ -155,9 +212,22 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 93129200,
+              "status": "passed"
             },
-            "line": 33,
+            "line": 22,
+            "name": "user click use a different billing address",
+            "match": {
+              "location": "stepDefinitions.InitiateTransactionsSteps.user_click_use_a_different_billing_address()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4259802600,
+              "status": "passed"
+            },
+            "line": 23,
             "name": "user fill credit card detail",
             "match": {
               "location": "stepDefinitions.InitiateTransactionsSteps.user_fill_credit_card_detail()"
@@ -166,9 +236,32 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1084996100,
+              "status": "passed"
             },
-            "line": 34,
+            "line": 24,
+            "name": "user fill billing address from CustomerDetails_XLSX_10.xlsx and 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "CustomerDetails_XLSX_10.xlsx",
+                  "offset": 31
+                },
+                {
+                  "val": "1",
+                  "offset": 64
+                }
+              ],
+              "location": "stepDefinitions.InitiateTransactionsSteps.user_fill_billing_address_from_and(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4066703000,
+              "status": "passed"
+            },
+            "line": 25,
             "name": "click on pay now button",
             "match": {
               "location": "stepDefinitions.InitiateTransactionsSteps.click_on_pay_now_button()"
@@ -177,10 +270,10 @@
           },
           {
             "result": {
-              "duration": 1001100,
-              "status": "skipped"
+              "duration": 6303449000,
+              "status": "passed"
             },
-            "line": 35,
+            "line": 26,
             "name": "user is navigated to order detail page",
             "match": {
               "location": "stepDefinitions.InitiateTransactionsSteps.user_is_navigated_to_order_detail_page()"
@@ -189,10 +282,11 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 9589066100,
+              "status": "passed"
             },
-            "line": 36,
-            "name": "user login to vt customer portal \"https://vt-customer-dev.azurewebsites.net\" user \"kiyeway177@posiklan.com\" and password \"Dcsharma@2020\"",
+            "line": 27,
+            "name": "user login to vt customer portal \"https://vt-customer-dev.azurewebsites.net\" user \"mavejen717@enamelme.com\" and password \"Dcsharma@2020\"",
             "match": {
               "arguments": [
                 {
@@ -200,7 +294,7 @@
                   "offset": 33
                 },
                 {
-                  "val": "\"kiyeway177@posiklan.com\"",
+                  "val": "\"mavejen717@enamelme.com\"",
                   "offset": 82
                 },
                 {
@@ -214,9 +308,10 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 14508384800,
+              "status": "passed"
             },
-            "line": 37,
+            "line": 28,
             "name": "navigate to risk management list page",
             "match": {
               "location": "stepDefinitions.RiskManagementSteps.navigate_to_risk_management_list_page()"
@@ -225,10 +320,10 @@
           },
           {
             "result": {
-              "duration": 908000,
-              "status": "skipped"
+              "duration": 4403261300,
+              "status": "passed"
             },
-            "line": 38,
+            "line": 29,
             "name": "search order with order id",
             "match": {
               "location": "stepDefinitions.RiskManagementSteps.search_order_with_order_id()"
@@ -237,10 +332,10 @@
           },
           {
             "result": {
-              "duration": 1301000,
-              "status": "skipped"
+              "duration": 2248401800,
+              "status": "passed"
             },
-            "line": 39,
+            "line": 30,
             "name": "click for transaction summary",
             "match": {
               "location": "stepDefinitions.RiskManagementSteps.click_for_transaction_summary()"
@@ -249,26 +344,142 @@
           },
           {
             "result": {
-              "duration": 1076800,
-              "status": "skipped"
+              "duration": 3501817000,
+              "status": "passed"
             },
-            "line": 40,
-            "name": "check positive negative attributes",
+            "line": 31,
+            "name": "check order status",
             "match": {
-              "location": "stepDefinitions.RiskManagementSteps.check_positive_negative_attributes()"
+              "location": "stepDefinitions.RiskManagementOrderSummarySteps.check_order_status()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3418293600,
+              "status": "passed"
             },
-            "line": 41,
+            "line": 32,
+            "name": "click decisions tab",
+            "match": {
+              "location": "stepDefinitions.RiskManagementSteps.click_decisions_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5829969500,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "search store \"Amit-Test-04-09-01\" for get decisions settings",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Amit-Test-04-09-01\"",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.RiskManagementSteps.search_store_for_get_decisions_settings(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 34,
             "name": "user logout",
             "match": {
               "location": "stepDefinitions.RiskManagementSteps.user_logout()"
             },
-            "keyword": "Then "
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3548940000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "user navigate to partners shopify page",
+            "match": {
+              "location": "stepDefinitions.ShopifyStoreSteps.user_navigate_to_partners_shopify_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 15339995500,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "user login with \"reymundo.paga@ubiquity.com\" and \"!Password@123\" and \"Amit-Test-04-09-01\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"reymundo.paga@ubiquity.com\"",
+                  "offset": 16
+                },
+                {
+                  "val": "\"!Password@123\"",
+                  "offset": 49
+                },
+                {
+                  "val": "\"Amit-Test-04-09-01\"",
+                  "offset": 69
+                }
+              ],
+              "location": "stepDefinitions.ShopifyStoreSteps.user_login_with_and(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4054815700,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "shopify search and login in store",
+            "match": {
+              "location": "stepDefinitions.ShopifyStoreSteps.shopify_search_and_login_in_store()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10197937900,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "click on store tab",
+            "match": {
+              "location": "stepDefinitions.ShopifyStoreSteps.click_on_store_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2526930200,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "search order in shopify with order id",
+            "match": {
+              "location": "stepDefinitions.ShopifyStoreSteps.search_order_in_shopify_with_order_id()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 76758500,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "Check order payment status",
+            "match": {
+              "location": "stepDefinitions.ShopifyStoreSteps.check_order_payment_status()"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [
@@ -278,11 +489,11 @@
         ]
       }
     ],
-    "name": "features to test initiate for digital products transaction and risk management functionality",
+    "name": "features to test initiate transaction for physical products functionality",
     "description": "",
-    "id": "features-to-test-initiate-for-digital-products-transaction-and-risk-management-functionality",
+    "id": "features-to-test-initiate-transaction-for-physical-products-functionality",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesDP.feature",
+    "uri": "file:src/test/resources/Features/Transactions/initiateTransactionsCheckDecisionsCheckShopify.feature",
     "tags": []
   }
 ]

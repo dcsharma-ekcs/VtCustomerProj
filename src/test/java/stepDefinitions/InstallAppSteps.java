@@ -29,6 +29,7 @@ public class InstallAppSteps {
         driver.get("https://www.shopify.com/partners");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
     @When("^user is enter (.*) and (.*) and (.*) and (.*)$")
     public void user_is_enter_login_detail(String email, String password, String storeName, String appName) throws InterruptedException {
         shopifyHomePageObject = new ShopifyHomePageObject(driver,email,password);
@@ -44,6 +45,9 @@ public class InstallAppSteps {
         this.appName = appName;
 
     }
+
+
+
     @When("user navigated to dashboard")
     public void user_navigated_to_dashboard() throws InterruptedException {
         shopifyHomePageObject.clickVestaCorporation();

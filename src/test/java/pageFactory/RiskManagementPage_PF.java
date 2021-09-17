@@ -21,34 +21,59 @@ public class RiskManagementPage_PF {
     String srtRiskManagement = "//li[normalize-space()='Risk Management']";
     @FindBy(xpath = "//li[normalize-space()='Risk Management']")
     WebElement risk_management_tab;
-
     public void clickOnRiskManagementTab() throws InterruptedException {
         util.waitForXpathElement(srtRiskManagement);
         risk_management_tab.click();
     }
 
+    String srtDecisions = "//img[@src='/img/sidemenu/default/decisions.svg']";
+    @FindBy(xpath = "//img[@src='/img/sidemenu/default/decisions.svg']")
+    WebElement risk_management_decisions;
+    public void clickOnDecisionsTab() throws InterruptedException {
+        util.waitForXpathElement(srtDecisions);
+        risk_management_decisions.click();
+    }
+
+    String srtSearchDecisions = "//div[@class='table-dekstop']//input[@type='text']";
+    @FindBy(xpath = "//div[@class='table-dekstop']//input[@type='text']")
+    WebElement search_decisions;
+    public void setSrtSearchDecisions(String strStore) throws InterruptedException {
+        util.waitForXpathElement(srtSearchDecisions);
+        Thread.sleep(1000);
+        search_decisions.click();
+        search_decisions.sendKeys(strStore);
+    }
+
+    String acceptDecisions = "//tbody/tr[@role='row']/td[2]/div[1]/label[1]/span[1]/span[1]/span[1]/input[1]";
+    @FindBy(xpath = "//tbody/tr[@role='row']/td[2]/div[1]/label[1]/span[1]/span[1]/span[1]/input[1]")
+    WebElement checkboxAcceptDecisions;
+    public boolean getAcceptDecisions() throws InterruptedException {
+       boolean flag = checkboxAcceptDecisions.isSelected();
+       return flag;
+    }
+
+    String noonAcceptDecisions = "//tbody/tr[@role='row']/td[3]/div[1]/label[1]/span[1]/span[1]/span[1]/input[1]";
+    @FindBy(xpath = "//tbody/tr[@role='row']/td[3]/div[1]/label[1]/span[1]/span[1]/span[1]/input[1]")
+    WebElement checkboxNoonAcceptDecisions;
+    public boolean getNoonAcceptDecisions() throws InterruptedException {
+        boolean flag = checkboxNoonAcceptDecisions.isSelected();
+        return flag;
+    }
+
+
+    //WebElement checkbox = driver.findElement(By.id("checkboxId"));
+    //System.out.println("The checkbox is selection state is - " + checkbox.isSelected());
+
+
+
 
     @FindBy(xpath = "//input[@id='searchInput']")
     WebElement search_input_field;
-
     public  void  setSearchText(String orderId){
         search_input_field.click();
         search_input_field.clear();
         search_input_field.sendKeys(orderId);
     }
 
-    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[1]/div[1]/span[1]")
-    WebElement positive_attributes_count;
 
-    public String getPositiveAttributesCount(){
-        return positive_attributes_count.getText();
-    }
-
-    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[1]/div[1]/span[2]")
-    WebElement negative_attributes_count;
-
-    public String getNegativeAttributesCount(){
-
-        return negative_attributes_count.getText();
-    }
 }

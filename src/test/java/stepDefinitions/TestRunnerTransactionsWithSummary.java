@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/Features/Transactions/initiateTransactionsPhysicalProduct.feature"
+        features = "src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesPhysicalProduct.feature"
         ,glue={"stepDefinitions"}
         ,tags= "@smoke"
         ,monochrome = true
@@ -21,5 +21,5 @@ import org.junit.runner.RunWith;
         ,"junit:target/JunitReports/junitReports.xml"}
 )
 
-public class TestRunnerTrasaction {
+public class TestRunnerTransactionsWithSummary {
 }

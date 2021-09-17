@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,9 @@ import util.UtilFunctions;
 public class RiskManagementSteps {
 
 
+    static boolean acceptGuaranteedOrders;
+    static boolean declineNonGuaranteedOrders;
+
     InitiateTransactionsSteps initiateTransactionsSteps = new InitiateTransactionsSteps();
     WebDriver driver = initiateTransactionsSteps.getDriver();
     String orderId = initiateTransactionsSteps.getOrderId();
@@ -17,7 +21,7 @@ public class RiskManagementSteps {
     RiskManagementPage_PF riskManagementPagePF = new RiskManagementPage_PF(driver);
     VtCustomerPage_PF vtCustomerPagePF = new VtCustomerPage_PF(driver);
 
-    @When("user login to vt customer portal {string} user {string} and password {string}")
+    @And("user login to vt customer portal {string} user {string} and password {string}")
     public void user_login_to_vt_customer_portal(String url, String userNAme, String password) {
         driver.navigate().to(url);
 
@@ -26,41 +30,66 @@ public class RiskManagementSteps {
         vtCustomerPagePF.clickNextButton();
 
     }
-    @When("navigate to risk management list page")
+    @And("navigate to risk management list page")
     public void navigate_to_risk_management_list_page() throws InterruptedException {
 
             riskManagementPagePF.clickOnRiskManagementTab();
 
     }
-    @When("search order with order id")
+    @And("search order with order id")
     public void search_order_with_order_id() {
-           // orderId = "1020";
+            //orderId = "1073";
             riskManagementPagePF.setSearchText(orderId);
             System.out.println("risk ManagementSteps OrderId:  "+orderId);
 
     }
-    @When("click for transaction summary")
+    @And("click for transaction summary")
     public void click_for_transaction_summary() throws InterruptedException {
         //td[normalize-space()='1020']
-
+        //orderId = "1073";
         String strXpath = "//td[normalize-space()='"+orderId+"']";
-        //System.out.println("strXpath:  "+strXpath);
+        System.out.println("strXpath:  "+strXpath);
+        Thread.sleep(2000);
         util.waitAndClickXpath5sec(strXpath);
        // util.clickStickyArrow();
     }
-    @When("check positive negative attributes")
-    public void check_positive_negative_attributes() {
-        String positiveCount = riskManagementPagePF.getPositiveAttributesCount();
-        System.out.println("positiveCount:  "+positiveCount);
-        String negativeCount = riskManagementPagePF.getNegativeAttributesCount();
-        System.out.println("negativeCount:  "+negativeCount);
+
+
+    @And("click decisions tab")
+    public void click_decisions_tab() throws InterruptedException {
+        Thread.sleep(2000);
+        riskManagementPagePF.clickOnDecisionsTab();
+
 
     }
+
+    @And("search store {string} for get decisions settings")
+    public void search_store_for_get_decisions_settings(String storeName) throws InterruptedException {
+        Thread.sleep(2000);
+
+        riskManagementPagePF.setSrtSearchDecisions(storeName);
+        //riskManagementPagePF.getAcceptDecisions();
+
+          acceptGuaranteedOrders = riskManagementPagePF.getAcceptDecisions();
+          declineNonGuaranteedOrders = riskManagementPagePF.getNoonAcceptDecisions();
+
+        System.out.println("Accept Decisions Settings:"+riskManagementPagePF.getAcceptDecisions());
+        System.out.println("Decline Decisions Settings:"+riskManagementPagePF.getNoonAcceptDecisions());
+
+    }
+
+
     @Then("user logout")
     public void user_logout() {
 
     }
 
+    public static boolean getAcceptGuaranteedOrdersSetting() {
+        return acceptGuaranteedOrders;
+    }
 
+    public static boolean getDeclineNonGuaranteedOrdersSetting() {
+        return declineNonGuaranteedOrders;
+    }
 
 }

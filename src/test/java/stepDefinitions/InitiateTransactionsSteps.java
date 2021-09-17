@@ -1,17 +1,24 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.ExcelUtils;
 import util.UtilFunctions;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,12 +28,52 @@ public class InitiateTransactionsSteps {
     UtilFunctions util;
     String transactionsType = "successful";
     static String orderId;
+    static String strContactInformation;
+    static String strPaymentMethod;
+    static String strShippingMethod;
+    static String strShippingAddress;
+    static String strTotalPayment;
+    static String strBillingAddress;
+    static String orderStatus;
+    static String browserType;
 
-    @Given("user on my shopify store page")
-    public void user_on_my_shopify_store_page() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+    @Given("user on my shopify store page {string}")
+    public void user_on_my_shopify_store_page(String browser)  {
+
+        browserType = browser;
+        if(browser.equalsIgnoreCase("chrome")){
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+
+        }else if(browser.equalsIgnoreCase("firefox")){
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+
+        }else if(browser.equalsIgnoreCase("edge")){
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+
+        }else if(browser.equalsIgnoreCase("opera")){
+            WebDriverManager.operadriver().setup();
+            driver = new OperaDriver();
+
+        }else if(browser.equalsIgnoreCase("safari")){
+
+            driver = new SafariDriver();
+
+        }else if(browser.equalsIgnoreCase("ie")){
+            WebDriverManager.iedriver().setup();
+            driver = new InternetExplorerDriver();
+
+        }else{
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+
+        }
+
         driver.manage().window().maximize();
+
+
     }
 
     @When("^user is with (.*) and (.*)$")
@@ -91,8 +138,8 @@ public class InitiateTransactionsSteps {
 
     }
 
-    @When("user search and add digital product in card {string}")
-    public void user_search_and_add_digital_product_in_card( String strPro) throws InterruptedException {
+    @And("user search and add product in card {string} quantity {int}")
+    public void user_search_and_add_product_in_card( String strPro, int intQuantity) throws InterruptedException {
 
         //System.out.println("I am here....: "+strPro);
         util.waitAndClickXpath("//summary[@aria-label='Search']//span");
@@ -107,6 +154,9 @@ public class InitiateTransactionsSteps {
         util.waitAndClickXpath(strXpathPro);
         //util.waitAndClickXpath("//main[@id='MainContent']//ul[1]//li[4]");
         driver.switchTo().defaultContent();
+        for (int i=0 ; i < intQuantity ; i++) {
+            driver.findElement(By.xpath("//button[@name='plus']")).click();
+        }
 
     }
 
@@ -164,7 +214,7 @@ public class InitiateTransactionsSteps {
 
     @When("user choose a shipping method")
     public void user_choose_a_shipping_method() throws InterruptedException {
-
+            Thread.sleep(3000);
 
     }
 
@@ -189,47 +239,56 @@ public class InitiateTransactionsSteps {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("number")));
 
-        if (transactionsType.equalsIgnoreCase("disputed")) {
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+        if(browserType.equalsIgnoreCase("firefox")){
+            System.out.println("I for firefox: ");
+            driver.findElement(By.id("number")).sendKeys("4242");
+            driver.findElement(By.id("number")).sendKeys("4242");
+            driver.findElement(By.id("number")).sendKeys("4242");
+            driver.findElement(By.id("number")).sendKeys("4242");
 
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+        }else {
+            if (transactionsType.equalsIgnoreCase("disputed")) {
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
 
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
 
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD5);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD9);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
 
-        } else {
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD0);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD5);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD9);
 
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+            } else {
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
 
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
 
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
-            driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD4);
+                driver.findElement(By.id("number")).sendKeys(Keys.NUMPAD2);
+            }
         }
 
 
@@ -242,10 +301,18 @@ public class InitiateTransactionsSteps {
         driver.switchTo().defaultContent();
         Thread.sleep(1000);
         driver.switchTo().frame(3);
-        driver.findElement(By.id("expiry")).sendKeys(Keys.NUMPAD1);
-        driver.findElement(By.id("expiry")).sendKeys(Keys.NUMPAD2);
-        driver.findElement(By.id("expiry")).sendKeys(Keys.NUMPAD2);
-        driver.findElement(By.id("expiry")).sendKeys(Keys.NUMPAD4);
+
+        if(browserType.equalsIgnoreCase("firefox")){
+            driver.findElement(By.id("expiry")).sendKeys("12");
+            driver.findElement(By.id("expiry")).sendKeys("24");
+        }else{
+            driver.findElement(By.id("expiry")).sendKeys(Keys.NUMPAD1);
+            driver.findElement(By.id("expiry")).sendKeys(Keys.NUMPAD2);
+            driver.findElement(By.id("expiry")).sendKeys(Keys.NUMPAD2);
+            driver.findElement(By.id("expiry")).sendKeys(Keys.NUMPAD4);
+        }
+
+
 
         driver.switchTo().defaultContent();
         Thread.sleep(1000);
@@ -269,14 +336,38 @@ public class InitiateTransactionsSteps {
         String actual_msg = driver.findElement(By.xpath(" //h2[normalize-space()='Your order is confirmed']")).getText();
         System.out.println("actual_msg:  "+actual_msg);
         String expect="Your order is confirmed";
-        // Verify error message
         Assert.assertEquals(actual_msg, expect);
 
         String strOrderId = driver.findElement(By.xpath("//span[@class='os-order-number']")).getText();
         String[] result = strOrderId.split("#");
         if(result.length > 1)
             orderId = result[1];
-        //System.out.println("OrderId:  "+result[1]);
+        strContactInformation = driver.findElement(By.xpath("//bdo[@dir='ltr']")).getText();
+        strPaymentMethod = driver.findElement(By.xpath("//span[@class='payment-method-list__item__info']")).getText();
+        strShippingMethod = driver.findElement(By.xpath("//div[@class='content-box__row']//p[2]")).getText();
+        strShippingAddress = driver.findElement(By.xpath("//body//div[@class='content']//div[@class='section__content']//div[@class='section__content']//div[1]//div[1]//address[1]")).getText();
+        //strBillingAddress = driver.findElement(By.xpath("//div[@class='content-box__row']//div[2]//div[1]//address[1]")).getText();
+        strTotalPayment = driver.findElement(By.xpath("//div[@data-order-summary-section='payment-lines']//span[2] ")).getText();
+ }
+
+    @Then("user is navigated to digital order detail page")
+    public void user_is_navigated_to_digital_order_detail_page() {
+
+        String actual_msg = driver.findElement(By.xpath(" //h2[normalize-space()='Your order is confirmed']")).getText();
+        System.out.println("actual_msg:  "+actual_msg);
+        String expect="Your order is confirmed";
+        Assert.assertEquals(actual_msg, expect);
+
+        String strOrderId = driver.findElement(By.xpath("//span[@class='os-order-number']")).getText();
+        String[] result = strOrderId.split("#");
+        if(result.length > 1)
+            orderId = result[1];
+        strContactInformation = driver.findElement(By.xpath("//bdo[@dir='ltr']")).getText();
+        strPaymentMethod = driver.findElement(By.xpath("//span[@class='payment-method-list__item__info']")).getText();
+        //strShippingMethod = driver.findElement(By.xpath("//div[@class='content-box__row']//p[2]")).getText();
+        //strShippingAddress = driver.findElement(By.xpath("//body//div[@class='content']//div[@class='section__content']//div[@class='section__content']//div[1]//div[1]//address[1]")).getText();
+        strBillingAddress = driver.findElement(By.xpath("//div[@class='content-box__row']//div[2]//div[1]//address[1]")).getText();
+        //strTotalPayment = driver.findElement(By.xpath("//div[@data-order-summary-section='payment-lines']//span[2] ")).getText();
     }
 
     @When("user is login in to store with {string} and {string}")
@@ -290,6 +381,24 @@ public class InitiateTransactionsSteps {
         driver.findElement(By.id("password")).sendKeys(password);
     }
 
+    @And("^user fill checkout email or phone from (.*) and (.*)$")
+    public void user_fill_checkout_email_or_phone_from_and(String excelFileName, String rowNum) {
+        String projectPath = System.getProperty("user.dir");
+        String fileName = projectPath + "/datafiles/" + excelFileName;
+        int sheetIndex = 0;
+        int rowNumber = Integer.parseInt(rowNum.trim());
+        System.out.println("rowNumber: " + rowNumber);
+        ExcelUtils excelUtils = new ExcelUtils(fileName, sheetIndex);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='checkout_email_or_phone']")));
+
+        driver.findElement(By.xpath("//input[@id='checkout_email_or_phone']")).click();
+        driver.findElement(By.xpath("//input[@id='checkout_email_or_phone']")).clear();
+        driver.findElement(By.xpath("//input[@id='checkout_email_or_phone']")).sendKeys(excelUtils.getCellDataString(rowNumber, 1).toString());
+
+    }
+
+
     @When("^user fill contact information from (.*) and (.*)$")
     public void user_fill_contact_information_from_and(String excelFileName, String rowNum) throws InterruptedException {
         System.out.println("fileName::" + excelFileName);
@@ -302,11 +411,6 @@ public class InitiateTransactionsSteps {
         ExcelUtils excelUtils = new ExcelUtils(fileName, sheetIndex);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='checkout_email_or_phone']")));
-
-        driver.findElement(By.xpath("//input[@id='checkout_email_or_phone']")).click();
-        driver.findElement(By.xpath("//input[@id='checkout_email_or_phone']")).clear();
-        driver.findElement(By.xpath("//input[@id='checkout_email_or_phone']")).sendKeys(excelUtils.getCellDataString(rowNumber, 1).toString());
 
         driver.findElement(By.xpath("//input[@id='checkout_shipping_address_first_name']")).click();
         driver.findElement(By.xpath("//input[@id='checkout_shipping_address_first_name']")).clear();
@@ -355,67 +459,96 @@ public class InitiateTransactionsSteps {
         ExcelUtils excelUtils = new ExcelUtils(fileName, sheetIndex);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='checkout_email_or_phone']")));
-        System.out.println("row 1 c 2: " + excelUtils.getCellDataString(rowNumber, 1).toString());
-        driver.findElement(By.xpath("//input[@id='checkout_email_or_phone']")).click();
-        driver.findElement(By.xpath("//input[@id='checkout_email_or_phone']")).clear();
-        driver.findElement(By.xpath("//input[@id='checkout_email_or_phone']")).sendKeys(excelUtils.getCellDataString(rowNumber, 1).toString());
 
         driver.findElement(By.xpath("//input[@id='checkout_billing_address_first_name']")).click();
         driver.findElement(By.xpath("//input[@id='checkout_billing_address_first_name']")).clear();
-        driver.findElement(By.xpath("//input[@id='checkout_billing_address_first_name']")).sendKeys(excelUtils.getCellDataString(rowNumber, 2).toString());
+        driver.findElement(By.xpath("//input[@id='checkout_billing_address_first_name']")).sendKeys(excelUtils.getCellDataString(rowNumber, 11).toString());
 
         driver.findElement(By.xpath("//input[@id='checkout_billing_address_last_name']")).click();
         driver.findElement(By.xpath("//input[@id='checkout_billing_address_last_name']")).clear();
-        driver.findElement(By.xpath("//input[@id='checkout_billing_address_last_name']")).sendKeys(excelUtils.getCellDataString(rowNumber, 3).toString());
+        driver.findElement(By.xpath("//input[@id='checkout_billing_address_last_name']")).sendKeys(excelUtils.getCellDataString(rowNumber, 12).toString());
 
 
         util.waitAndClickXpath("//input[@id='checkout_billing_address_address1']");
         driver.findElement(By.xpath("//input[@id='checkout_billing_address_address1']")).clear();
-        driver.findElement(By.xpath("//input[@id='checkout_billing_address_address1']")).sendKeys(excelUtils.getCellDataString(rowNumber, 4).toString());
+        driver.findElement(By.xpath("//input[@id='checkout_billing_address_address1']")).sendKeys(excelUtils.getCellDataString(rowNumber, 12).toString());
 
         js.executeScript("window.scrollBy(0,350)", "");
 
         driver.findElement(By.xpath("//input[@id='checkout_billing_address_city']")).click();
         driver.findElement(By.xpath("//input[@id='checkout_billing_address_city']")).clear();
-        driver.findElement(By.xpath("//input[@id='checkout_billing_address_city']")).sendKeys(excelUtils.getCellDataString(rowNumber, 6).toString());
+        driver.findElement(By.xpath("//input[@id='checkout_billing_address_city']")).sendKeys(excelUtils.getCellDataString(rowNumber, 15).toString());
         // select from dropdown
         Select drpCountry = new Select(driver.findElement(By.xpath("//select[@id='checkout_billing_address_country']")));
-        drpCountry.selectByVisibleText(excelUtils.getCellDataString(rowNumber, 7).toString());
+        drpCountry.selectByVisibleText(excelUtils.getCellDataString(rowNumber, 16).toString());
 
 
         Select drpCity = new Select(driver.findElement(By.xpath("//select[@id='checkout_billing_address_province']")));
-        drpCity.selectByVisibleText(excelUtils.getCellDataString(rowNumber, 8).toString());
+        drpCity.selectByVisibleText(excelUtils.getCellDataString(rowNumber, 17).toString());
 
-        System.out.println("checkout_shipping_address_zip: " + excelUtils.getCellDataString(rowNumber, 9));
+       // System.out.println("checkout_shipping_address_zip: " + excelUtils.getCellDataString(rowNumber, 18));
         driver.findElement(By.xpath("//input[@id='checkout_billing_address_zip']")).click();
         driver.findElement(By.xpath("//input[@id='checkout_billing_address_zip']")).clear();
-        driver.findElement(By.xpath("//input[@id='checkout_billing_address_zip']")).sendKeys("" + excelUtils.getCellDataInt(rowNumber, 9));
+        driver.findElement(By.xpath("//input[@id='checkout_billing_address_zip']")).sendKeys("" + excelUtils.getCellDataInt(rowNumber, 18));
 
         transactionsType = excelUtils.getCellDataString(rowNumber, 10);
 
     }
-    @When("click add to card and check out")
-    public void click_add_to_card_and_check_out() throws InterruptedException {
-//button[normalize-space()='Check out']
+    @When("click add to card")
+    public void click_add_to_card() throws InterruptedException {
+        //button[normalize-space()='Check out']
         util.waitAndClickXpath("//button[contains(text(),'Add to cart')]");
+    }
+
+    @When("click check out")
+    public void click_check_out() throws InterruptedException {
         Thread.sleep(2000);
         driver.switchTo().activeElement();
-
         //div[@role='dialog']//div//a[@href='/cart']
         util.waitAndClickXpath("//a[@id='cart-notification-button']");
         driver.switchTo().defaultContent();
-
         //input[@value='Check out']
         util.waitAndClickXpath("//button[@id='checkout']");
+    }
+
+    @And("user click use a different billing address")
+    public void user_click_use_a_different_billing_address() throws InterruptedException {
+        util.waitAndClickXpath("//input[@id='checkout_different_billing_address_true']");
     }
 
 
     public static WebDriver getDriver() {
         return driver;
     }
-    public static String getOrderId() {
-        return orderId;
+
+    public static String getOrderId() { return orderId; }
+
+    public static String getOrderStatus() { return orderStatus;  }
+
+    public static String getPaymentMethod() {
+        return strPaymentMethod;
     }
+
+    public static String getContactInformation() {
+        return strContactInformation;
+    }
+
+    public static String getShippingMethod() {
+        return strShippingMethod;
+    }
+
+    public static String getShippingAddress() {
+        return strShippingAddress;
+    }
+
+    public static String getBillingAddress() {
+        return strBillingAddress;
+    }
+
+    public static String getTotalPayment() {
+        return strTotalPayment;
+    }
+
+
 
 }

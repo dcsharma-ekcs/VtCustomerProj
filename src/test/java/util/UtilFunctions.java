@@ -21,7 +21,7 @@ public class UtilFunctions {
 
     public void waitForXpath(By element) throws InterruptedException {
         for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
+            if (second >= 30) fail("timeout");
             try {
                 if (isElementPresent(element)) break;
             } catch (Exception e) {
@@ -33,7 +33,7 @@ public class UtilFunctions {
 
     public void waitForXpathElement(String strXpath) throws InterruptedException {
         for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
+            if (second >= 30) fail("timeout");
             try {
                 if (isElementPresent(By.xpath(strXpath))) break;
             } catch (Exception e) {
@@ -57,7 +57,7 @@ public class UtilFunctions {
 
     public void clickStickyArrow() throws InterruptedException {
         for (int second = 0; ; second++) {
-            if (second >= 3) fail("timeout");
+            if (second >= 5) fail("timeout");
             Thread.sleep(1000);
             try {
                 if (isElementPresent(By.xpath("//div[@class='sticky-arrow showOn']"))) break;
@@ -71,7 +71,7 @@ public class UtilFunctions {
     public void waitAndClickXpath(String strXpath) throws InterruptedException {
 
         for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
+            if (second >= 30) fail("timeout");
             try {
                 if (isElementPresent(By.xpath(strXpath))) break;
             } catch (Exception e) {
@@ -122,5 +122,31 @@ public class UtilFunctions {
         String parent_window=I1.next();
         driver.switchTo().window(parent_window);
         driver.switchTo().defaultContent();
+    }
+
+    public String getBillingToShippingDistanceKM(String myStr){
+        String srtResult = null;
+        String[] srtArray = myStr.split("km");
+        try {
+            String str1 = srtArray[0].substring(srtArray[0].indexOf(":")+1, srtArray[0].length());
+            srtResult = str1.trim();
+        } catch (Exception exp) {
+            System.out.println(exp.getMessage());
+            System.out.println(exp.getCause());
+        }
+        return srtResult;
+    }
+
+    public String getBillingToIPDistanceKM(String myStr){
+        String srtResult = null;
+        String[] srtArray = myStr.split("km");
+        try {
+            String str1 = srtArray[1].substring(srtArray[1].indexOf(":")+1, srtArray[1].length());
+            srtResult = str1.trim();
+        } catch (Exception exp) {
+            System.out.println(exp.getMessage());
+            System.out.println(exp.getCause());
+        }
+        return srtResult;
     }
 }

@@ -6,6 +6,11 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import pageFactory.VtCustomerPage_PF;
 
 import java.util.concurrent.TimeUnit;
@@ -15,15 +20,47 @@ import static junit.framework.TestCase.fail;
 public class VtLoginSteps_PF {
 
     static WebDriver driver = null;
+    static String browserType;
 
     VtCustomerPage_PF vtLogin;
 
-    @Given("vt user on login page")
-    public void vt_user_on_login_page() throws InterruptedException {
+    @Given("vt user on login page with browser {string}")
+    public void vt_user_on_login_page(String browser) throws InterruptedException {
         System.out.println("=========VtLoginSteps_PF===========");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+        browserType = browser;
+        if(browser.equalsIgnoreCase("chrome")){
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+
+        }else if(browser.equalsIgnoreCase("firefox")){
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+
+        }else if(browser.equalsIgnoreCase("edge")){
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+
+        }else if(browser.equalsIgnoreCase("opera")){
+            WebDriverManager.operadriver().setup();
+            driver = new OperaDriver();
+
+        }else if(browser.equalsIgnoreCase("safari")){
+
+            driver = new SafariDriver();
+
+        }else if(browser.equalsIgnoreCase("ie")){
+            WebDriverManager.iedriver().setup();
+            driver = new InternetExplorerDriver();
+
+        }else{
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+
+        }
+
         driver.manage().window().maximize();
+
         driver.get("https://vt-customer-dev.azurewebsites.net");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         vtLogin = new VtCustomerPage_PF(driver);

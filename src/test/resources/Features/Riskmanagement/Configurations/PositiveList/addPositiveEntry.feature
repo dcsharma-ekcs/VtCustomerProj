@@ -3,7 +3,7 @@ Feature: features to test add positive entry
   @positiveScenario
   Scenario Outline: Add Positive Entry Functionality
 
-    Given vt user on login page
+    Given vt user on login page with browser "chrome"
     When vt user is enter <username> and <password>
     And click on vt login button
     When user on dashboard page
@@ -18,6 +18,5 @@ Feature: features to test add positive entry
     Then user is navigated to Configurations page
 
     Examples:
-      | username                         | password       | CSVfile                               | rowNumber |
-      | rifige8310@enamelme.com | Dcsharma@2020 | /datafiles/csvAddNewPositiveEntry.csv | 1         |
-      | rifige8310@enamelme.com | Dcsharma@2020 | /datafiles/csvAddNewPositiveEntry.csv | 2         |
+      | username                | password      | CSVfile                               | rowNumber |
+      | mavejen717@enamelme.com | Dcsharma@2020 | /datafiles/csvAddNewPositiveEntry.csv | 1         |

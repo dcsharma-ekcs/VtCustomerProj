@@ -2,17 +2,18 @@ Feature: features to test initiate for digital products transaction functionalit
 
 
   Background: Transaction Functionality
-    Given user on my shopify store page
+    Given user on my shopify store page "chrome"
     When  user is login in to store with "https://dcpulsetxnstg.myshopify.com/" and "plauly"
     And click on enter button
     When user is navigated to store home page
     And click on catalog
-    When user search and add digital product in card "digital products X02"
+    And user search and add product in card "Chequered Red Shirt" quantity 2
 
   @smoke1
   Scenario Outline: Transaction buy it now Functionality
 
     When click on buy it now
+    And user fill checkout email or phone from <ExcelFileName> and <RowNumber>
     When user fill billing address from <ExcelFileName> and <RowNumber>
     And click on continue to payment
     When user fill credit card detail
@@ -27,7 +28,9 @@ Feature: features to test initiate for digital products transaction functionalit
   @smoke
   Scenario Outline: Transaction add to card Functionality
 
-    When click add to card and check out
+    When click add to card
+    And click check out
+    And user fill checkout email or phone from <ExcelFileName> and <RowNumber>
     When user fill billing address from <ExcelFileName> and <RowNumber>
     And click on continue to payment
     When user fill credit card detail

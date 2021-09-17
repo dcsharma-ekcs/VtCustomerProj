@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import util.UtilFunctions;
 
 
@@ -27,8 +29,8 @@ public class PositiveNegativeListPage_PF {
     @FindBy(xpath = "//li[normalize-space()='Positive Negative']")
     WebElement positive_negative_button;
 
-    String srtNegativeList = "//span[normalize-space()='Negative']";
-    @FindBy(xpath = "//span[normalize-space()='Negative']")
+    String srtNegativeList = "//button[@value='Negative']//span[1]";
+    @FindBy(xpath = "//button[@value='Negative']//span[1]")
     WebElement negative_list_button;
 
     String srtAddPositiveEntry = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div[1]/button[1]/span[1]";
@@ -111,7 +113,7 @@ public class PositiveNegativeListPage_PF {
         // select wanted KPT //p[normalize-space()='regress-01-01']
         //p[normalize-space()='All Customers']
         //p[normalize-space()='DC-Test-04-09-01']
-        driver.findElement(By.xpath("//p[normalize-space()='DC-Test-04-09-01']")).click();
+        driver.findElement(By.xpath("//p[normalize-space()='"+strCustomer+"']")).click();
         util.clickOutside();
 
         form_expire_date.click();
@@ -128,11 +130,15 @@ public class PositiveNegativeListPage_PF {
 
 
     public void clickOnNegativeList() throws InterruptedException {
-        Thread.sleep(3000);
-        System.out.println("srtNegativeList:   "+srtNegativeList);
-        util.waitForXpathElement(srtNegativeList);
-        System.out.println(" ------------   ");
-        negative_list_button.click();
+         System.out.println("srtNegativeList:   "+srtNegativeList);
+         util.waitForXpathElement(srtNegativeList);
+         Thread.sleep(10000);
+         WebDriverWait wait;
+         wait = new WebDriverWait(driver, 10);
+         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(srtNegativeList)));
+         negative_list_button.click();
+
+
     }
 
 
@@ -153,6 +159,7 @@ public class PositiveNegativeListPage_PF {
 
     public void clickOnAddPositiveEntry() throws InterruptedException {
         util.waitForXpathElement(srtAddPositiveEntry);
+        Thread.sleep(3000);
         add_positive_entry_button.click();
     }
 

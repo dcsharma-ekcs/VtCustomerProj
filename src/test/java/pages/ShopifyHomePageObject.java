@@ -3,6 +3,7 @@ package pages;
 import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.KeyInput;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.UtilFunctions;
@@ -41,8 +42,32 @@ public class ShopifyHomePageObject {
     By store_contact_email = By.xpath("//input[@id='PolarisTextField2']");
     By save_store_Change_email = By.xpath("//body/div[@id='app']/div/div/div/div[@data-polaris-layer='true']/div/div/div/div/div/div/div[2]/button[1]/span[1]/span[1]");
     By search_product_field = By.xpath("//summary[@aria-label='Search']//span");
+    By store_orders_tab = By.xpath("//span[normalize-space()='Orders']");
+    By store_search_field = By.xpath("//input[@placeholder='Filter orders']");
+    By store_payment_status = By.xpath("//tbody/tr/td/div/div/div/span[1]");
 
 
+
+
+    public String getOrderPaymentStatus() throws InterruptedException {
+           String paymentStatus =  driver.findElement(store_payment_status).getText();
+
+           return paymentStatus;
+    }
+
+    public void clickStoreOrdersTab() throws InterruptedException {
+        //utilFunctions.waitForXpath(store_orders_tab);
+        Thread.sleep(3000);
+        System.out.println("this.....");
+        driver.findElement(store_orders_tab).click();
+    }
+
+    public void searchOrder(String srtOrder) throws InterruptedException {
+        utilFunctions.waitForXpath(store_search_field);
+        driver.findElement(store_search_field).click();
+        driver.findElement(store_search_field).clear();
+        driver.findElement(store_search_field).sendKeys(srtOrder);
+    }
 
 
 
@@ -70,7 +95,7 @@ public class ShopifyHomePageObject {
 
     public void clickNextButton() throws InterruptedException {
         utilFunctions.waitForXpath(next_button);
-        driver.findElement(next_button).click();
+        driver.findElement(next_button).submit();
     }
 
     public void setPassword() throws InterruptedException {
@@ -84,11 +109,13 @@ public class ShopifyHomePageObject {
 
     public void clickAccountsLogInButton() throws InterruptedException {
         utilFunctions.waitForXpath(account_log_in_button);
-        driver.findElement(account_log_in_button).click();
+        Thread.sleep(1000);
+        driver.findElement(account_log_in_button).submit();
     }
 
     public void clickVestaCorporation() throws InterruptedException {
         utilFunctions.waitForXpath(vesta_corporation);
+        Thread.sleep(2000);
         driver.findElement(vesta_corporation).click();
     }
 
