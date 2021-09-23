@@ -16,6 +16,10 @@ public class VtCustomerPage_PF {
     @FindBy(id="next")
     WebElement login_button;
 
+    @FindBy(id="passwordHint")
+     WebElement password_hint;
+
+
     WebDriver drive;
 
     public VtCustomerPage_PF(WebDriver driver){
@@ -41,6 +45,11 @@ public class VtCustomerPage_PF {
     }
 
     public void clickNextButton(){
+
         login_button.click();
+    }
+
+    public String getPasswordHint(){
+        return  password_hint.getText();
     }
 }

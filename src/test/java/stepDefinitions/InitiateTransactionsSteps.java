@@ -110,21 +110,15 @@ public class InitiateTransactionsSteps {
             catalogElement = driver.findElement(By.xpath("//span[normalize-space()='Catalog']"));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[normalize-space()='Catalog']")));
             util.waitAndClickXpath("//span[normalize-space()='Catalog']");
-
-
-
         } catch (NoSuchElementException e) {
             isElement1Present = false;
             System.out.println("catalogElement not present");
         }
-
         if (isElement1Present == false) {
             catalogElement = driver.findElement(By.xpath("//span[@class='site-nav__label'][normalize-space()='Catalog']"));
             System.out.println("catalogElement present");
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='site-nav__label'][normalize-space()='Catalog']")));
             util.waitAndClickXpath("//span[@class='site-nav__label'][normalize-space()='Catalog']");
-
-
 
         }
 
@@ -141,7 +135,6 @@ public class InitiateTransactionsSteps {
     @And("user search and add product in card {string} quantity {int}")
     public void user_search_and_add_product_in_card( String strPro, int intQuantity) throws InterruptedException {
 
-        //System.out.println("I am here....: "+strPro);
         util.waitAndClickXpath("//summary[@aria-label='Search']//span");
         Thread.sleep(2000);
         driver.switchTo().activeElement();
@@ -150,9 +143,8 @@ public class InitiateTransactionsSteps {
         driver.findElement(By.xpath("//input[@id='Search-In-Modal']")).clear();
         driver.findElement(By.xpath("//input[@id='Search-In-Modal']")).sendKeys(strPro);
         String strXpathPro = "//h3[normalize-space()='"+strPro+"']";
-        System.out.println("I am here...."+strXpathPro);
+
         util.waitAndClickXpath(strXpathPro);
-        //util.waitAndClickXpath("//main[@id='MainContent']//ul[1]//li[4]");
         driver.switchTo().defaultContent();
         for (int i=0 ; i < intQuantity ; i++) {
             driver.findElement(By.xpath("//button[@name='plus']")).click();
@@ -162,7 +154,6 @@ public class InitiateTransactionsSteps {
 
     @When("click on buy it now")
     public void click_on_buy_it_now() throws InterruptedException {
-
         util.waitAndClickXpath("//button[normalize-space()='Buy it now']");
     }
 

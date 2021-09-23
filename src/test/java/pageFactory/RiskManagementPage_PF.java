@@ -60,13 +60,6 @@ public class RiskManagementPage_PF {
         return flag;
     }
 
-
-    //WebElement checkbox = driver.findElement(By.id("checkboxId"));
-    //System.out.println("The checkbox is selection state is - " + checkbox.isSelected());
-
-
-
-
     @FindBy(xpath = "//input[@id='searchInput']")
     WebElement search_input_field;
     public  void  setSearchText(String orderId){

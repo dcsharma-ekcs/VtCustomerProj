@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -13,6 +14,7 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import pageFactory.VtCustomerPage_PF;
 
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import static junit.framework.TestCase.fail;
@@ -24,8 +26,8 @@ public class VtLoginSteps_PF {
 
     VtCustomerPage_PF vtLogin;
 
-    @Given("vt user on login page with browser {string}")
-    public void vt_user_on_login_page(String browser) throws InterruptedException {
+    @Given("vt user login on url {string} with browser {string}")
+    public void vt_user_on_login_page(String url, String browser) throws InterruptedException {
         System.out.println("=========VtLoginSteps_PF===========");
 
         browserType = browser;
@@ -61,7 +63,7 @@ public class VtLoginSteps_PF {
 
         driver.manage().window().maximize();
 
-        driver.get("https://vt-customer-dev.azurewebsites.net");
+        driver.get(url);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         vtLogin = new VtCustomerPage_PF(driver);
 
@@ -82,22 +84,26 @@ public class VtLoginSteps_PF {
     @Then("user is navigated to the vt home page")
     public void user_is_navigated_to_the_vt_home_page() throws InterruptedException {
         for (int second = 0;; second++) {
-            if (second >= 60) fail("timeout");
+            if (second >= 30) fail("timeout");
             try { if ("Dashboard".equals(driver.getTitle())) break; } catch (Exception e) {}
             Thread.sleep(1000);
             System.out.println("Title...: "+driver.getTitle());
         }
     }
 
-    @Then("error message should throw")
-    public void error_message_should_throw() throws InterruptedException {
-        for (int second = 0;; second++) {
-            System.out.println("Title...: "+driver.getTitle());
-            if (second >= 60) fail("timeout");
-            try { if ("Sign In".equals(driver.getTitle())) break; } catch (Exception e) {}
-            Thread.sleep(1000);
+    @Then("error message {string} should throw")
+    public void error_message_should_throw(String msg) throws InterruptedException {
+        Thread.sleep(3000);
+        String errorMsg =  vtLogin.getPasswordHint();
+        System.out.println("errorMsg: "+errorMsg) ;
 
+        if(msg.contains(errorMsg)){
+            System.out.println("Test Pass");
+        }else{
+            Assert.fail("Test fail");
         }
+        //Assert.assertEquals(msg.toLowerCase(Locale.ROOT), errorMsg.toLowerCase(Locale.ROOT));
+
     }
 
     public static WebDriver getDriver() {

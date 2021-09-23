@@ -52,7 +52,6 @@ public class UtilFunctions {
         } catch (NoSuchElementException e) {
             return false;
         }
-
     }
 
     public void clickStickyArrow() throws InterruptedException {
@@ -63,7 +62,6 @@ public class UtilFunctions {
                 if (isElementPresent(By.xpath("//div[@class='sticky-arrow showOn']"))) break;
             } catch (Exception e) {
             }
-
         }
         driver.findElement(By.xpath("//div[@class='sticky-arrow showOn']")).click();
     }

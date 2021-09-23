@@ -3,7 +3,7 @@ Feature: features to test initiate transaction functionality
 
   Scenario Outline: Transaction Functionality
 
-    Given user on my shopify store page
+    Given user on my shopify store page "chrome"
     When  user is with <url> and <password>
     And click on enter button
     When user is navigated to store home page

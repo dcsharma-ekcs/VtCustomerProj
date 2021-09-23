@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="126.013">
-<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction buy it now Functionality" time="125.864">
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="266.247">
+<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction buy it now Functionality" time="134.629">
 <system-out><![CDATA[Given user on my shopify store page "chrome"................................passed
-When user is login in to store with "https://amit-test-04-09-01.myshopify.com/" and "lohyau".passed
+When user is login in to store with "https://dcpulsetxnstg.myshopify.com/" and "plauly".passed
 And click on enter button...................................................passed
 When user is navigated to store home page...................................passed
 And click on catalog........................................................passed
@@ -17,16 +17,51 @@ When user fill credit card detail...........................................pass
 And user fill billing address from CustomerDetails_XLSX_10.xlsx and 1.......passed
 And click on pay now button.................................................passed
 Then user is navigated to order detail page.................................passed
-When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "mavejen717@enamelme.com" and password "Dcsharma@2020".passed
+When user login to vt customer portal "https://vt-customer-stg.azurewebsites.net" user "cehedem117@posiklan.com" and password "PCopperDc@!2611@".passed
 And navigate to risk management list page...................................passed
 And search order with order id..............................................passed
 And click for transaction summary...........................................passed
 And check order status......................................................passed
 And click decisions tab.....................................................passed
-And search store "Amit-Test-04-09-01" for get decisions settings............passed
+And search store "dcpulsetxnstg" for get decisions settings.................passed
 And user logout.............................................................passed
 When user navigate to partners shopify page.................................passed
-When user login with "reymundo.paga@ubiquity.com" and "!Password@123" and "Amit-Test-04-09-01".passed
+When user login with "vnext_cloud@trustvesta.com" and "@dM!nShopify007!" and "dcpulsetxnstg".passed
+And shopify search and login in store.......................................passed
+And click on store tab......................................................passed
+And search order in shopify with order id...................................passed
+And Check order payment status..............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction add to card Functionality" time="131.45">
+<system-out><![CDATA[Given user on my shopify store page "chrome"................................passed
+When user is login in to store with "https://dcpulsetxnstg.myshopify.com/" and "plauly".passed
+And click on enter button...................................................passed
+When user is navigated to store home page...................................passed
+And click on catalog........................................................passed
+And user search and add product in card "Chequered Red Shirt" quantity 2....passed
+And click add to card.......................................................passed
+And user search and add product in card "Blue Silk Tuxedo" quantity 3.......passed
+And click add to card.......................................................passed
+And click check out.........................................................passed
+And user fill checkout email or phone from CustomerDetails_XLSX_10.xlsx and 4.passed
+When user fill contact information from CustomerDetails_XLSX_10.xlsx and 4..passed
+And click on continue to shipping...........................................passed
+When user choose a shipping method..........................................passed
+And click on continue to payment............................................passed
+When user fill credit card detail...........................................passed
+And click on pay now button.................................................passed
+Then user is navigated to order detail page.................................passed
+When user login to vt customer portal "https://vt-customer-stg.azurewebsites.net" user "cehedem117@posiklan.com" and password "PCopperDc@!2611@".passed
+And navigate to risk management list page...................................passed
+And search order with order id..............................................passed
+And click for transaction summary...........................................passed
+And check order status......................................................passed
+And click decisions tab.....................................................passed
+And search store "dcpulsetxnstg" for get decisions settings.................passed
+And user logout.............................................................passed
+When user navigate to partners shopify page.................................passed
+When user login with "vnext_cloud@trustvesta.com" and "@dM!nShopify007!" and "dcpulsetxnstg".passed
 And shopify search and login in store.......................................passed
 And click on store tab......................................................passed
 And search order in shopify with order id...................................passed

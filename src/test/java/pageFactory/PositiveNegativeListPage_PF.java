@@ -71,9 +71,6 @@ public class PositiveNegativeListPage_PF {
 
     public PositiveNegativeListPage_PF(WebDriver driver) {
         this.driver = driver;
-        // For Ajax related pages.
-        //AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 30);
-        //PageFactory.initElements(factory, this);
 
         PageFactory.initElements(driver, this);
         util = new UtilFunctions(driver);
@@ -84,9 +81,6 @@ public class PositiveNegativeListPage_PF {
         Thread.sleep(3000);
         act.moveToElement(form_search_input).click().perform();
         form_search_input.sendKeys(strText);
-        //form_search_input.click();
-        //form_search_input.clear();
-        //form_search_input.sendKeys(strText);
     }
 
     public void clickOnCreateButton() throws InterruptedException {
@@ -95,8 +89,6 @@ public class PositiveNegativeListPage_PF {
     }
 
     public void setData_Add_New_Entry_Form(String strKeys, String strKeyValue, String strCustomer, String strExpireDate, String strNotes) throws InterruptedException {
-        System.out.println("setData_Add_New_Entry_Form is : ");
-
         form_keys.click();
         form_keys.clear();
         form_keys.sendKeys(strKeys);
@@ -110,10 +102,7 @@ public class PositiveNegativeListPage_PF {
 
         driver.findElement(By.xpath(strCustomerXpath)).click();
         Thread.sleep(1000);
-        // select wanted KPT //p[normalize-space()='regress-01-01']
-        //p[normalize-space()='All Customers']
-        //p[normalize-space()='DC-Test-04-09-01']
-        driver.findElement(By.xpath("//p[normalize-space()='"+strCustomer+"']")).click();
+         driver.findElement(By.xpath("//p[normalize-space()='"+strCustomer+"']")).click();
         util.clickOutside();
 
         form_expire_date.click();
@@ -123,7 +112,6 @@ public class PositiveNegativeListPage_PF {
         form_notes.click();
         form_notes.clear();
         form_notes.sendKeys(strNotes);
-
         action.moveToElement(form_create_button);
 
     }
@@ -167,8 +155,6 @@ public class PositiveNegativeListPage_PF {
         Actions act =  new Actions(driver);
         Thread.sleep(3000);
         act.moveToElement(add_negative_entry_button).click().perform();
-//        util.waitForXpathElement(srtAddNegativeEntry);
-//        add_negative_entry_button.click();
     }
 
     public void clickStickyArrow() throws InterruptedException {

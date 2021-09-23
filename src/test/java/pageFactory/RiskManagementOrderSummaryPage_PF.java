@@ -108,15 +108,11 @@ public class RiskManagementOrderSummaryPage_PF {
         mapZoomOut.click();
     }
 
-
-
     @FindBy(xpath = "//button[@title='Toggle fullscreen view']")
     WebElement mapToggleFullScreenView;
     public void clickToggleFullScreenView(){
         mapToggleFullScreenView.click();
     }
-
-    //@FindBy(xpath = "///body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div/div/div/div[@coordinates='[object Object],[object Object],[object Object]']/div/div/div/div[@aria-label='Map']/div/div/div/div[@title='Billing Address']/img[1]")
 
     @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div/div/div/div[@coordinates='[object Object],[object Object],[object Object]']/div/div/div/div[@aria-label='Map']/div/div/div[3]/div[2]/img[1]")
     WebElement mapBillingAddPinter;
@@ -129,7 +125,6 @@ public class RiskManagementOrderSummaryPage_PF {
     public String getMapBillingAddAttributes(){
         return mpBillingAddAttributes.getText();
     }
-    //body//div[@id='__next']//div//div//div//div//div//div//div//div//div[3]//div[1]//div[1]//div[1]//div[1]//div[1]//span[1]
 
 
 
