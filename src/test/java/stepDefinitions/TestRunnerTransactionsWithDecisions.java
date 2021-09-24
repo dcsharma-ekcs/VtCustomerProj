@@ -6,9 +6,6 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 
-//NegativeList/addNegativeEntry.feature
-
-//PositiveList/addPositiveEntry.feature
 
 @RunWith(Cucumber.class)
 @CucumberOptions(

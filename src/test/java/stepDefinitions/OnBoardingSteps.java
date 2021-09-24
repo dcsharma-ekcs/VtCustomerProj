@@ -18,6 +18,29 @@ public class OnBoardingSteps {
         OnBoarding_PF onBoardingObj = new OnBoarding_PF(driver);
 
         onBoardingObj.clickDescribeYourBusiness();
+        Thread.sleep(1000);
+        onBoardingObj.clickProceedButton1();
+        Thread.sleep(1000);
+        onBoardingObj.clickProceedButton2();
+        Thread.sleep(1000);
+        onBoardingObj.clickProceedButton2();
+        Thread.sleep(1000);
+        onBoardingObj.selectVerticals("Marketplace");
+        Thread.sleep(1000);
+        onBoardingObj.selectSubVerticals("Physical Good");
+        Thread.sleep(1000);
+        onBoardingObj.clickProceedButton3();
+        Thread.sleep(1000);
+        onBoardingObj.selectPaymentProcessor("Atome");
+        Thread.sleep(1000);
+        onBoardingObj.clickProceedButton3();
+        Thread.sleep(1000);
+        //onBoardingObj.clickCheckboxProceed();
+        Thread.sleep(1000);
+        onBoardingObj.clickLetsGoButton();
+
+
+
 
     }
 

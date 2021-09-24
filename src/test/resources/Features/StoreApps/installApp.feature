@@ -18,4 +18,4 @@ Feature: features to test install app functionality
 
     Examples:
       | email                      | password      | storeName          | appName                      |
-      | reymundo.paga@ubiquity.com | !Password@123 | dev-regression-s01 | payment guarantee by vesta X |
+      | reymundo.paga@ubiquity.com | !Password@123 | dev-regression-s01 | Vesta Payment Guarantee-Stg |

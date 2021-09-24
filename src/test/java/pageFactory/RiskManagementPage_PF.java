@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import util.UtilFunctions;
 
 public class RiskManagementPage_PF {
@@ -11,11 +13,13 @@ public class RiskManagementPage_PF {
 
     UtilFunctions util;
     WebDriver driver;
+    WebDriverWait wait;
 
     public RiskManagementPage_PF(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         util = new UtilFunctions(driver);
+        wait  = new WebDriverWait(driver, 30);
     }
 
     String srtRiskManagement = "//li[normalize-space()='Risk Management']";
@@ -23,6 +27,7 @@ public class RiskManagementPage_PF {
     WebElement risk_management_tab;
     public void clickOnRiskManagementTab() throws InterruptedException {
         util.waitForXpathElement(srtRiskManagement);
+        wait.until(ExpectedConditions.elementToBeClickable(risk_management_tab));
         risk_management_tab.click();
     }
 
@@ -31,6 +36,7 @@ public class RiskManagementPage_PF {
     WebElement risk_management_decisions;
     public void clickOnDecisionsTab() throws InterruptedException {
         util.waitForXpathElement(srtDecisions);
+        wait.until(ExpectedConditions.elementToBeClickable(risk_management_decisions));
         risk_management_decisions.click();
     }
 
@@ -39,6 +45,7 @@ public class RiskManagementPage_PF {
     WebElement search_decisions;
     public void setSrtSearchDecisions(String strStore) throws InterruptedException {
         util.waitForXpathElement(srtSearchDecisions);
+        wait.until(ExpectedConditions.elementToBeClickable(search_decisions));
         Thread.sleep(1000);
         search_decisions.click();
         search_decisions.sendKeys(strStore);
@@ -63,6 +70,7 @@ public class RiskManagementPage_PF {
     @FindBy(xpath = "//input[@id='searchInput']")
     WebElement search_input_field;
     public  void  setSearchText(String orderId){
+        wait.until(ExpectedConditions.elementToBeClickable(search_input_field));
         search_input_field.click();
         search_input_field.clear();
         search_input_field.sendKeys(orderId);

@@ -27,7 +27,7 @@ public class InstallAppSteps {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.shopify.com/partners");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     @When("^user is enter (.*) and (.*) and (.*) and (.*)$")
@@ -94,7 +94,10 @@ public class InstallAppSteps {
     }
     @When("click install unlisted app")
     public void click_install_unlisted_app() throws InterruptedException {
+
+       // shopifyHomePageObject.clickInstallAppAnywayButton();
        shopifyHomePageObject.clickInstallAppButton();
+       Thread.sleep(3000);
 
     }
     @Then("user is navigated to b2c login page")

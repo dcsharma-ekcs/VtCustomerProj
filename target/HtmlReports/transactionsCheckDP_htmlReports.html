@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22ml-3%20ml-md-0%22%20viewBox%3D%220%200%2040.59%2046.31%22%20width%3D%2240.59%22%20height%3D%2246.31%22%3E%0A%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%2323d96c%22%20fill-rule%3D%22evenodd%22%20d%3D%22M30.283%203.645q-.528-.317-1.08-.593a16.164%2016.164%200%2000-1.154-.518c-.124-.052-.247-.1-.372-.149-.343-.127-.689-.268-1.042-.371a19.427%2019.427%200%2010-9.792%2037.51v5.56c11.676-1.753%2022.016-10.979%2022.787-23.093.459-7.289-3.193-14.73-9.347-18.346z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23173647%22%20d%3D%22M15.787%2046.307v-5.935A20.472%2020.472%200%201126.959%201.015c.274.08.557.187.832.291l.248.093c.165.064.291.113.417.167.348.137.739.313%201.208.543q.589.295%201.153.633c6.393%203.756%2010.354%2011.518%209.857%2019.316-.763%2012-10.722%2022.122-23.679%2024.067zm4.8-44.214h-.026a18.366%2018.366%200%2000-3.524%2036.408l.85.165v5.18c11.392-2.224%2020.009-11.272%2020.686-21.922.448-7.033-3.1-14.018-8.83-17.383l-.008-.005A14.691%2014.691%200%200027.654%203.5a5.74%205.74%200%2000-.344-.138l-.27-.1a9.49%209.49%200%2000-.708-.249%2018.425%2018.425%200%2000-5.743-.92z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23173647%22%20fill-rule%3D%22evenodd%22%20d%3D%22M16.666%2010.58a1.8%201.8%200%20011.583.608%204.184%204.184%200%2001.728%201.107c.645%201.422%201.027%203.461.23%204.605a6.334%206.334%200%2001-3.981-3.087%203.236%203.236%200%2001-.347-1.339%201.957%201.957%200%20011.787-1.894zm-5.683%208.025a7.742%207.742%200%20001.218.737%205.789%205.789%200%20004.883-.138%206.116%206.116%200%2000-3.345-3.45%203.664%203.664%200%2000-1.442-.321%201.884%201.884%200%2000-.319%200%201.766%201.766%200%2000-.995%203.172zm6.1%203.433c-.777-.518-2.379-.309-3.312-.292a4.416%204.416%200%2000-1.666.352%203.5%203.5%200%2000-1.218.738%201.817%201.817%200%20001.409%203.171%203.3%203.3%200%20001.442-.321c1.436-.62%203.141-2.32%203.346-3.648zm2.61%202a6.556%206.556%200%2000-3.724%203.506%203.091%203.091%200%2000-.321%201.314%201.907%201.907%200%20003.3%201.346%207.422%207.422%200%2000.7-1.218c.621-1.333.866-3.72.046-4.948zm2.557-7.167a5.941%205.941%200%20003.7-3.167%203.243%203.243%200%2000.319-1.346%201.915%201.915%200%2000-1.794-1.954%201.832%201.832%200%2000-1.6.641%207.382%207.382%200%2000-.705%201.218c-.62%201.434-.842%203.48.081%204.603zm4.208%2012.115a3.244%203.244%200%2000-.321-1.345%205.869%205.869%200%2000-3.554-3.269%205.386%205.386%200%2000-.226%204.711%204.147%204.147%200%2000.7%201.121c1.133%201.23%203.505.32%203.402-1.218zm4.2-6.28a7.466%207.466%200%2000-1.217-.7%204.425%204.425%200%2000-1.666-.352%206.4%206.4%200%2000-3.188.555%205.959%205.959%200%20003.316%203.386%203.672%203.672%200%20001.442.32%201.8%201.8%200%20001.31-3.209z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+  max-width: calc(100% - 1.5em);
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow-x: auto;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  max-width: 100%;
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-attachment__text {
+  background-color: #ebebeb;
+  padding: 0.5em;
+  overflow-x: auto;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"15.0.0","implementation":{"name":"cucumber-jvm","version":"6.11.0"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"11.0.12+8-LTS-237"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1632465704","nanos":863835100}}},{"source":{"uri":"file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesDPSTG.feature","data":"Feature: features to test initiate for digital products transaction and risk management functionality\r\n\r\n\r\n  Background: Transaction Functionality\r\n    Given user on my shopify store page \"chrome\"\r\n    When  user is login in to store with \"https://dcpulsetxnstg.myshopify.com/\" and \"plauly\"\r\n    And click on enter button\r\n    When user is navigated to store home page\r\n    And click on catalog\r\n    When user search and add product in card \"digital products X02\" quantity 2\r\n\r\n  @smoke1\r\n  Scenario Outline: Transaction buy it now Functionality\r\n\r\n    When click on buy it now\r\n    And user fill checkout email or phone from \u003cExcelFileName\u003e and \u003cRowNumber\u003e\r\n    When user fill billing address from \u003cExcelFileName\u003e and \u003cRowNumber\u003e\r\n    And click on continue to payment\r\n    When user fill credit card detail\r\n    And click on pay now button\r\n    Then user is navigated to digital order detail page\r\n    When user login to vt customer portal \"https://vt-customer-stg.azurewebsites.net\" user \"cehedem117@posiklan.com\" and password \"PCopperDc@!2611@\"\r\n    And navigate to risk management list page\r\n    And search order with order id\r\n    And click for transaction summary\r\n    And check attributes positive negative\r\n    Then user logout\r\n\r\n    Examples:\r\n      | ExcelFileName                           | RowNumber |\r\n      | data_file_for_digital_products_new.xlsx | 1         |\r\n\r\n\r\n  @smoke\r\n  Scenario Outline: Transaction add to card Functionality\r\n\r\n    And click add to card\r\n    And click check out\r\n    And user fill checkout email or phone from \u003cExcelFileName\u003e and \u003cRowNumber\u003e\r\n    When user fill billing address from \u003cExcelFileName\u003e and \u003cRowNumber\u003e\r\n    And click on continue to payment\r\n    When user fill credit card detail\r\n    And click on pay now button\r\n    Then user is navigated to digital order detail page\r\n    When user login to vt customer portal \"https://vt-customer-dev.azurewebsites.net\" user \"kiyeway177@posiklan.com\" and password \"Dcsharma@2020\"\r\n    And navigate to risk management list page\r\n    And search order with order id\r\n    And click for transaction summary\r\n    And check attributes positive negative\r\n    Then user logout\r\n\r\n    Examples:\r\n      | ExcelFileName                | RowNumber |\r\n      | CustomerDetails_XLSX_10.xlsx | 2         |\r\n\r\n    \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesDPSTG.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"features to test initiate for digital products transaction and risk management functionality","children":[{"background":{"location":{"line":4,"column":3},"keyword":"Background","name":"Transaction Functionality","steps":[{"location":{"line":5,"column":5},"keyword":"Given ","text":"user on my shopify store page \"chrome\"","id":"0c0be7b4-20b3-4e88-824a-5ea3f4662e07"},{"location":{"line":6,"column":5},"keyword":"When ","text":"user is login in to store with \"https://dcpulsetxnstg.myshopify.com/\" and \"plauly\"","id":"f5f529db-4cb5-4b22-be38-dd47893622a2"},{"location":{"line":7,"column":5},"keyword":"And ","text":"click on enter button","id":"9f584945-7d8f-42de-9d9a-63147828dc21"},{"location":{"line":8,"column":5},"keyword":"When ","text":"user is navigated to store home page","id":"f6ebfb72-70ea-439e-9f78-e5686570cb51"},{"location":{"line":9,"column":5},"keyword":"And ","text":"click on catalog","id":"4ba163d3-ce29-4eaf-ae82-dbe532694251"},{"location":{"line":10,"column":5},"keyword":"When ","text":"user search and add product in card \"digital products X02\" quantity 2","id":"2dabac76-5609-41f9-82b9-24ce86971f62"}],"id":"71327617-b82d-43b6-a6ca-6baf21e04680"}},{"scenario":{"location":{"line":13,"column":3},"tags":[{"location":{"line":12,"column":3},"name":"@smoke1","id":"d746fda9-ccf9-4868-a138-05ea92014c91"}],"keyword":"Scenario Outline","name":"Transaction buy it now Functionality","steps":[{"location":{"line":15,"column":5},"keyword":"When ","text":"click on buy it now","id":"82ba447f-1d22-46ad-b37a-2c3f4852fa29"},{"location":{"line":16,"column":5},"keyword":"And ","text":"user fill checkout email or phone from \u003cExcelFileName\u003e and \u003cRowNumber\u003e","id":"ec9dbbf1-e22e-43dc-ae7e-94c70e560cb8"},{"location":{"line":17,"column":5},"keyword":"When ","text":"user fill billing address from \u003cExcelFileName\u003e and \u003cRowNumber\u003e","id":"cc488bc2-27bc-42ed-a829-59d1415745dc"},{"location":{"line":18,"column":5},"keyword":"And ","text":"click on continue to payment","id":"5f8fe064-da6a-464e-a14f-94a6413ce223"},{"location":{"line":19,"column":5},"keyword":"When ","text":"user fill credit card detail","id":"7f2c1ecf-8948-4a11-92c3-18f5f7530c84"},{"location":{"line":20,"column":5},"keyword":"And ","text":"click on pay now button","id":"750fe031-cd07-424c-8195-1113bd147008"},{"location":{"line":21,"column":5},"keyword":"Then ","text":"user is navigated to digital order detail page","id":"b45c5434-afee-43c4-8a0f-81d67436b023"},{"location":{"line":22,"column":5},"keyword":"When ","text":"user login to vt customer portal \"https://vt-customer-stg.azurewebsites.net\" user \"cehedem117@posiklan.com\" and password \"PCopperDc@!2611@\"","id":"3a4cce8b-2fb1-4b9f-9d7f-11df176e5b20"},{"location":{"line":23,"column":5},"keyword":"And ","text":"navigate to risk management list page","id":"496e1fe3-4d55-47b8-9374-874ff762f097"},{"location":{"line":24,"column":5},"keyword":"And ","text":"search order with order id","id":"2b692963-1393-42ea-83b7-7ad54261ccf9"},{"location":{"line":25,"column":5},"keyword":"And ","text":"click for transaction summary","id":"9795ab97-2a3c-4b0c-8cce-f41a83e72d14"},{"location":{"line":26,"column":5},"keyword":"And ","text":"check attributes positive negative","id":"f7c93e3d-935e-4829-8163-0020a85bd103"},{"location":{"line":27,"column":5},"keyword":"Then ","text":"user logout","id":"ec4dd140-eab2-429f-ad18-c07a8030a77e"}],"examples":[{"location":{"line":29,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":30,"column":7},"cells":[{"location":{"line":30,"column":9},"value":"ExcelFileName"},{"location":{"line":30,"column":51},"value":"RowNumber"}],"id":"c79add68-80ed-4c6b-8d91-f5cb918263ac"},"tableBody":[{"location":{"line":31,"column":7},"cells":[{"location":{"line":31,"column":9},"value":"data_file_for_digital_products_new.xlsx"},{"location":{"line":31,"column":51},"value":"1"}],"id":"9b48e43b-9b51-4469-9b14-487700f043c6"}],"id":"d7b6f228-3922-4936-bdec-9208b0a1421b"}],"id":"ecb0f5db-4c84-4aea-af48-1acd18ec01e8"}},{"scenario":{"location":{"line":35,"column":3},"tags":[{"location":{"line":34,"column":3},"name":"@smoke","id":"20211297-feff-40be-89b2-9475aeb0688e"}],"keyword":"Scenario Outline","name":"Transaction add to card Functionality","steps":[{"location":{"line":37,"column":5},"keyword":"And ","text":"click add to card","id":"6086ac68-ca1d-4e28-b44d-a947ad8838de"},{"location":{"line":38,"column":5},"keyword":"And ","text":"click check out","id":"0143cf74-a12d-4d4a-912a-d1195c4e2574"},{"location":{"line":39,"column":5},"keyword":"And ","text":"user fill checkout email or phone from \u003cExcelFileName\u003e and \u003cRowNumber\u003e","id":"ef4b3839-3770-42d7-a731-ec99614f64e6"},{"location":{"line":40,"column":5},"keyword":"When ","text":"user fill billing address from \u003cExcelFileName\u003e and \u003cRowNumber\u003e","id":"ba219f7b-f3d4-46f8-9e07-3cf1db096956"},{"location":{"line":41,"column":5},"keyword":"And ","text":"click on continue to payment","id":"aed856fb-589f-4643-9973-a86c4ca998d0"},{"location":{"line":42,"column":5},"keyword":"When ","text":"user fill credit card detail","id":"e4e4ba8d-4e75-410b-942a-288c2d0a27e0"},{"location":{"line":43,"column":5},"keyword":"And ","text":"click on pay now button","id":"31db9eff-1cc4-4428-b5c7-b345cd547d15"},{"location":{"line":44,"column":5},"keyword":"Then ","text":"user is navigated to digital order detail page","id":"ce5ba470-773e-4758-a7c9-8f5e960d0939"},{"location":{"line":45,"column":5},"keyword":"When ","text":"user login to vt customer portal \"https://vt-customer-dev.azurewebsites.net\" user \"kiyeway177@posiklan.com\" and password \"Dcsharma@2020\"","id":"6f6574be-f111-41c8-9ea8-91bf8f4a9a25"},{"location":{"line":46,"column":5},"keyword":"And ","text":"navigate to risk management list page","id":"8a8c41f9-c70c-45f1-b279-d01914d3a5e1"},{"location":{"line":47,"column":5},"keyword":"And ","text":"search order with order id","id":"b62fe045-ebf0-449e-8bfd-13db116ddf4a"},{"location":{"line":48,"column":5},"keyword":"And ","text":"click for transaction summary","id":"dc3ba8a6-3476-4a71-a026-cd6fe5939318"},{"location":{"line":49,"column":5},"keyword":"And ","text":"check attributes positive negative","id":"64f6876c-7621-43bf-b45c-fb66bba5b2ba"},{"location":{"line":50,"column":5},"keyword":"Then ","text":"user logout","id":"bd5e22be-2a16-4982-9fe3-13829208ae6b"}],"examples":[{"location":{"line":52,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":53,"column":7},"cells":[{"location":{"line":53,"column":9},"value":"ExcelFileName"},{"location":{"line":53,"column":40},"value":"RowNumber"}],"id":"d8af61ba-56a9-4b91-ab84-f0f5268f84c0"},"tableBody":[{"location":{"line":54,"column":7},"cells":[{"location":{"line":54,"column":9},"value":"CustomerDetails_XLSX_10.xlsx"},{"location":{"line":54,"column":40},"value":"2"}],"id":"ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"}],"id":"aa4b939f-0784-4cfb-9ff4-770763480f26"}],"id":"248c44ad-d574-412c-95bf-40936bfbd0f2"}}]}}},{"pickle":{"id":"94e3d532-9628-49b0-bd1d-99959e0c06f3","uri":"file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesDPSTG.feature","name":"Transaction buy it now Functionality","language":"en","steps":[{"text":"user on my shopify store page \"chrome\"","id":"f16def12-79ab-453b-ab4c-3f4ae3335490","astNodeIds":["0c0be7b4-20b3-4e88-824a-5ea3f4662e07"]},{"text":"user is login in to store with \"https://dcpulsetxnstg.myshopify.com/\" and \"plauly\"","id":"2d04435e-4b5f-463c-8e35-4aaf60710453","astNodeIds":["f5f529db-4cb5-4b22-be38-dd47893622a2"]},{"text":"click on enter button","id":"fcbac537-2017-4b38-baa9-2567e0b65791","astNodeIds":["9f584945-7d8f-42de-9d9a-63147828dc21"]},{"text":"user is navigated to store home page","id":"a242a76c-b6a6-428a-ad75-8fb2ceb0f8e9","astNodeIds":["f6ebfb72-70ea-439e-9f78-e5686570cb51"]},{"text":"click on catalog","id":"eaf5f763-12ae-437a-b70f-17917b87cf7e","astNodeIds":["4ba163d3-ce29-4eaf-ae82-dbe532694251"]},{"text":"user search and add product in card \"digital products X02\" quantity 2","id":"fdbe4256-e4c4-45d6-aa2b-71f5e5d7a246","astNodeIds":["2dabac76-5609-41f9-82b9-24ce86971f62"]},{"text":"click on buy it now","id":"0efb54b4-fc40-4e50-9ae6-a314fc1ef241","astNodeIds":["82ba447f-1d22-46ad-b37a-2c3f4852fa29","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"user fill checkout email or phone from data_file_for_digital_products_new.xlsx and 1","id":"d67b069e-420a-4e56-8270-ac4610b74a2f","astNodeIds":["ec9dbbf1-e22e-43dc-ae7e-94c70e560cb8","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"user fill billing address from data_file_for_digital_products_new.xlsx and 1","id":"0bc832bd-791f-4791-9fa9-15a173191083","astNodeIds":["cc488bc2-27bc-42ed-a829-59d1415745dc","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"click on continue to payment","id":"23b06b02-f723-4e1b-a56a-5e71e4525fa6","astNodeIds":["5f8fe064-da6a-464e-a14f-94a6413ce223","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"user fill credit card detail","id":"d4684e2b-d898-4d59-a9a5-886244fbe6a2","astNodeIds":["7f2c1ecf-8948-4a11-92c3-18f5f7530c84","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"click on pay now button","id":"bf8da256-e028-4a93-8bdb-54692eb7f8a4","astNodeIds":["750fe031-cd07-424c-8195-1113bd147008","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"user is navigated to digital order detail page","id":"4ae7cc90-16ee-4dad-ba02-d384d089728c","astNodeIds":["b45c5434-afee-43c4-8a0f-81d67436b023","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"user login to vt customer portal \"https://vt-customer-stg.azurewebsites.net\" user \"cehedem117@posiklan.com\" and password \"PCopperDc@!2611@\"","id":"8a4bf839-dc06-444d-bb24-621f532f1bbe","astNodeIds":["3a4cce8b-2fb1-4b9f-9d7f-11df176e5b20","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"navigate to risk management list page","id":"60541f1c-a2ad-4ff7-94d4-f42c72ab8dac","astNodeIds":["496e1fe3-4d55-47b8-9374-874ff762f097","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"search order with order id","id":"d1f728f0-9f2d-4872-a2a0-39e247a147b9","astNodeIds":["2b692963-1393-42ea-83b7-7ad54261ccf9","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"click for transaction summary","id":"b4bcd874-4826-4043-80a7-106b4966f0b1","astNodeIds":["9795ab97-2a3c-4b0c-8cce-f41a83e72d14","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"check attributes positive negative","id":"e0afe8fc-6275-4b95-971b-07505e937964","astNodeIds":["f7c93e3d-935e-4829-8163-0020a85bd103","9b48e43b-9b51-4469-9b14-487700f043c6"]},{"text":"user logout","id":"49ff5754-3dda-48f7-9d9a-f5c35cadcbf3","astNodeIds":["ec4dd140-eab2-429f-ad18-c07a8030a77e","9b48e43b-9b51-4469-9b14-487700f043c6"]}],"tags":[{"name":"@smoke1","astNodeId":"d746fda9-ccf9-4868-a138-05ea92014c91"}],"astNodeIds":["ecb0f5db-4c84-4aea-af48-1acd18ec01e8","9b48e43b-9b51-4469-9b14-487700f043c6"]}},{"pickle":{"id":"24e5156e-5203-4571-af02-95409ce43d51","uri":"file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesDPSTG.feature","name":"Transaction add to card Functionality","language":"en","steps":[{"text":"user on my shopify store page \"chrome\"","id":"7cd90ca0-495b-4aad-8dfd-4dde0dc48cb8","astNodeIds":["0c0be7b4-20b3-4e88-824a-5ea3f4662e07"]},{"text":"user is login in to store with \"https://dcpulsetxnstg.myshopify.com/\" and \"plauly\"","id":"0f2e8d26-f796-42ba-8b5a-f9acc07f14f3","astNodeIds":["f5f529db-4cb5-4b22-be38-dd47893622a2"]},{"text":"click on enter button","id":"474f744f-0ca8-48a7-9a37-710639ba55d0","astNodeIds":["9f584945-7d8f-42de-9d9a-63147828dc21"]},{"text":"user is navigated to store home page","id":"2798950c-d54b-4920-a1a0-fece3f43758e","astNodeIds":["f6ebfb72-70ea-439e-9f78-e5686570cb51"]},{"text":"click on catalog","id":"67034c23-d511-4159-a127-752f220e4c3b","astNodeIds":["4ba163d3-ce29-4eaf-ae82-dbe532694251"]},{"text":"user search and add product in card \"digital products X02\" quantity 2","id":"74120733-39db-4bd8-98ca-909d63cac6be","astNodeIds":["2dabac76-5609-41f9-82b9-24ce86971f62"]},{"text":"click add to card","id":"ee9d889e-8a39-4b3e-bb0c-846c38adf3d5","astNodeIds":["6086ac68-ca1d-4e28-b44d-a947ad8838de","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"click check out","id":"035bc556-bafe-4a73-8599-02e046f22e83","astNodeIds":["0143cf74-a12d-4d4a-912a-d1195c4e2574","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"user fill checkout email or phone from CustomerDetails_XLSX_10.xlsx and 2","id":"05c638bb-d39e-482f-b6e3-51f76332065c","astNodeIds":["ef4b3839-3770-42d7-a731-ec99614f64e6","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"user fill billing address from CustomerDetails_XLSX_10.xlsx and 2","id":"3b0226dc-911c-447a-aa15-4f904136c84b","astNodeIds":["ba219f7b-f3d4-46f8-9e07-3cf1db096956","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"click on continue to payment","id":"029a7c64-4e4e-4c90-9384-5b681152029e","astNodeIds":["aed856fb-589f-4643-9973-a86c4ca998d0","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"user fill credit card detail","id":"41c31ac1-18bc-4b09-89fb-b45813b31a29","astNodeIds":["e4e4ba8d-4e75-410b-942a-288c2d0a27e0","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"click on pay now button","id":"20c15676-93ae-4258-aa68-37d2a3183ffa","astNodeIds":["31db9eff-1cc4-4428-b5c7-b345cd547d15","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"user is navigated to digital order detail page","id":"d9cd84f8-5d7b-4490-b078-95672143078c","astNodeIds":["ce5ba470-773e-4758-a7c9-8f5e960d0939","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"user login to vt customer portal \"https://vt-customer-dev.azurewebsites.net\" user \"kiyeway177@posiklan.com\" and password \"Dcsharma@2020\"","id":"dddf09f0-95b0-4e1e-b95a-578fb55d0323","astNodeIds":["6f6574be-f111-41c8-9ea8-91bf8f4a9a25","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"navigate to risk management list page","id":"46d47f04-a857-4698-8a4a-b6da1b26149e","astNodeIds":["8a8c41f9-c70c-45f1-b279-d01914d3a5e1","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"search order with order id","id":"f364a443-05b0-4066-8a38-6e3d329706cc","astNodeIds":["b62fe045-ebf0-449e-8bfd-13db116ddf4a","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"click for transaction summary","id":"014a84af-da4e-4076-9d0e-83cb82007817","astNodeIds":["dc3ba8a6-3476-4a71-a026-cd6fe5939318","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"check attributes positive negative","id":"0fa12abf-d629-4846-9999-309e1227f7a3","astNodeIds":["64f6876c-7621-43bf-b45c-fb66bba5b2ba","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]},{"text":"user logout","id":"5ce0580b-d705-4533-9ff9-ac2974af20e9","astNodeIds":["bd5e22be-2a16-4982-9fe3-13829208ae6b","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]}],"tags":[{"name":"@smoke","astNodeId":"20211297-feff-40be-89b2-9475aeb0688e"}],"astNodeIds":["248c44ad-d574-412c-95bf-40936bfbd0f2","ab3240ea-6c02-4c23-acc6-0ac0d0ecf35e"]}},{"testCase":{"id":"039e82dc-227c-40e0-929e-5f61b1edb660","pickleId":"24e5156e-5203-4571-af02-95409ce43d51","testSteps":[{"id":"7f0db84f-32a5-4033-b2c5-c186b199019d","pickleStepId":"7cd90ca0-495b-4aad-8dfd-4dde0dc48cb8","stepDefinitionIds":["962242cc-15f9-4b72-8d3c-8c1a87de9281"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":30,"value":"\"chrome\"","children":[{"start":31,"value":"chrome","children":[{}]},{"children":[{}]}]}}]}]},{"id":"e3fe6b17-c69a-4d28-947c-c78a5410a0a3","pickleStepId":"0f2e8d26-f796-42ba-8b5a-f9acc07f14f3","stepDefinitionIds":["fe149496-2f26-49c3-a785-fa84a8544676"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":31,"value":"\"https://dcpulsetxnstg.myshopify.com/\"","children":[{"start":32,"value":"https://dcpulsetxnstg.myshopify.com/","children":[{}]},{"children":[{}]}]}},{"parameterTypeName":"string","group":{"start":74,"value":"\"plauly\"","children":[{"start":75,"value":"plauly","children":[{}]},{"children":[{}]}]}}]}]},{"id":"c73a9758-f48f-449f-bf46-c83fb7ab3850","pickleStepId":"474f744f-0ca8-48a7-9a37-710639ba55d0","stepDefinitionIds":["078e1504-8c55-46d5-a961-5f3afb7e398a"],"stepMatchArgumentsLists":[{}]},{"id":"17afdf9e-0af9-4f31-be2e-4e4d57adb79a","pickleStepId":"2798950c-d54b-4920-a1a0-fece3f43758e","stepDefinitionIds":["72f38178-0649-4b3b-83ff-1b3f310106b9"],"stepMatchArgumentsLists":[{}]},{"id":"1d6a5cd8-9cbb-4228-b171-efd3e13c7965","pickleStepId":"67034c23-d511-4159-a127-752f220e4c3b","stepDefinitionIds":["3275da0b-fed2-4862-822e-a744f3eb65d2"],"stepMatchArgumentsLists":[{}]},{"id":"05dc5e05-6d1f-4573-b376-cae90b52095a","pickleStepId":"74120733-39db-4bd8-98ca-909d63cac6be","stepDefinitionIds":["02ecb564-70eb-401b-98c6-6fcd2a39a51e"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":36,"value":"\"digital products X02\"","children":[{"start":37,"value":"digital products X02","children":[{}]},{"children":[{}]}]}},{"parameterTypeName":"int","group":{"start":68,"value":"2"}}]}]},{"id":"29dbd046-2753-4b66-9574-2fb2c82f8021","pickleStepId":"ee9d889e-8a39-4b3e-bb0c-846c38adf3d5","stepDefinitionIds":["ae09a595-e3ae-4708-b8c2-d8ae13a9db36"],"stepMatchArgumentsLists":[{}]},{"id":"1d745f5a-4205-40ee-9a06-b8a794b48677","pickleStepId":"035bc556-bafe-4a73-8599-02e046f22e83","stepDefinitionIds":["54856e9c-48ea-4f0f-80a4-c40a937dd816"],"stepMatchArgumentsLists":[{}]},{"id":"72799c0c-b0c7-4a35-a097-1d9c6e6ae166","pickleStepId":"05c638bb-d39e-482f-b6e3-51f76332065c","stepDefinitionIds":["2feba388-a0c5-4029-a0c9-addfd69afc7c"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"anonymous","group":{"start":39,"value":"CustomerDetails_XLSX_10.xlsx"}},{"parameterTypeName":"anonymous","group":{"start":72,"value":"2"}}]}]},{"id":"bca763bc-5a06-46d3-ad3c-b7f574d918b0","pickleStepId":"3b0226dc-911c-447a-aa15-4f904136c84b","stepDefinitionIds":["40bdd6bf-3ae9-4d61-8e1d-78f1b2805045"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"anonymous","group":{"start":31,"value":"CustomerDetails_XLSX_10.xlsx"}},{"parameterTypeName":"anonymous","group":{"start":64,"value":"2"}}]}]},{"id":"edef3e32-3e23-4743-97ec-5826977df636","pickleStepId":"029a7c64-4e4e-4c90-9384-5b681152029e","stepDefinitionIds":["caefba07-ce02-4bbe-94f1-d479fa09d441"],"stepMatchArgumentsLists":[{}]},{"id":"451cbf4e-f1c4-46f0-bea7-bd663dceada7","pickleStepId":"41c31ac1-18bc-4b09-89fb-b45813b31a29","stepDefinitionIds":["9f720244-44d9-4050-b649-5620380f965a"],"stepMatchArgumentsLists":[{}]},{"id":"32492441-5907-4d05-9cea-c3e73132cc4f","pickleStepId":"20c15676-93ae-4258-aa68-37d2a3183ffa","stepDefinitionIds":["5b4cb17d-af81-4968-bb23-5f9ab26fbfb6"],"stepMatchArgumentsLists":[{}]},{"id":"4ae4e5ea-3604-477f-8751-18955f5e0b3c","pickleStepId":"d9cd84f8-5d7b-4490-b078-95672143078c","stepDefinitionIds":["acdae4f3-5e3b-4a64-89a6-00872c7ec647"],"stepMatchArgumentsLists":[{}]},{"id":"d3d8fee0-67a2-4a1b-92e2-57ddb907eac0","pickleStepId":"dddf09f0-95b0-4e1e-b95a-578fb55d0323","stepDefinitionIds":["1cf2233f-aeff-4576-bec5-2d8197d690c3"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":33,"value":"\"https://vt-customer-dev.azurewebsites.net\"","children":[{"start":34,"value":"https://vt-customer-dev.azurewebsites.net","children":[{}]},{"children":[{}]}]}},{"parameterTypeName":"string","group":{"start":82,"value":"\"kiyeway177@posiklan.com\"","children":[{"start":83,"value":"kiyeway177@posiklan.com","children":[{}]},{"children":[{}]}]}},{"parameterTypeName":"string","group":{"start":121,"value":"\"Dcsharma@2020\"","children":[{"start":122,"value":"Dcsharma@2020","children":[{}]},{"children":[{}]}]}}]}]},{"id":"8f2b4f58-73c3-486a-bcd1-2503b2c2e8a9","pickleStepId":"46d47f04-a857-4698-8a4a-b6da1b26149e","stepDefinitionIds":["bacd778e-9d27-4301-8e25-69d868d39466"],"stepMatchArgumentsLists":[{}]},{"id":"47411a18-a610-4b4a-9e31-a9beb60861ec","pickleStepId":"f364a443-05b0-4066-8a38-6e3d329706cc","stepDefinitionIds":["1457cfd2-fb3d-4e32-a7b8-f16b63b336ad"],"stepMatchArgumentsLists":[{}]},{"id":"f4a3da7a-b546-46c6-85be-4efdfb0bd1b0","pickleStepId":"014a84af-da4e-4076-9d0e-83cb82007817","stepDefinitionIds":["d82dc5aa-06ed-49a5-80b6-b64872eacb70"],"stepMatchArgumentsLists":[{}]},{"id":"4568d076-5b67-455c-b233-42338c1ef6d9","pickleStepId":"0fa12abf-d629-4846-9999-309e1227f7a3","stepDefinitionIds":["9b2275a3-46ae-49ea-a7e2-d007a354287d"],"stepMatchArgumentsLists":[{}]},{"id":"4b1963e8-6311-442e-b056-be7d7c834b2f","pickleStepId":"5ce0580b-d705-4533-9ff9-ac2974af20e9","stepDefinitionIds":["59ee4ece-ca92-4f02-929c-534bf7980889"],"stepMatchArgumentsLists":[{}]}]}},{"testCaseStarted":{"timestamp":{"seconds":"1632465705","nanos":11486800},"testCaseId":"039e82dc-227c-40e0-929e-5f61b1edb660","id":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632465705","nanos":47916600},"testStepId":"7f0db84f-32a5-4033-b2c5-c186b199019d","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"13","nanos":673243300}},"timestamp":{"seconds":"1632465718","nanos":721159900},"testStepId":"7f0db84f-32a5-4033-b2c5-c186b199019d","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632465718","nanos":730409300},"testStepId":"e3fe6b17-c69a-4d28-947c-c78a5410a0a3","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"1","nanos":927941000}},"timestamp":{"seconds":"1632465720","nanos":658350300},"testStepId":"e3fe6b17-c69a-4d28-947c-c78a5410a0a3","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632465720","nanos":659355500},"testStepId":"c73a9758-f48f-449f-bf46-c83fb7ab3850","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"13","nanos":221234400}},"timestamp":{"seconds":"1632465733","nanos":880589900},"testStepId":"c73a9758-f48f-449f-bf46-c83fb7ab3850","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632465733","nanos":881626200},"testStepId":"17afdf9e-0af9-4f31-be2e-4e4d57adb79a","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{}},"timestamp":{"seconds":"1632465733","nanos":881626200},"testStepId":"17afdf9e-0af9-4f31-be2e-4e4d57adb79a","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632465733","nanos":882625900},"testStepId":"1d6a5cd8-9cbb-4228-b171-efd3e13c7965","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"3","nanos":87838500}},"timestamp":{"seconds":"1632465736","nanos":970464400},"testStepId":"1d6a5cd8-9cbb-4228-b171-efd3e13c7965","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632465736","nanos":971542000},"testStepId":"05dc5e05-6d1f-4573-b376-cae90b52095a","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"275","nanos":267183600}},"timestamp":{"seconds":"1632466012","nanos":238725600},"testStepId":"05dc5e05-6d1f-4573-b376-cae90b52095a","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632466012","nanos":238725600},"testStepId":"29dbd046-2753-4b66-9574-2fb2c82f8021","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":71117700}},"timestamp":{"seconds":"1632466012","nanos":309843300},"testStepId":"29dbd046-2753-4b66-9574-2fb2c82f8021","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632466012","nanos":310849000},"testStepId":"1d745f5a-4205-40ee-9a06-b8a794b48677","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"8","nanos":144832400}},"timestamp":{"seconds":"1632466020","nanos":455681400},"testStepId":"1d745f5a-4205-40ee-9a06-b8a794b48677","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632466020","nanos":455681400},"testStepId":"72799c0c-b0c7-4a35-a097-1d9c6e6ae166","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":822820700}},"timestamp":{"seconds":"1632466021","nanos":278502100},"testStepId":"72799c0c-b0c7-4a35-a097-1d9c6e6ae166","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632466021","nanos":279505600},"testStepId":"bca763bc-5a06-46d3-ad3c-b7f574d918b0","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"1","nanos":115731200}},"timestamp":{"seconds":"1632466022","nanos":395236800},"testStepId":"bca763bc-5a06-46d3-ad3c-b7f574d918b0","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632466022","nanos":395236800},"testStepId":"edef3e32-3e23-4743-97ec-5826977df636","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"6","nanos":1556300}},"timestamp":{"seconds":"1632466028","nanos":396793100},"testStepId":"edef3e32-3e23-4743-97ec-5826977df636","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632466028","nanos":396793100},"testStepId":"451cbf4e-f1c4-46f0-bea7-bd663dceada7","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"4","nanos":241000700}},"timestamp":{"seconds":"1632466032","nanos":637793800},"testStepId":"451cbf4e-f1c4-46f0-bea7-bd663dceada7","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632466032","nanos":637793800},"testStepId":"32492441-5907-4d05-9cea-c3e73132cc4f","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"4","nanos":64041900}},"timestamp":{"seconds":"1632466036","nanos":701835700},"testStepId":"32492441-5907-4d05-9cea-c3e73132cc4f","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632466036","nanos":702762500},"testStepId":"4ae4e5ea-3604-477f-8751-18955f5e0b3c","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"5","nanos":213675000}},"timestamp":{"seconds":"1632466041","nanos":916437500},"testStepId":"4ae4e5ea-3604-477f-8751-18955f5e0b3c","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepStarted":{"timestamp":{"seconds":"1632466041","nanos":916437500},"testStepId":"d3d8fee0-67a2-4a1b-92e2-57ddb907eac0","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"7","nanos":799385800}},"timestamp":{"seconds":"1632466049","nanos":715823300},"testStepId":"d3d8fee0-67a2-4a1b-92e2-57ddb907eac0","testCaseStartedId":"c3548283-9924-4e18-8716-7139914411c1"}},{"testStep

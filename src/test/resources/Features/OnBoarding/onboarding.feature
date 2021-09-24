@@ -10,6 +10,6 @@ Feature: features to test on boarding functionality
     And user click on describe your business
 
     Examples:
-      | username                | password        |
+      | username                | password         |
       | cehedem117@posiklan.com | PCopperDc@!2611@ |
 

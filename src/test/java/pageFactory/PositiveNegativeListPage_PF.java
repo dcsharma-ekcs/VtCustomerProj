@@ -16,6 +16,7 @@ public class PositiveNegativeListPage_PF {
 
     UtilFunctions util;
     WebDriver driver;
+    WebDriverWait wait;
 
     String srtRiskManagement = "//li[normalize-space()='Risk Management']";
     @FindBy(xpath = "//li[normalize-space()='Risk Management']")
@@ -74,6 +75,7 @@ public class PositiveNegativeListPage_PF {
 
         PageFactory.initElements(driver, this);
         util = new UtilFunctions(driver);
+        wait  = new WebDriverWait(driver, 30);
     }
 
     public void clickOnSearchInput(String strText) throws InterruptedException {
@@ -85,6 +87,7 @@ public class PositiveNegativeListPage_PF {
 
     public void clickOnCreateButton() throws InterruptedException {
         util.waitForXpathElement(strCreateButtonXpath);
+        wait.until(ExpectedConditions.elementToBeClickable(form_create_button));
         form_create_button.click();
     }
 
@@ -132,21 +135,25 @@ public class PositiveNegativeListPage_PF {
 
     public void clickOnRiskManagementTab() throws InterruptedException {
         util.waitForXpathElement(srtRiskManagement);
+        wait.until(ExpectedConditions.elementToBeClickable(risk_management_tab));
         risk_management_tab.click();
     }
 
     public void clickOnConfigurationsButton() throws InterruptedException {
         util.waitForXpathElement(srtConfigurations);
+        wait.until(ExpectedConditions.elementToBeClickable(configuration_button));
         configuration_button.click();
     }
 
     public void clickOnPositiveNegativeButton() throws InterruptedException {
         util.waitForXpathElement(srtPositive);
+        wait.until(ExpectedConditions.elementToBeClickable(positive_negative_button));
         positive_negative_button.click();
     }
 
     public void clickOnAddPositiveEntry() throws InterruptedException {
         util.waitForXpathElement(srtAddPositiveEntry);
+        wait.until(ExpectedConditions.elementToBeClickable(add_positive_entry_button));
         Thread.sleep(3000);
         add_positive_entry_button.click();
     }

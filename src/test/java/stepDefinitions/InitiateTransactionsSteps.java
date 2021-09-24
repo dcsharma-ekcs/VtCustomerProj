@@ -81,7 +81,7 @@ public class InitiateTransactionsSteps {
         driver.get(url);
         util = new UtilFunctions(driver);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 10);
 
         driver.findElement(By.id("password")).click();
         driver.findElement(By.id("password")).clear();

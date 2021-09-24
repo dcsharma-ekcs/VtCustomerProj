@@ -3,7 +3,7 @@ Feature: features to test initiate for digital products transaction and risk man
 
   Background: Transaction Functionality
     Given user on my shopify store page "chrome"
-    When  user is login in to store with "https://dev-regression-s01.myshopify.com/" and "nahfao"
+    When  user is login in to store with "https://dcpulsetxnstg.myshopify.com/" and "plauly"
     And click on enter button
     When user is navigated to store home page
     And click on catalog
@@ -19,7 +19,7 @@ Feature: features to test initiate for digital products transaction and risk man
     When user fill credit card detail
     And click on pay now button
     Then user is navigated to digital order detail page
-    When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "kiyeway177@posiklan.com" and password "Dcsharma@2020"
+    When user login to vt customer portal "https://vt-customer-stg.azurewebsites.net" user "cehedem117@posiklan.com" and password "PCopperDc@!2611@"
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary

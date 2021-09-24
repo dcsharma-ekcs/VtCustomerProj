@@ -9,15 +9,14 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/Features/Transactions/initiateTransactionsCheckDecisionsCheckShopifySTG.feature"
+        features = "src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesPhysicalProductSTG.feature"
         ,glue={"stepDefinitions"}
         ,tags= "@smoke"
         ,monochrome = true
-        ,plugin = {"pretty", "html:target/HtmlReports/transactionsWithDecisions_htmlReports_24092021_1.html"
+        ,plugin = {"pretty", "html:target/HtmlReports/transactionsSummary_htmlReports.html"
         ,"json:target/JsonReports/jsonReports.json"
         ,"junit:target/JunitReports/junitReports.xml"}
 )
 
-public class TestRunnerTransactionsWithDecisionsSTG {
-
+public class TestRunnerTransactionsSummaryCheckAttributesSTG {
 }

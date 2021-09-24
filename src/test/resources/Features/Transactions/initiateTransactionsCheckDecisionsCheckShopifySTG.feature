@@ -12,7 +12,7 @@ Feature: features to test initiate transaction for physical products functionali
   @smoke
   Scenario Outline: Transaction buy it now Functionality
 
-    And user search and add product in card "Chequered Red Shirt" quantity 0
+    And user search and add product in card "Chequered Red Shirt" quantity 2
     When click on buy it now
     And user fill checkout email or phone from <ExcelFileName> and <RowNumber>
     When user fill contact information from <ExcelFileName> and <RowNumber>
@@ -46,7 +46,7 @@ Feature: features to test initiate transaction for physical products functionali
       | CustomerDetails_XLSX_10.xlsx | 1         |
 
 
-  @smoke
+  @smoke1
   Scenario Outline: Transaction add to card Functionality
 
     And user search and add product in card "Chequered Red Shirt" quantity 2

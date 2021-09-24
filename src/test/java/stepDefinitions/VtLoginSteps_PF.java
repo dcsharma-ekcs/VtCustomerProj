@@ -58,13 +58,12 @@ public class VtLoginSteps_PF {
         }else{
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-
         }
 
         driver.manage().window().maximize();
 
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         vtLogin = new VtCustomerPage_PF(driver);
 
     }
