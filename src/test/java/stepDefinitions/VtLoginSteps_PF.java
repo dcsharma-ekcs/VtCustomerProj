@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import dataProviders.ConfigFileReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,15 +23,16 @@ import static junit.framework.TestCase.fail;
 public class VtLoginSteps_PF {
 
     static WebDriver driver = null;
-    static String browserType;
-
+    ConfigFileReader configFileReader;
+    static String browser;
     VtCustomerPage_PF vtLogin;
 
-    @Given("vt user login on url {string} with browser {string}")
-    public void vt_user_on_login_page(String url, String browser) throws InterruptedException {
-        System.out.println("=========VtLoginSteps_PF===========");
+    @Given("vt user is on customer portal login page")
+    public void vt_user_on_login_page() throws InterruptedException {
+        System.out.println("..........VtLoginSteps..........");
+        configFileReader= new ConfigFileReader();
+        browser = configFileReader.getBrowserName();
 
-        browserType = browser;
         if(browser.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
@@ -62,15 +64,15 @@ public class VtLoginSteps_PF {
 
         driver.manage().window().maximize();
 
-        driver.get(url);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.get(configFileReader.getApplicationUrl());
+        driver.manage().timeouts().implicitlyWait(configFileReader.getImplicitlyWait(), TimeUnit.SECONDS);
         vtLogin = new VtCustomerPage_PF(driver);
 
     }
     @When("^vt user is enter (.*) and (.*)$")
     public void vt_user_is_enter_user1_and_password1(String username, String password) throws InterruptedException {
 
-       vtLogin.setUser_email_address(username);
+       vtLogin.setUserEmailAddress(username);
        vtLogin.setUserPassword(password);
     }
 

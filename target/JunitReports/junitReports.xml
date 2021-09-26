@@ -1,31 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="122.28">
-<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction buy it now Functionality" time="122.137">
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="92.592">
+<testcase classname="features to test initiate for digital products transaction and risk management functionality" name="Transaction add to card Functionality" time="92.423">
 <system-out><![CDATA[Given user on my shopify store page "chrome"................................passed
 When user is login in to store with "https://dcpulsetxnstg.myshopify.com/" and "plauly".passed
 And click on enter button...................................................passed
 When user is navigated to store home page...................................passed
 And click on catalog........................................................passed
-And user search and add product in card "Chequered Red Shirt" quantity 2....passed
-When click on buy it now....................................................passed
-And user fill checkout email or phone from CustomerDetails_XLSX_10.xlsx and 1.passed
-When user fill contact information from CustomerDetails_XLSX_10.xlsx and 1..passed
-And click on continue to shipping...........................................passed
-When user choose a shipping method..........................................passed
+When user search and add product in card "digital products X02" quantity 2..passed
+And click add to card.......................................................passed
+And click check out.........................................................passed
+And user fill checkout email or phone from CustomerDetails_XLSX_10.xlsx and 2.passed
+When user fill billing address from CustomerDetails_XLSX_10.xlsx and 2......passed
 And click on continue to payment............................................passed
-And user click use a different billing address..............................passed
 When user fill credit card detail...........................................passed
-And user fill billing address from CustomerDetails_XLSX_10.xlsx and 1.......passed
 And click on pay now button.................................................passed
-Then user is navigated to order detail page.................................passed
+Then user is navigated to digital order detail page.........................passed
 When user login to vt customer portal "https://vt-customer-stg.azurewebsites.net" user "cehedem117@posiklan.com" and password "PCopperDc@!2611@".passed
 And navigate to risk management list page...................................passed
 And search order with order id..............................................passed
 And click for transaction summary...........................................passed
 And check attributes positive negative......................................passed
-And check billing and shipping details......................................passed
-And check shopping cart.....................................................passed
-And check payment device and auth...........................................passed
-And check map information...................................................passed
 Then user logout............................................................passed
 ]]></system-out>
 </testcase>

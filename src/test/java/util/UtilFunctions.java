@@ -94,6 +94,20 @@ public class UtilFunctions {
 
     }
 
+    public void checkProgressbar(String strXpath) throws InterruptedException {
+
+        for (int second = 0; ; second++) {
+            if (second >= 120)  fail("timeout");
+            try {
+                if (!isElementPresent(By.xpath(strXpath))) break;
+            } catch (Exception e) {
+            }
+            Thread.sleep(1000);
+            System.out.println("Count....:"+second);
+        }
+
+    }
+
     public void clickOutside() {
         Actions action = new Actions(driver);
         action.moveByOffset(0, 0).click().build().perform();

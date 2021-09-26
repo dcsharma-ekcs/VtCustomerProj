@@ -55,6 +55,8 @@ public class ShopifyHomePageObject {
 
 
     public String getOrderPaymentStatus() throws InterruptedException {
+        Thread.sleep(3000);
+           wait.until(ExpectedConditions.visibilityOfElementLocated(store_payment_status));
            String paymentStatus =  driver.findElement(store_payment_status).getText();
 
            return paymentStatus;
@@ -237,6 +239,7 @@ public class ShopifyHomePageObject {
     }
 
     public String getTextFromElement(By element){
+
         String message = driver.findElement(element).getText();
 
         return message;

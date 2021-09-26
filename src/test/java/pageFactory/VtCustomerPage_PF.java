@@ -39,7 +39,7 @@ public class VtCustomerPage_PF {
 
 
 
-    public void setUser_email_address(String userEmail){
+    public void setUserEmailAddress(String userEmail){
         wait.until(ExpectedConditions.elementToBeClickable(user_email_address));
         user_email_address.click();
         user_email_address.clear();

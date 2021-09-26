@@ -25,7 +25,7 @@ public class RiskManagementSteps {
     public void user_login_to_vt_customer_portal(String url, String userNAme, String password) {
         driver.navigate().to(url);
 
-        vtCustomerPagePF.setUser_email_address(userNAme);
+        vtCustomerPagePF.setUserEmailAddress(userNAme);
         vtCustomerPagePF.setUserPassword(password);
         vtCustomerPagePF.clickNextButton();
 

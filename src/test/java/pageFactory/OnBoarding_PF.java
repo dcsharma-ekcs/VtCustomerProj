@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.*;
+import util.UtilFunctions;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -35,21 +36,30 @@ public class OnBoarding_PF {
     WebElement proceed_button3;
 
     @FindBy(xpath="//input[@type='checkbox']")
-    WebElement checkbox_proceed;
+    WebElement checkbox_terms;
 
     @FindBy(xpath=" //button[contains(text(),'LET’S GO!')]")
     WebElement lets_go_button;
+
+
+    String strProgressbar = "//div[@role='progressbar']//*[name()='svg']";
+    @FindBy(css="//div[@role='progressbar']//*[name()='svg']")
+    WebElement progressbar;
+
 
 
 
     WebDriver driver;
     WebDriverWait wait;
     Wait<WebDriver> fluentWait;
+    UtilFunctions util;
+
     
     public OnBoarding_PF(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
         wait  = new WebDriverWait(driver, 30);
+        util = new UtilFunctions(driver);
 
         fluentWait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(30))
@@ -99,24 +109,37 @@ public class OnBoarding_PF {
     }
 
     public void selectPaymentProcessor(String strPaymentProcessor) throws InterruptedException {
-        fluentWait.until(ExpectedConditions.elementToBeClickable(select_payment_processor));
-        select_payment_processor.click();
-
-       // Actions action = new Actions(driver);
-       // action.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+        wait.until(ExpectedConditions.elementToBeClickable(select_payment_processor));
+         select_payment_processor.click();
+         Actions action = new Actions(driver);
+         action.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
     }
 
     public void clickCheckboxProceed() throws InterruptedException {
-
-        fluentWait.until(ExpectedConditions.elementToBeClickable(checkbox_proceed));
-        //wait.until(ExpectedConditions.elementToBeClickable(checkbox_proceed));
-        checkbox_proceed.click();
+        driver.switchTo().activeElement();
+        JavascriptExecutor j = (JavascriptExecutor) driver;
+        j.executeScript("arguments[0].click();", checkbox_terms);
+        Thread.sleep(3000);
+        boolean t = checkbox_terms.isSelected();
+        if (t) {
+            System.out.println("Checkbox is checked");
+        }else {
+            System.out.println("Checkbox is not checked");
+            j.executeScript("arguments[0].click();", checkbox_terms);
+        }
     }
 
     public void clickLetsGoButton() throws InterruptedException {
+        System.out.println("lets_go_button........");
         fluentWait.until(ExpectedConditions.elementToBeClickable(lets_go_button));
-        //wait.until(ExpectedConditions.elementToBeClickable(lets_go_button));
         lets_go_button.click();
+    }
+
+    public void checkProgressbarStatus() throws InterruptedException {
+        System.out.println("....checkProgressbarStatus........");
+
+        util.checkProgressbar(strProgressbar);
+
     }
 
 
