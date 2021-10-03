@@ -3,7 +3,7 @@ Feature: features to test initiate transaction functionality
 
   Scenario Outline: Transaction Functionality
 
-    Given user on my shopify store page "chrome"
+    Given user on my shopify store page
     When  user is with <url> and <password>
     And click on enter button
     When user is navigated to store home page
@@ -19,8 +19,8 @@ Feature: features to test initiate transaction functionality
     Then user is navigated to order detail page
 
     Examples:
-      | url | password  |
-      | https://amit-test-04-09-01.myshopify.com/ | lohyau |
+      | url                                       | password |
+      | https://amit-test-04-09-01.myshopify.com/ | lohyau   |
 
 
 

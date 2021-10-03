@@ -3,8 +3,8 @@ Feature: features to test add positive entry
   @positiveScenario
   Scenario Outline: Add Positive Entry Functionality
 
-    Given vt user login on url "https://vt-customer-stg.azurewebsites.net" with browser "chrome"
-    When vt user is enter <username> and <password>
+    Given vt user is on customer portal login page
+    When vt user is enter username and password
     And click on vt login button
     When user on dashboard page
     And click on Risk Management
@@ -19,7 +19,7 @@ Feature: features to test add positive entry
     Then user is navigated to Configurations page
 
     Examples:
-      | username                | password      | CSVfile                               | rowNumber |
-      | cehedem117@posiklan.com | PCopperDc@!2611@ | /datafiles/csvAddNewNegativeEntry.csv | 1         |
+      | CSVfile                               | rowNumber |
+      | /datafiles/csvAddNewNegativeEntry.csv | 1         |
 
 

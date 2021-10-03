@@ -165,20 +165,21 @@ public class ShopifyHomePageObject {
     }
 
     public  void clickInstallAppAnywayButton() throws InterruptedException {
-
         try {
+            System.out.println("clickInstallAppAnywayButton.....");
+            driver.switchTo().activeElement();
             wait.until(ExpectedConditions.elementToBeClickable(install_app_anyway_button));
             Thread.sleep(2000);
-            driver.findElement(install_app_anyway_button).submit();
+            driver.findElement(install_app_anyway_button).click();
 
-        } catch (Exception exp){
-            System.out.println("Exception..."+exp);
-        }
+            }catch (Exception exp){
+                System.out.println("Exception..2."+exp);
+            }
 
     }
     public  void clickInstallAppButton() throws InterruptedException {
 
-        try {
+
             Thread.sleep(3000);
             js.executeScript("window.scrollBy(0,1000)", "");
             Thread.sleep(3000);
@@ -188,9 +189,7 @@ public class ShopifyHomePageObject {
             Thread.sleep(3000);
             driver.findElement(install_app_button).submit();
 
-        } catch (Exception exp){
-            System.out.println("Exception..."+exp);
-        }
+
 
     }
 
@@ -200,14 +199,19 @@ public class ShopifyHomePageObject {
         System.out.println("loginInToStore..."+storeXpath);
         utilFunctions.waitForXpath(store_link);
         wait.until(ExpectedConditions.visibilityOfElementLocated(store_link));
+        Thread.sleep(1000);
         driver.findElement(store_link).click();
-
+        System.out.println("...Step 2...");
         setSearch_text_field1(srtStore);
-
+        System.out.println("...Step 3...");
         utilFunctions.waitAndClickXpath(storeXpath);
         utilFunctions.waitForXpath(store_login);
+        System.out.println("...Step 4...");
         wait.until(ExpectedConditions.visibilityOfElementLocated(store_login));
+        Thread.sleep(1000);
+        System.out.println("...Step 5...");
         driver.findElement(store_login).click();
+        System.out.println("...Step 6...");
     }
 
     public void deleteAppFromStore(String srtApp) throws InterruptedException {

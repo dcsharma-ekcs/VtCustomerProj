@@ -17,5 +17,5 @@ Feature: features to test install app functionality
     Then user is navigated to b2c login page
 
     Examples:
-      | email                      | password      | storeName          | appName                      |
-      | reymundo.paga@ubiquity.com | !Password@123 | dev-regression-s01 | Vesta Payment Guarantee-Stg |
+      | email                      | password      | storeName       | appName                      |
+      | reymundo.paga@ubiquity.com | !Password@123 | DevTest02102021 | Payment Guarantee by Vesta X |

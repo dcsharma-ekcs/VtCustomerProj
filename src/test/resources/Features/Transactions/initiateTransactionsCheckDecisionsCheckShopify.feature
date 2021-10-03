@@ -2,17 +2,17 @@ Feature: features to test initiate transaction for physical products functionali
 
 
   Background: Transaction Functionality
-    Given user on my shopify store page "chrome"
-    When  user is login in to store with "https://amit-test-04-09-01.myshopify.com/" and "lohyau"
+    Given user on my shopify store page
+    When  user is login in to store with url and password
     And click on enter button
     When user is navigated to store home page
     And click on catalog
 
 
-  @smoke
+  @smoke1
   Scenario Outline: Transaction buy it now Functionality
 
-    And user search and add product in card "Chequered Red Shirt" quantity 0
+    And user search and add product in card "Chequered Red Shirt" quantity 2
     When click on buy it now
     And user fill checkout email or phone from <ExcelFileName> and <RowNumber>
     When user fill contact information from <ExcelFileName> and <RowNumber>
@@ -24,16 +24,16 @@ Feature: features to test initiate transaction for physical products functionali
     And user fill billing address from <ExcelFileName> and <RowNumber>
     And click on pay now button
     Then user is navigated to order detail page
-    When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "mavejen717@enamelme.com" and password "Dcsharma@2020"
+    When user login to vt customer portal url username and password
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary
     And check order status
     And click decisions tab
-    And search store "Amit-Test-04-09-01" for get decisions settings
+    And search store for get decisions settings
     And user logout
     When user navigate to partners shopify page
-    When user login with "reymundo.paga@ubiquity.com" and "!Password@123" and "Amit-Test-04-09-01"
+    When user login in shopify partners with email and password for store
     And shopify search and login in store
     And click on store tab
     And search order in shopify with order id
@@ -44,12 +44,9 @@ Feature: features to test initiate transaction for physical products functionali
     Examples:
       | ExcelFileName                | RowNumber |
       | CustomerDetails_XLSX_10.xlsx | 1         |
-      | CustomerDetails_XLSX_10.xlsx | 2         |
-      | CustomerDetails_XLSX_10.xlsx | 3         |
-      | CustomerDetails_XLSX_10.xlsx | 7         |
 
 
-  @smoke1
+  @smoke
   Scenario Outline: Transaction add to card Functionality
 
     And user search and add product in card "Chequered Red Shirt" quantity 2
@@ -65,16 +62,16 @@ Feature: features to test initiate transaction for physical products functionali
     When user fill credit card detail
     And click on pay now button
     Then user is navigated to order detail page
-    When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "mavejen717@enamelme.com" and password "Dcsharma@2020"
+    When user login to vt customer portal url username and password
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary
     And check order status
     And click decisions tab
-    And search store "Amit-Test-04-09-01" for get decisions settings
+    And search store for get decisions settings
     And user logout
     When user navigate to partners shopify page
-    When user login with "reymundo.paga@ubiquity.com" and "!Password@123" and "Amit-Test-04-09-01"
+    When user login in shopify partners with email and password for store
     And shopify search and login in store
     And click on store tab
     And search order in shopify with order id
@@ -86,19 +83,20 @@ Feature: features to test initiate transaction for physical products functionali
       | CustomerDetails_XLSX_10.xlsx | 4         |
 
 
+
   @smoke1
   Scenario: Transaction decisions Functionality
 
-    When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "mavejen717@enamelme.com" and password "Dcsharma@2020"
+    When user login to vt customer portal url username and password
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary
     And check order status
     And click decisions tab
-    And search store "Amit-Test-04-09-01" for get decisions settings
+    And search store for get decisions settings
     And user logout
     When user navigate to partners shopify page
-    When user login with "reymundo.paga@ubiquity.com" and "!Password@123" and "Amit-Test-04-09-01"
+    When user login in shopify partners with email and password for store
     And shopify search and login in store
     And click on store tab
     And search order in shopify with order id

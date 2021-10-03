@@ -1,5 +1,6 @@
 package pageFactory;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.UtilFunctions;
+
+import java.nio.channels.spi.AbstractSelector;
+import java.util.Iterator;
+import java.util.Set;
 
 
 public class PositiveNegativeListPage_PF {
@@ -75,7 +80,7 @@ public class PositiveNegativeListPage_PF {
 
         PageFactory.initElements(driver, this);
         util = new UtilFunctions(driver);
-        wait  = new WebDriverWait(driver, 30);
+        wait  = new WebDriverWait(driver, 1);
     }
 
     public void clickOnSearchInput(String strText) throws InterruptedException {
@@ -152,16 +157,19 @@ public class PositiveNegativeListPage_PF {
     }
 
     public void clickOnAddPositiveEntry() throws InterruptedException {
-        util.waitForXpathElement(srtAddPositiveEntry);
+        System.out.println("....clickOnAddPositiveEntry....");
         wait.until(ExpectedConditions.elementToBeClickable(add_positive_entry_button));
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         add_positive_entry_button.click();
+
     }
 
     public void clickOnAddNegativeEntry() throws InterruptedException {
-        Actions act =  new Actions(driver);
-        Thread.sleep(3000);
-        act.moveToElement(add_negative_entry_button).click().perform();
+
+        wait.until(ExpectedConditions.elementToBeClickable(add_negative_entry_button));
+        Thread.sleep(5000);
+        add_negative_entry_button.click();
+
     }
 
     public void clickStickyArrow() throws InterruptedException {

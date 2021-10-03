@@ -1,25 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="92.592">
-<testcase classname="features to test initiate for digital products transaction and risk management functionality" name="Transaction add to card Functionality" time="92.423">
-<system-out><![CDATA[Given user on my shopify store page "chrome"................................passed
-When user is login in to store with "https://dcpulsetxnstg.myshopify.com/" and "plauly".passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="985.509">
+<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction add to card Functionality" time="985.351">
+<failure message="timeout" type="junit.framework.AssertionFailedError"><![CDATA[Given user on my shopify store page.........................................passed
+When user is login in to store with url and password........................passed
 And click on enter button...................................................passed
 When user is navigated to store home page...................................passed
 And click on catalog........................................................passed
-When user search and add product in card "digital products X02" quantity 2..passed
-And click add to card.......................................................passed
-And click check out.........................................................passed
-And user fill checkout email or phone from CustomerDetails_XLSX_10.xlsx and 2.passed
-When user fill billing address from CustomerDetails_XLSX_10.xlsx and 2......passed
-And click on continue to payment............................................passed
-When user fill credit card detail...........................................passed
-And click on pay now button.................................................passed
-Then user is navigated to digital order detail page.........................passed
-When user login to vt customer portal "https://vt-customer-stg.azurewebsites.net" user "cehedem117@posiklan.com" and password "PCopperDc@!2611@".passed
-And navigate to risk management list page...................................passed
-And search order with order id..............................................passed
-And click for transaction summary...........................................passed
-And check attributes positive negative......................................passed
-Then user logout............................................................passed
-]]></system-out>
+And user search and add product in card "Chequered Red Shirt" quantity 2....passed
+And click add to card.......................................................failed
+And user search and add product in card "Blue Silk Tuxedo" quantity 3.......skipped
+And click add to card.......................................................skipped
+And click check out.........................................................skipped
+And user fill checkout email or phone from CustomerDetails_XLSX_10.xlsx and 4.skipped
+When user fill contact information from CustomerDetails_XLSX_10.xlsx and 4..skipped
+And click on continue to shipping...........................................skipped
+When user choose a shipping method..........................................skipped
+And click on continue to payment............................................skipped
+When user fill credit card detail...........................................skipped
+And click on pay now button.................................................skipped
+Then user is navigated to order detail page.................................skipped
+When user login to vt customer portal url username and password.............skipped
+And navigate to risk management list page...................................skipped
+And search order with order id..............................................skipped
+And click for transaction summary...........................................skipped
+And check order status......................................................skipped
+And click decisions tab.....................................................skipped
+And search store for get decisions settings.................................skipped
+And user logout.............................................................skipped
+When user navigate to partners shopify page.................................skipped
+When user login in shopify partners with email and password for store.......skipped
+And shopify search and login in store.......................................skipped
+And click on store tab......................................................skipped
+And search order in shopify with order id...................................skipped
+And Check order payment status..............................................skipped
+
+StackTrace:
+junit.framework.AssertionFailedError: timeout
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:223)
+	at util.UtilFunctions.waitAndClickXpath(UtilFunctions.java:76)
+	at stepDefinitions.InitiateTransactionsSteps.click_add_to_card(InitiateTransactionsSteps.java:495)
+	at ✽.click add to card(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckDecisionsCheckShopify.feature:53)
+]]></failure>
 </testcase>
 </testsuite>

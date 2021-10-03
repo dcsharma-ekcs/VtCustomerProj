@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import dataProviders.ConfigFileReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,6 +17,7 @@ public class ShopifyStoreSteps {
 
     static ShopifyHomePageObject shopifyHomePageObject;
     static String storeName;
+    ConfigFileReader configFileReader;
 
     InitiateTransactionsSteps initiateTransactionsSteps = new InitiateTransactionsSteps();
     RiskManagementOrderSummarySteps riskManagementOrderSummarySteps = new RiskManagementOrderSummarySteps();
@@ -27,18 +29,19 @@ public class ShopifyStoreSteps {
 
     @When("user navigate to partners shopify page")
     public void user_navigate_to_partners_shopify_page() {
-        driver.navigate().to("https://www.shopify.com/partners");
+        configFileReader= new ConfigFileReader();
+        driver.navigate().to(configFileReader.getShopifyPartnersUrl());
     }
-    @When("user login with {string} and {string} and {string}")
-    public void user_login_with_and(String email, String password, String storeName) throws InterruptedException {
-        shopifyHomePageObject = new ShopifyHomePageObject(driver,email,password);
+    @When("user login in shopify partners with email and password for store")
+    public void user_login_shopify_with_email_password_store() throws InterruptedException {
 
+        shopifyHomePageObject = new ShopifyHomePageObject(driver,configFileReader.getShopifyPartnersUserName(),configFileReader.getShopifyPartnersPassword());
         shopifyHomePageObject.clickOnLogInLink();
         shopifyHomePageObject.setUserEmailAddress();
         shopifyHomePageObject.clickNextButton();
         shopifyHomePageObject.setPassword();
         shopifyHomePageObject.clickAccountsLogInButton();
-        this.storeName = storeName;
+        this.storeName = configFileReader.getShopifyStoreName();
         shopifyHomePageObject.clickVestaCorporation();
     }
 
@@ -64,14 +67,13 @@ public class ShopifyStoreSteps {
     @And("Check order payment status")
     public void check_order_payment_status() throws InterruptedException {
          //orderId = "1073";
-         // String strXpath = "//span[normalize-space()='#1073']";
          String strXpath = "//span[normalize-space()='#"+orderId+"']";
          String strOrderNo = driver.findElement(By.xpath(strXpath)).getText();
          System.out.println("orderId : "+strOrderNo);
          Assert.assertEquals("#"+orderId, strOrderNo);
         Thread.sleep(3000);
          String strPaymentStatus = shopifyHomePageObject.getOrderPaymentStatus();
-         strPaymentStatus = "Complete Paid";
+         //strPaymentStatus = "Complete Paid";
          System.out.println("strPaymentStatus : "+strPaymentStatus);
 
          if(riskManagementSteps.getAcceptGuaranteedOrdersSetting() && orderStatus.equalsIgnoreCase("Guaranteed")){

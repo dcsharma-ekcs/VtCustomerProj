@@ -1,11 +1,13 @@
 package util;
 
+import org.joda.time.DateTime;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -38,7 +40,9 @@ public class UtilFunctions {
                 if (isElementPresent(By.xpath(strXpath))) break;
             } catch (Exception e) {
             }
-            Thread.sleep(1000);
+           Thread.sleep(1000);
+            System.out.println("second:  "+second);
+            System.out.println(new DateTime());
         }
 
     }
@@ -76,6 +80,7 @@ public class UtilFunctions {
             }
             Thread.sleep(1000);
         }
+        Thread.sleep(3000);
         driver.findElement(By.xpath(strXpath)).click();
 
     }
@@ -90,6 +95,7 @@ public class UtilFunctions {
             }
             Thread.sleep(1000);
         }
+        Thread.sleep(1000);
         driver.findElement(By.xpath(strXpath)).click();
 
     }

@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import dataProviders.ConfigFileReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,6 +14,7 @@ public class RiskManagementSteps {
 
     static boolean acceptGuaranteedOrders;
     static boolean declineNonGuaranteedOrders;
+    ConfigFileReader configFileReader;
 
     InitiateTransactionsSteps initiateTransactionsSteps = new InitiateTransactionsSteps();
     WebDriver driver = initiateTransactionsSteps.getDriver();
@@ -21,12 +23,13 @@ public class RiskManagementSteps {
     RiskManagementPage_PF riskManagementPagePF = new RiskManagementPage_PF(driver);
     VtCustomerPage_PF vtCustomerPagePF = new VtCustomerPage_PF(driver);
 
-    @And("user login to vt customer portal {string} user {string} and password {string}")
-    public void user_login_to_vt_customer_portal(String url, String userNAme, String password) {
-        driver.navigate().to(url);
 
-        vtCustomerPagePF.setUserEmailAddress(userNAme);
-        vtCustomerPagePF.setUserPassword(password);
+    @And("user login to vt customer portal url username and password")
+    public void user_login_to_vt_customer_portal() {
+        configFileReader= new ConfigFileReader();
+        driver.navigate().to(configFileReader.getApplicationUrl());
+        vtCustomerPagePF.setUserEmailAddress(configFileReader.getUserName());
+        vtCustomerPagePF.setUserPassword(configFileReader.getUserPassword());
         vtCustomerPagePF.clickNextButton();
 
     }
@@ -37,7 +40,7 @@ public class RiskManagementSteps {
 
     }
     @And("search order with order id")
-    public void search_order_with_order_id() {
+    public void search_order_with_order_id() throws InterruptedException {
             //orderId = "1073";
             riskManagementPagePF.setSearchText(orderId);
             System.out.println("risk ManagementSteps OrderId:  "+orderId);
@@ -63,12 +66,11 @@ public class RiskManagementSteps {
 
     }
 
-    @And("search store {string} for get decisions settings")
-    public void search_store_for_get_decisions_settings(String storeName) throws InterruptedException {
+    @And("search store for get decisions settings")
+    public void search_store_for_get_decisions_settings() throws InterruptedException {
         Thread.sleep(2000);
 
-        riskManagementPagePF.setSrtSearchDecisions(storeName);
-        //riskManagementPagePF.getAcceptDecisions();
+          riskManagementPagePF.setSrtSearchDecisions(configFileReader.getShopifyStoreName());
 
           acceptGuaranteedOrders = riskManagementPagePF.getAcceptDecisions();
           declineNonGuaranteedOrders = riskManagementPagePF.getNoonAcceptDecisions();

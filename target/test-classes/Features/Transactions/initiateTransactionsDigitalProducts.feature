@@ -2,8 +2,8 @@ Feature: features to test initiate for digital products transaction functionalit
 
 
   Background: Transaction Functionality
-    Given user on my shopify store page "chrome"
-    When  user is login in to store with "https://dcpulsetxnstg.myshopify.com/" and "plauly"
+    Given user on my shopify store page
+    When  user is login in to store with url and password
     And click on enter button
     When user is navigated to store home page
     And click on catalog

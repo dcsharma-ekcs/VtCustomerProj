@@ -3,7 +3,7 @@ package JavaPackage;
 import util.ExcelUtils;
 
 
-public class ReadExcelFile {
+public class ExcelFileRead {
 
     public static void main(String[] args) {
 

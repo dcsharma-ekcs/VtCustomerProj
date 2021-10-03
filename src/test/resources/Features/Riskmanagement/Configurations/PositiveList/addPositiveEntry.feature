@@ -4,7 +4,7 @@ Feature: features to test add positive entry
   Scenario Outline: Add Positive Entry Functionality
 
     Given vt user is on customer portal login page
-    When vt user is enter <username> and <password>
+    When vt user is enter username and password
     And click on vt login button
     When user on dashboard page
     And click on Risk Management
@@ -18,6 +18,5 @@ Feature: features to test add positive entry
     Then user is navigated to Configurations page
 
     Examples:
-      | username                | password         | CSVfile                               | rowNumber |
-      | cehedem117@posiklan.com | PCopperDc@!2611@ | /datafiles/csvAddNewPositiveEntry.csv | 1         |
-      | cehedem117@posiklan.com | PCopperDc@!2611@ | /datafiles/csvAddNewPositiveEntry.csv | 2         |
+      | CSVfile                               | rowNumber |
+      | /datafiles/csvAddNewPositiveEntry.csv | 1         |

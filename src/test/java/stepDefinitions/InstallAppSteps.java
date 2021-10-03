@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import dataProviders.ConfigFileReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,31 +19,34 @@ public class InstallAppSteps {
     static ShopifyHomePageObject shopifyHomePageObject;
     static String appName;
     static String storeName;
+    ConfigFileReader configFileReader;
 
 
     @Given("user on login partners shopify page")
     public void user_on_login_partners_shopify_page() {
         System.out.println("Open Shopify Page");
+        configFileReader= new ConfigFileReader();
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.shopify.com/partners");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.get(configFileReader.getShopifyPartnersUrl());
+        driver.manage().timeouts().implicitlyWait(configFileReader.getImplicitlyWait(), TimeUnit.SECONDS);
     }
 
     @When("^user is enter (.*) and (.*) and (.*) and (.*)$")
     public void user_is_enter_login_detail(String email, String password, String storeName, String appName) throws InterruptedException {
-        shopifyHomePageObject = new ShopifyHomePageObject(driver,email,password);
+
+        shopifyHomePageObject = new ShopifyHomePageObject(driver,configFileReader.getShopifyPartnersUserName(),configFileReader.getShopifyPartnersPassword());
 
         shopifyHomePageObject.clickOnLogInLink();
         shopifyHomePageObject.setUserEmailAddress();
         shopifyHomePageObject.clickNextButton();
         shopifyHomePageObject.setPassword();
         shopifyHomePageObject.clickAccountsLogInButton();
-        System.out.println("storeName: "+storeName);
-        System.out.println("appName: "+appName);
-        this.storeName = storeName;
-        this.appName = appName;
+        System.out.println("storeName: "+configFileReader.getShopifyStoreName());
+        System.out.println("appName: "+configFileReader.getVestaShopifyPluginApp());
+        this.storeName = configFileReader.getShopifyStoreName();
+        this.appName = configFileReader.getVestaShopifyPluginApp();
 
     }
 
@@ -94,8 +98,9 @@ public class InstallAppSteps {
     }
     @When("click install unlisted app")
     public void click_install_unlisted_app() throws InterruptedException {
-
-       // shopifyHomePageObject.clickInstallAppAnywayButton();
+        Thread.sleep(2000);
+       shopifyHomePageObject.clickInstallAppAnywayButton();
+       Thread.sleep(2000);
        shopifyHomePageObject.clickInstallAppButton();
        Thread.sleep(3000);
 

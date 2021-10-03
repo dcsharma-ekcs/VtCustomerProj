@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import dataProviders.ConfigFileReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -36,32 +37,35 @@ public class InitiateTransactionsSteps {
     static String strBillingAddress;
     static String orderStatus;
     static String browserType;
+    ConfigFileReader configFileReader;
 
-    @Given("user on my shopify store page {string}")
-    public void user_on_my_shopify_store_page(String browser)  {
+    @Given("user on my shopify store page")
+    public void user_on_my_shopify_store_page()  {
 
-        browserType = browser;
-        if(browser.equalsIgnoreCase("chrome")){
+        configFileReader= new ConfigFileReader();
+
+        browserType = configFileReader.getBrowserName();
+        if(browserType.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
 
-        }else if(browser.equalsIgnoreCase("firefox")){
+        }else if(browserType.equalsIgnoreCase("firefox")){
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
 
-        }else if(browser.equalsIgnoreCase("edge")){
+        }else if(browserType.equalsIgnoreCase("edge")){
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
 
-        }else if(browser.equalsIgnoreCase("opera")){
+        }else if(browserType.equalsIgnoreCase("opera")){
             WebDriverManager.operadriver().setup();
             driver = new OperaDriver();
 
-        }else if(browser.equalsIgnoreCase("safari")){
+        }else if(browserType.equalsIgnoreCase("safari")){
 
             driver = new SafariDriver();
 
-        }else if(browser.equalsIgnoreCase("ie")){
+        }else if(browserType.equalsIgnoreCase("ie")){
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
 
@@ -80,8 +84,8 @@ public class InitiateTransactionsSteps {
     public void user_is_with_url_password(String url, String password) {
         driver.get(url);
         util = new UtilFunctions(driver);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 10);
+        driver.manage().timeouts().implicitlyWait(configFileReader.getImplicitlyWait(), TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, configFileReader.getFluentWait());
 
         driver.findElement(By.id("password")).click();
         driver.findElement(By.id("password")).clear();
@@ -361,15 +365,15 @@ public class InitiateTransactionsSteps {
         //strTotalPayment = driver.findElement(By.xpath("//div[@data-order-summary-section='payment-lines']//span[2] ")).getText();
     }
 
-    @When("user is login in to store with {string} and {string}")
-    public void user_is_login_with_url_password(String url, String password) {
-        driver.get(url);
+    @When("user is login in to store with url and password")
+    public void user_is_login_with_url_password() {
+        driver.get(configFileReader.getShopifyStoreUrl());
         util = new UtilFunctions(driver);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 10);
+        driver.manage().timeouts().implicitlyWait(configFileReader.getImplicitlyWait(), TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, configFileReader.getFluentWait());
         driver.findElement(By.id("password")).click();
         driver.findElement(By.id("password")).clear();
-        driver.findElement(By.id("password")).sendKeys(password);
+        driver.findElement(By.id("password")).sendKeys(configFileReader.getShopifyStorePassword());
     }
 
     @And("^user fill checkout email or phone from (.*) and (.*)$")

@@ -2,8 +2,8 @@ Feature: features to test initiate transaction for physical products functionali
 
 
   Background: Transaction Functionality
-    Given user on my shopify store page "chrome"
-    When  user is login in to store with "https://amit-test-04-09-01.myshopify.com/" and "lohyau"
+    Given user on my shopify store page
+    When  user is login in to store with url and password
     And click on enter button
     When user is navigated to store home page
     And click on catalog
@@ -24,7 +24,7 @@ Feature: features to test initiate transaction for physical products functionali
     And user fill billing address from <ExcelFileName> and <RowNumber>
     And click on pay now button
     Then user is navigated to order detail page
-    When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "mavejen717@enamelme.com" and password "Dcsharma@2020"
+    When user login to vt customer portal url username and password
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary
@@ -39,7 +39,6 @@ Feature: features to test initiate transaction for physical products functionali
     Examples:
       | ExcelFileName                | RowNumber |
       | CustomerDetails_XLSX_10.xlsx | 1         |
-
 
 
   @smoke1
@@ -58,7 +57,7 @@ Feature: features to test initiate transaction for physical products functionali
     When user fill credit card detail
     And click on pay now button
     Then user is navigated to order detail page
-    When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "mavejen717@enamelme.com" and password "Dcsharma@2020"
+    When user login to vt customer portal url username and password
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary
@@ -78,7 +77,7 @@ Feature: features to test initiate transaction for physical products functionali
   @smoke1
   Scenario: Transaction check summary Functionality
 
-    When user login to vt customer portal "https://vt-customer-dev.azurewebsites.net" user "mavejen717@enamelme.com" and password "Dcsharma@2020"
+    When user login to vt customer portal url username and password
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary

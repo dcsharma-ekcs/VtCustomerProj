@@ -1,5 +1,6 @@
 package pageFactory;
 
+import dataProviders.ConfigFileReader;
 import org.apache.xpath.functions.Function;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -53,12 +54,14 @@ public class OnBoarding_PF {
     WebDriverWait wait;
     Wait<WebDriver> fluentWait;
     UtilFunctions util;
+    ConfigFileReader configFileReader;
 
     
     public OnBoarding_PF(WebDriver driver){
         this.driver = driver;
+        configFileReader= new ConfigFileReader();
         PageFactory.initElements(driver, this);
-        wait  = new WebDriverWait(driver, 30);
+        wait  = new WebDriverWait(driver, configFileReader.getFluentWait());
         util = new UtilFunctions(driver);
 
         fluentWait = new FluentWait<WebDriver>(driver)

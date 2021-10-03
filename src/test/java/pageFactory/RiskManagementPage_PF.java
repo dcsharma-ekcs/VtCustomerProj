@@ -1,5 +1,6 @@
 package pageFactory;
 
+import dataProviders.ConfigFileReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,12 +15,14 @@ public class RiskManagementPage_PF {
     UtilFunctions util;
     WebDriver driver;
     WebDriverWait wait;
+    ConfigFileReader configFileReader;
 
     public RiskManagementPage_PF(WebDriver driver) {
         this.driver = driver;
+        configFileReader= new ConfigFileReader();
         PageFactory.initElements(driver, this);
         util = new UtilFunctions(driver);
-        wait  = new WebDriverWait(driver, 30);
+        wait  = new WebDriverWait(driver, configFileReader.getFluentWait());
     }
 
     String srtRiskManagement = "//li[normalize-space()='Risk Management']";
@@ -28,6 +31,7 @@ public class RiskManagementPage_PF {
     public void clickOnRiskManagementTab() throws InterruptedException {
         util.waitForXpathElement(srtRiskManagement);
         wait.until(ExpectedConditions.elementToBeClickable(risk_management_tab));
+        Thread.sleep(5000);
         risk_management_tab.click();
     }
 
@@ -55,6 +59,7 @@ public class RiskManagementPage_PF {
     @FindBy(xpath = "//tbody/tr[@role='row']/td[2]/div[1]/label[1]/span[1]/span[1]/span[1]/input[1]")
     WebElement checkboxAcceptDecisions;
     public boolean getAcceptDecisions() throws InterruptedException {
+        Thread.sleep(1000);
        boolean flag = checkboxAcceptDecisions.isSelected();
        return flag;
     }
@@ -63,14 +68,16 @@ public class RiskManagementPage_PF {
     @FindBy(xpath = "//tbody/tr[@role='row']/td[3]/div[1]/label[1]/span[1]/span[1]/span[1]/input[1]")
     WebElement checkboxNoonAcceptDecisions;
     public boolean getNoonAcceptDecisions() throws InterruptedException {
+        Thread.sleep(1000);
         boolean flag = checkboxNoonAcceptDecisions.isSelected();
         return flag;
     }
 
     @FindBy(xpath = "//input[@id='searchInput']")
     WebElement search_input_field;
-    public  void  setSearchText(String orderId){
+    public  void  setSearchText(String orderId) throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(search_input_field));
+        Thread.sleep(3000);
         search_input_field.click();
         search_input_field.clear();
         search_input_field.sendKeys(orderId);

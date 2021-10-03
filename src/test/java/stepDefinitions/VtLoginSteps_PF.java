@@ -69,11 +69,18 @@ public class VtLoginSteps_PF {
         vtLogin = new VtCustomerPage_PF(driver);
 
     }
-    @When("^vt user is enter (.*) and (.*)$")
-    public void vt_user_is_enter_user1_and_password1(String username, String password) throws InterruptedException {
+    @When("vt user is enter username and password")
+    public void vt_user_is_enter_user_and_password() throws InterruptedException {
 
-       vtLogin.setUserEmailAddress(username);
-       vtLogin.setUserPassword(password);
+       vtLogin.setUserEmailAddress(configFileReader.getUserName());
+       vtLogin.setUserPassword(configFileReader.getUserPassword());
+    }
+
+    @When("vt user is enter username and wrong password")
+    public void vt_user_is_enter_user_and_wrong_password() throws InterruptedException {
+
+        vtLogin.setUserEmailAddress(configFileReader.getUserName());
+        vtLogin.setUserPassword(configFileReader.getUserWrongPassword());
     }
 
     @When("click on vt login button")

@@ -1,5 +1,6 @@
 package pageFactory;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,6 +35,7 @@ public class VtCustomerPage_PF {
         //PageFactory.initElements(factory, this);
 
         PageFactory.initElements(driver, this);
+
         wait  = new WebDriverWait(driver, 30);
     }
 
@@ -58,7 +60,15 @@ public class VtCustomerPage_PF {
         login_button.click();
     }
 
-    public String getPasswordHint(){
-        return  password_hint.getText();
+    public String getPasswordHint() throws InterruptedException {
+        Thread.sleep(3000);
+        String msg = "fail";
+        try {
+            msg = password_hint.getText();
+        } catch (Exception exception){
+            System.out.println("exception: "+exception);
+        }
+
+        return  msg;
     }
 }
