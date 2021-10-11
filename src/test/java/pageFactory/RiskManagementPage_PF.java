@@ -25,8 +25,9 @@ public class RiskManagementPage_PF {
         wait  = new WebDriverWait(driver, configFileReader.getFluentWait());
     }
 
-    String srtRiskManagement = "//li[normalize-space()='Risk Management']";
-    @FindBy(xpath = "//li[normalize-space()='Risk Management']")
+    //li[normalize-space()='Risk Management']
+    String srtRiskManagement = "//div[@id='__next']//div//header//div//div//img[@id='Risk ManagementId']";
+    @FindBy(xpath = "//div[@id='__next']//div//header//div//div//img[@id='Risk ManagementId']")
     WebElement risk_management_tab;
     public void clickOnRiskManagementTab() throws InterruptedException {
         util.waitForXpathElement(srtRiskManagement);
@@ -34,6 +35,7 @@ public class RiskManagementPage_PF {
         Thread.sleep(5000);
         risk_management_tab.click();
     }
+
 
     String srtDecisions = "//img[@src='/img/sidemenu/default/decisions.svg']";
     @FindBy(xpath = "//img[@src='/img/sidemenu/default/decisions.svg']")

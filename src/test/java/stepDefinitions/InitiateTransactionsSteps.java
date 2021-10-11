@@ -1,6 +1,8 @@
 package stepDefinitions;
 
 import dataProviders.ConfigFileReader;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -38,6 +40,7 @@ public class InitiateTransactionsSteps {
     static String orderStatus;
     static String browserType;
     ConfigFileReader configFileReader;
+
 
     @Given("user on my shopify store page")
     public void user_on_my_shopify_store_page()  {
@@ -94,7 +97,7 @@ public class InitiateTransactionsSteps {
 
     @When("click on enter button")
     public void click_on_enter_button() {
-        //itpf.clickSubmit();
+
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
     }
@@ -491,8 +494,8 @@ public class InitiateTransactionsSteps {
     }
     @When("click add to card")
     public void click_add_to_card() throws InterruptedException {
-        //button[normalize-space()='Check out']
-        util.waitAndClickXpath("//button[contains(text(),'Add to cart')]");
+        Thread.sleep(1000);
+        util.waitAndClickXpath("//button[@name='add']");
     }
 
     @When("click check out")

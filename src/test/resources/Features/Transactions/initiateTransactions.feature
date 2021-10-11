@@ -19,8 +19,8 @@ Feature: features to test initiate transaction functionality
     Then user is navigated to order detail page
 
     Examples:
-      | url                                       | password |
-      | https://amit-test-04-09-01.myshopify.com/ | lohyau   |
+      | url                                    | password |
+      | https://teststg05102021.myshopify.com/ | vowgah   |
 
 
 

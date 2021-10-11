@@ -12,7 +12,7 @@ import util.UtilFunctions;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class OnBoarding_PF {
+public class OnBoardingPage_PF {
 
     private static final TimeUnit SECONDS = null;
     @FindBy(xpath="//div[@class='common-layout-content-div']//div//div[3]//div[1]//div[2]//h5[1]")
@@ -57,7 +57,7 @@ public class OnBoarding_PF {
     ConfigFileReader configFileReader;
 
     
-    public OnBoarding_PF(WebDriver driver){
+    public OnBoardingPage_PF(WebDriver driver){
         this.driver = driver;
         configFileReader= new ConfigFileReader();
         PageFactory.initElements(driver, this);
