@@ -9,7 +9,7 @@ Feature: features to test initiate transaction for physical products functionali
     And click on catalog
 
 
-  @smoke
+  @smoke1
   Scenario Outline: Transaction buy it now Functionality
 
     And user search and add product in card "Chequered Red Shirt" quantity 2
@@ -74,14 +74,15 @@ Feature: features to test initiate transaction for physical products functionali
       | CustomerDetails_XLSX_10.xlsx | 4         |
 
 
-  @smoke1
-  Scenario: Transaction check summary Functionality
+  @smoke
+  Scenario: Transaction check validate summary Functionality
 
     When user login to vt customer portal url username and password
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary
-    And check map information
+    And check attributes positive negative
+    And validate risk score and status
     Then user logout
 
 

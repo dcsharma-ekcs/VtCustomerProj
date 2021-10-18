@@ -11,11 +11,12 @@ public class RiskManagementOrderSummarySteps {
 
 
     static String orderStatus;
+    int intPositiveCount = 0;
+    int intNegativeCount = 0;
     InitiateTransactionsSteps initiateTransactionsSteps = new InitiateTransactionsSteps();
     WebDriver driver = initiateTransactionsSteps.getDriver();
     UtilFunctions util = new UtilFunctions(driver);
     String orderId = initiateTransactionsSteps.getOrderId();
-    //String orderStatusTemp = initiateTransactionsSteps.getOrderStatus();
     String orderContactInformation = initiateTransactionsSteps.getContactInformation();
     String orderPaymentMethod = initiateTransactionsSteps.getPaymentMethod();
     String orderShippingMethod = initiateTransactionsSteps.getShippingMethod();
@@ -40,14 +41,44 @@ public class RiskManagementOrderSummarySteps {
     public void check_attributes_positive_negative() {
         String positiveCount = smosPF.getPositiveAttributesCount();
 
-        positiveCount = positiveCount.trim().substring(1,positiveCount.length());
+        positiveCount = positiveCount.trim().substring(1,positiveCount.length()).trim();
         System.out.println("positiveCount:  "+positiveCount);
+        intPositiveCount = Integer.parseInt(positiveCount);
+        System.out.println("intPositiveCount:  "+intPositiveCount);
 
 
         String negativeCount = smosPF.getNegativeAttributesCount();
-        negativeCount = negativeCount.trim().substring(1,negativeCount.length());
+        negativeCount = negativeCount.trim().substring(1,negativeCount.length()).trim();
         System.out.println("negativeCount:  "+negativeCount);
+        intNegativeCount = Integer.parseInt(negativeCount);
+        System.out.println("intNegativeCount:  "+intNegativeCount);
 
+    }
+
+    @And("validate risk score and status")
+    public void validate_risk_score_and_status() {
+
+        String riskScore = smosPF.getRiskScore();
+        String[] arrRiskScore = riskScore.split(" ");
+        String currentOrderStatus = smosPF.getOrderStatus();
+        int intRiskScore = 0 ;
+        if(arrRiskScore.length > 1 )
+            intRiskScore = Integer.parseInt(arrRiskScore[1].trim());
+
+        System.out.println("intRiskScore:  "+intRiskScore);
+        System.out.println("currentOrderStatus:  "+currentOrderStatus);
+
+        if(intNegativeCount > 0){
+            Assert.assertEquals("Not Guaranteed".toLowerCase(Locale.ROOT), currentOrderStatus.toLowerCase(Locale.ROOT).trim());
+
+        } else if(intPositiveCount > 0){
+            Assert.assertEquals("Guaranteed".toLowerCase(Locale.ROOT), currentOrderStatus.toLowerCase(Locale.ROOT).trim());
+
+        } else if (intRiskScore >= 85){
+            Assert.assertEquals("Not Guaranteed".toLowerCase(Locale.ROOT), currentOrderStatus.toLowerCase(Locale.ROOT).trim());
+       } else if (intRiskScore < 85){
+            Assert.assertEquals("Guaranteed".toLowerCase(Locale.ROOT), currentOrderStatus.toLowerCase(Locale.ROOT).trim());
+        }
     }
 
     @And("check billing and shipping details")

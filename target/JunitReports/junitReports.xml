@@ -1,15 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="62.831">
-<testcase classname="features to test on boarding functionality" name="On Boarding Functionality1" time="62.657">
-<system-out><![CDATA[Given vt user is on customer portal login page..............................passed
-When vt user is enter username and password.................................passed
-And click on vt login button................................................passed
-When user click on account management tab...................................passed
-And user search merchant DevTest01102021 by search field....................passed
-And user get and check merchant tage status Now Live........................passed
-And user click merchant detail button.......................................passed
-And user check merchant vertical Event Tickets..............................passed
-And user check merchant sub vertical Virtual................................passed
-And user check payment processor Atome......................................passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="125.987">
+<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction check validate summary Functionality" time="125.857">
+<system-out><![CDATA[Given user on my shopify store page.........................................passed
+When user is login in to store with url and password........................passed
+And click on enter button...................................................passed
+When user is navigated to store home page...................................passed
+And click on catalog........................................................passed
+When user login to vt customer portal url username and password.............passed
+And navigate to risk management list page...................................passed
+And search order with order id..............................................passed
+And click for transaction summary...........................................passed
+And check attributes positive negative......................................passed
+And validate risk score and status..........................................passed
+Then user logout............................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

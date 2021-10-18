@@ -30,6 +30,12 @@ public class RiskManagementOrderSummaryPage_PF {
         }
     }
 
+    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div[1]/span[2]")
+    WebElement risk_score;
+    public String getRiskScore(){
+        return risk_score.getText();
+    }
+
     @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[1]/div[1]/span[1]")
     WebElement positive_attributes_count;
     public String getPositiveAttributesCount(){

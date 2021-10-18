@@ -3,163 +3,164 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-10-08T11:36:39.625Z",
-        "line": 42,
-        "name": "On Boarding Functionality1",
+        "line": 4,
+        "name": "Transaction Functionality",
         "description": "",
-        "id": "features-to-test-on-boarding-functionality;on-boarding-functionality1;;2",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
+        "type": "background",
+        "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 5366379400,
+              "duration": 1831334100,
               "status": "passed"
             },
-            "line": 29,
-            "name": "vt user is on customer portal login page",
+            "line": 5,
+            "name": "user on my shopify store page",
             "match": {
-              "location": "stepDefinitions.VtLoginSteps_PF.vt_user_on_login_page()"
+              "location": "stepDefinitions.InitiateTransactionsSteps.user_on_my_shopify_store_page()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 6148944200,
+              "duration": 1237963700,
               "status": "passed"
             },
-            "line": 30,
-            "name": "vt user is enter username and password",
+            "line": 6,
+            "name": "user is login in to store with url and password",
             "match": {
-              "location": "stepDefinitions.VtLoginSteps_PF.vt_user_is_enter_user_and_password()"
+              "location": "stepDefinitions.InitiateTransactionsSteps.user_is_login_with_url_password()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 1014221800,
+              "duration": 1612636900,
               "status": "passed"
             },
-            "line": 31,
-            "name": "click on vt login button",
+            "line": 7,
+            "name": "click on enter button",
             "match": {
-              "location": "stepDefinitions.VtLoginSteps_PF.click_on_vt_login_button()"
+              "location": "stepDefinitions.InitiateTransactionsSteps.click_on_enter_button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 30149841500,
               "status": "passed"
             },
-            "line": 32,
-            "name": "user click on account management tab",
+            "line": 8,
+            "name": "user is navigated to store home page",
             "match": {
-              "location": "stepDefinitions.AccountManagementSteps.userClickOnAccountManagementTab()"
+              "location": "stepDefinitions.InitiateTransactionsSteps.user_is_navigated_to_store_home_page()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 3706920100,
+              "duration": 5859418600,
               "status": "passed"
             },
-            "line": 33,
-            "name": "user search merchant DevTest01102021 by search field",
+            "line": 9,
+            "name": "click on catalog",
             "match": {
-              "arguments": [
-                {
-                  "val": "DevTest01102021",
-                  "offset": 21
-                }
-              ],
-              "location": "stepDefinitions.AccountManagementSteps.user_search_merchant_by_search_field(java.lang.String)"
+              "location": "stepDefinitions.InitiateTransactionsSteps.click_on_catalog()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-11T07:08:09.541Z",
+        "line": 78,
+        "name": "Transaction check validate summary Functionality",
+        "description": "",
+        "id": "features-to-test-initiate-transaction-for-physical-products-functionality;transaction-check-validate-summary-functionality",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12020185400,
+              "status": "passed"
+            },
+            "line": 80,
+            "name": "user login to vt customer portal url username and password",
+            "match": {
+              "location": "stepDefinitions.RiskManagementSteps.user_login_to_vt_customer_portal()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 94281342600,
+              "status": "passed"
+            },
+            "line": 81,
+            "name": "navigate to risk management list page",
+            "match": {
+              "location": "stepDefinitions.RiskManagementSteps.navigate_to_risk_management_list_page()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 13045522500,
+              "duration": 3709680900,
               "status": "passed"
             },
-            "line": 34,
-            "name": "user get and check merchant tage status Now Live",
+            "line": 82,
+            "name": "search order with order id",
             "match": {
-              "arguments": [
-                {
-                  "val": "Now Live",
-                  "offset": 40
-                }
-              ],
-              "location": "stepDefinitions.AccountManagementSteps.user_get_and_check_merchant_tage_status(java.lang.String)"
+              "location": "stepDefinitions.RiskManagementSteps.search_order_with_order_id()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 55949700,
+              "duration": 3117967500,
               "status": "passed"
             },
-            "line": 35,
-            "name": "user click merchant detail button",
+            "line": 83,
+            "name": "click for transaction summary",
             "match": {
-              "location": "stepDefinitions.AccountManagementSteps.user_click_merchant_detail_button()"
+              "location": "stepDefinitions.RiskManagementSteps.click_for_transaction_summary()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 3057655900,
+              "duration": 2045359200,
               "status": "passed"
             },
-            "line": 36,
-            "name": "user check merchant vertical Event Tickets",
+            "line": 84,
+            "name": "check attributes positive negative",
             "match": {
-              "arguments": [
-                {
-                  "val": "Event Tickets",
-                  "offset": 29
-                }
-              ],
-              "location": "stepDefinitions.AccountManagementSteps.user_check_merchant_vertical(java.lang.String)"
+              "location": "stepDefinitions.RiskManagementOrderSummarySteps.check_attributes_positive_negative()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 23920300,
+              "duration": 100663900,
               "status": "passed"
             },
-            "line": 37,
-            "name": "user check merchant sub vertical Virtual",
+            "line": 85,
+            "name": "validate risk score and status",
             "match": {
-              "arguments": [
-                {
-                  "val": "Virtual",
-                  "offset": 33
-                }
-              ],
-              "location": "stepDefinitions.AccountManagementSteps.user_check_merchant_sub_vertical(java.lang.String)"
+              "location": "stepDefinitions.RiskManagementOrderSummarySteps.validate_risk_score_and_status()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 32889700,
               "status": "passed"
             },
-            "line": 38,
-            "name": "user check payment processor Atome",
+            "line": 86,
+            "name": "user logout",
             "match": {
-              "arguments": [
-                {
-                  "val": "Atome",
-                  "offset": 29
-                }
-              ],
-              "location": "stepDefinitions.AccountManagementSteps.user_check_payment_processor(java.lang.String)"
+              "location": "stepDefinitions.RiskManagementSteps.user_logout()"
             },
-            "keyword": "And "
+            "keyword": "Then "
           }
         ],
         "tags": [
@@ -169,11 +170,11 @@
         ]
       }
     ],
-    "name": "features to test on boarding functionality",
+    "name": "features to test initiate transaction for physical products functionality",
     "description": "",
-    "id": "features-to-test-on-boarding-functionality",
+    "id": "features-to-test-initiate-transaction-for-physical-products-functionality",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/Features/OnBoarding/onboarding.feature",
+    "uri": "file:src/test/resources/Features/Transactions/initiateTransactionsCheckAttributesPhysicalProduct.feature",
     "tags": []
   }
 ]

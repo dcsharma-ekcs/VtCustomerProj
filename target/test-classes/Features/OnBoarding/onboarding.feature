@@ -8,6 +8,8 @@ Feature: features to test on boarding functionality
     And click on vt login button
     Then user is navigated to the vt home page
     And user click on describe your business
+    And user set verticals <merchantVertical> and sub verticals <merchantSubVertical>
+    And user set payment processor <paymentProcessor>
     And user go live
     Then user check progressbar status
     When user click on account management tab
