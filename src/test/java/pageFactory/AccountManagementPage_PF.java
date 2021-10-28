@@ -31,16 +31,18 @@ public class AccountManagementPage_PF {
     WebElement account_management_tab;
     public void clickOnAccountManagementTab() throws InterruptedException {
         util.waitForXpathElement(srtAccountManagement);
-        wait.until(ExpectedConditions.elementToBeClickable(account_management_tab));
-        Thread.sleep(5000);
+        WebElement tmp = wait.until(ExpectedConditions.elementToBeClickable(account_management_tab));
+        Thread.sleep(10000);
         account_management_tab.click();
+
     }
 
     @FindBy(xpath = "//input[@id='searchInput']")
     WebElement search_input_field;
     public  void  setSearchText(String searchText) throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(search_input_field));
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.visibilityOf(search_input_field));
+        Thread.sleep(6000);
         search_input_field.click();
         search_input_field.clear();
         search_input_field.sendKeys(searchText);
@@ -75,6 +77,64 @@ public class AccountManagementPage_PF {
     WebElement payment_processor;
     public  String  getPaymentProcessor() throws InterruptedException {
         return  payment_processor.getAttribute("value").trim().toLowerCase(Locale.ROOT);
+    }
+
+    @FindBy(xpath = "//body/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/button[1]")
+    WebElement invoice_currency;
+    public  String  getInvoiceCurrency() throws InterruptedException {
+        return  invoice_currency.getText().trim().toLowerCase(Locale.ROOT);
+    }
+
+    @FindBy(xpath = "//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[4]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/input[1]")
+    WebElement billing_address;
+    public  String  getBillingAddress() throws InterruptedException {
+        return  billing_address.getAttribute("value").trim().toLowerCase(Locale.ROOT);
+    }
+
+    @FindBy(xpath = "//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[4]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/input[1]")
+    WebElement ends_on_date;
+    public  String  getEndsOnDate() throws InterruptedException {
+        return  ends_on_date.getAttribute("value").trim().toLowerCase(Locale.ROOT);
+    }
+
+
+    @FindBy(xpath = "//div[@id='tab-Product']//div//div//div//h4")
+    WebElement merchantProductName;
+    public  String  getMerchantProductName() throws InterruptedException {
+        return  merchantProductName.getText().trim().toLowerCase(Locale.ROOT);
+    }
+
+    @FindBy(xpath = "//div[@id='tab-Product']//div//div//h3")
+    WebElement merchantProductAmount;
+    public  String  getMerchantProductAmount() throws InterruptedException {
+        return  merchantProductAmount.getText().trim().toLowerCase(Locale.ROOT);
+    }
+
+    String strTabConfigure = "//li[@data-tab='Configure']";
+    @FindBy(xpath="//li[@data-tab='Configure']")
+    WebElement tabConfigure;
+
+    String strTabBilling = "//li[@data-tab='Billing']";
+    @FindBy(xpath="//li[@data-tab='Billing']")
+    WebElement tabBilling;
+
+    String strTabProduct = "//li[@data-tab='Product']";
+    @FindBy(xpath="//li[@data-tab='Product']")
+    WebElement tabProduct;
+
+    public void clickTabConfigure(){
+        wait.until(ExpectedConditions.elementToBeClickable(tabConfigure));
+        tabConfigure.click();
+    }
+
+    public void clickTabBilling(){
+        wait.until(ExpectedConditions.elementToBeClickable(tabBilling));
+        tabBilling.click();
+    }
+
+    public void clickTabProduct(){
+        wait.until(ExpectedConditions.elementToBeClickable(tabProduct));
+        tabProduct.click();
     }
 
 

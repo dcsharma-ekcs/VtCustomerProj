@@ -7,9 +7,9 @@ Feature: features to test initiate for digital products transaction functionalit
     And click on enter button
     When user is navigated to store home page
     And click on catalog
-    And user search and add product in card "Chequered Red Shirt" quantity 2
+    And user search and add product in card "Digital Products X01" quantity 2
 
-  @smoke1
+  @smoke
   Scenario Outline: Transaction buy it now Functionality
 
     When click on buy it now
@@ -22,10 +22,10 @@ Feature: features to test initiate for digital products transaction functionalit
 
     Examples:
       | ExcelFileName                           | RowNumber |
-      | data_file_for_digital_products_new.xlsx | 1         |
-      | data_file_for_digital_products_new.xlsx | 2         |
+      | CustomerDetails_XLSX_10.xlsx | 1         |
 
-  @smoke
+
+  @smoke1
   Scenario Outline: Transaction add to card Functionality
 
     When click add to card
@@ -39,7 +39,7 @@ Feature: features to test initiate for digital products transaction functionalit
 
     Examples:
       | ExcelFileName                           | RowNumber |
-      | data_file_for_digital_products_new.xlsx | 1         |
+      | CustomerDetails_XLSX_10.xlsx | 1         |
 
 
 

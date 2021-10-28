@@ -24,7 +24,7 @@ public class AccountManagementSteps {
     public void userClickOnAccountManagementTab() throws InterruptedException {
         driver = VtLoginSteps_PF.getDriver();
         accountManagementPageObj = new AccountManagementPage_PF(driver);
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         accountManagementPageObj.clickOnAccountManagementTab();
     }
 
@@ -67,5 +67,46 @@ public class AccountManagementSteps {
         System.out.println("strPaymentProcessor:"+ strPaymentProcessor);
         Assert.assertEquals(strInput.toLowerCase(Locale.ROOT), strPaymentProcessor);
     }
+
+    @And("user click billing tab")
+    public void user_click_billing_tab() throws InterruptedException {
+
+        accountManagementPageObj.clickTabBilling();
+    }
+
+    @And("user click product tab")
+    public void user_click_product_tab() throws InterruptedException {
+
+        accountManagementPageObj.clickTabProduct();
+    }
+
+    @And("^user check merchant invoice currency (.*)$")
+    public void user_check_merchant_invoice_currency(String strInput) throws InterruptedException {
+        String strInvoiceCurrency = accountManagementPageObj.getInvoiceCurrency();
+        System.out.println("strSubVertical:"+ strInvoiceCurrency);
+        Assert.assertEquals(strInput.toLowerCase(Locale.ROOT), strInvoiceCurrency);
+    }
+
+    @And("user check merchant billing address")
+    public void user_check_merchant_billing_address() throws InterruptedException {
+        String strBillingAddress = accountManagementPageObj.getBillingAddress();
+        System.out.println("strBillingAddress:"+ strBillingAddress);
+    }
+
+    @And("user check billing end on date")
+    public void user_check_billing_end_on_date() throws InterruptedException {
+        String strEndOnDate  = accountManagementPageObj.getEndsOnDate();
+        System.out.println("strEndOnDate:"+ strEndOnDate);
+    }
+
+    @And("user check merchant product details")
+    public void user_check_merchant_product_details() throws InterruptedException {
+        String strProductName  = accountManagementPageObj.getMerchantProductName();
+        System.out.println("strProductName:"+ strProductName);
+
+        String strProductAmount  = accountManagementPageObj.getMerchantProductAmount();
+        System.out.println("strProductAmount:"+ strProductAmount);
+    }
+
 
 }

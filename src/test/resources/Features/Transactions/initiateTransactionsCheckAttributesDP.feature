@@ -7,7 +7,7 @@ Feature: features to test initiate for digital products transaction and risk man
     And click on enter button
     When user is navigated to store home page
     And click on catalog
-    When user search and add product in card "Digi X01" quantity 2
+    When user search and add product in card "Digital Products X01" quantity 2
 
   @smoke1
   Scenario Outline: Transaction buy it now Functionality
@@ -28,7 +28,7 @@ Feature: features to test initiate for digital products transaction and risk man
 
     Examples:
       | ExcelFileName                           | RowNumber |
-      | data_file_for_digital_products_new.xlsx | 1         |
+      | CustomerDetails_XLSX_10.xlsx | 1         |
 
 
   @smoke

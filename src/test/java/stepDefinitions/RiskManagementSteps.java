@@ -41,7 +41,7 @@ public class RiskManagementSteps {
     }
     @And("search order with order id")
     public void search_order_with_order_id() throws InterruptedException {
-            orderId = "1013";
+            //orderId = "1013";
             riskManagementPagePF.setSearchText(orderId);
             System.out.println("risk ManagementSteps OrderId:  "+orderId);
 

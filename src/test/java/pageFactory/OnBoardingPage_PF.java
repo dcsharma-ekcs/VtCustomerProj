@@ -42,10 +42,10 @@ public class OnBoardingPage_PF {
     @FindBy(xpath=" //button[contains(text(),'LET’S GO!')]")
     WebElement lets_go_button;
 
-
     String strProgressbar = "//div[@role='progressbar']//*[name()='svg']";
     @FindBy(css="//div[@role='progressbar']//*[name()='svg']")
     WebElement progressbar;
+
 
 
 
@@ -140,10 +140,10 @@ public class OnBoardingPage_PF {
 
     public void checkProgressbarStatus() throws InterruptedException {
         System.out.println("....checkProgressbarStatus........");
-
         util.checkProgressbar(strProgressbar);
-
     }
+
+
 
 
 }

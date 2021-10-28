@@ -19,8 +19,24 @@ Feature: features to test initiate transaction functionality
     Then user is navigated to order detail page
 
     Examples:
-      | url                                    | password |
-      | https://teststg05102021.myshopify.com/ | vowgah   |
+      | url                                   | password |
+      | https://testint24oct.myshopify.com/   | muiffu   |
+      | https://testint25octs7.myshopify.com/ | rtaulu   |
+      | https://testint25octs7.myshopify.com/ | rtaulu   |
+      | https://testint24oct.myshopify.com/   | muiffu   |
+      | https://testint24oct.myshopify.com/   | muiffu   |
+      | https://testint24oct.myshopify.com/   | muiffu   |
+      | https://testint24oct.myshopify.com/   | muiffu   |
+      | https://testint25octs1.myshopify.com/ | Ceolas   |
+      | https://testint25octs1.myshopify.com/ | Ceolas   |
+      | https://testint25octs1.myshopify.com/ | Ceolas   |
+      | https://testint25octs1.myshopify.com/ | Ceolas   |
+      | https://testint25octs7.myshopify.com/ | rtaulu   |
+      | https://testint25octs7.myshopify.com/ | rtaulu   |
+      | https://testint26octs1.myshopify.com/ | eweugg   |
+      | https://testint26octs1.myshopify.com/ | eweugg   |
+      | https://testint26octs1.myshopify.com/ | eweugg   |
+      | https://testint26octs1.myshopify.com/ | eweugg   |
 
 
 

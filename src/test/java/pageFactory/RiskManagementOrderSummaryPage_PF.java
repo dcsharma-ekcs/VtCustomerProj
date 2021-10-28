@@ -19,8 +19,8 @@ public class RiskManagementOrderSummaryPage_PF {
         util = new UtilFunctions(driver);
     }
 
-    String strOrderStatus = "//body/div/div/div/div/div/div/div/div/div/div/div/div/div/label[1]";
-    @FindBy(xpath = "//body/div/div/div/div/div/div/div/div/div/div/div/div/div/label[1]")
+    String strOrderStatus = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div/div/div/label[1]";
+    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div/div/div/label[1]")
     WebElement order_status;
     public String getOrderStatus(){
         if(driver.findElement(By.xpath(strOrderStatus)).isDisplayed()){
