@@ -1,8 +1,11 @@
 package pageFactory;
 
 import dataProviders.ConfigFileReader;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import util.UtilFunctions;
 
 import java.util.Locale;
+import java.util.Random;
 
 public class AccountManagementPage_PF {
 
@@ -32,10 +36,75 @@ public class AccountManagementPage_PF {
     public void clickOnAccountManagementTab() throws InterruptedException {
         util.waitForXpathElement(srtAccountManagement);
         WebElement tmp = wait.until(ExpectedConditions.elementToBeClickable(account_management_tab));
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         account_management_tab.click();
 
     }
+
+    @FindBy(xpath = "//li[normalize-space()='Users']//img[@class='img-fluid']")
+    WebElement users_tab;
+    public void clickOnUsersTab() throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(users_tab));
+        Thread.sleep(5000);
+        users_tab.click();
+
+    }
+
+    @FindBy(xpath = "//div[@id='customUserDiv']//div//div//div//div//div//button[@type='button']")
+    WebElement add_new_user;
+    public void clickAddNewUserButton() throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(add_new_user));
+        Thread.sleep(1000);
+        util.clickStickyArrow();
+        Thread.sleep(1000);
+        add_new_user.click();
+    }
+
+    @FindBy(xpath = "//div[@class='col-4 col']//input[@name='Name']")
+    WebElement user_name;
+
+    @FindBy(xpath = "//div[@class='col-4 col']//input[@name='Email Id']")
+    WebElement user_email_id;
+
+    @FindBy(xpath = "//div[@class='col-4 col']//input[@value='+1']")
+    WebElement user_phone;
+
+    @FindBy(xpath = "//div[@id='__next']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//button")
+    WebElement user_role;
+
+    @FindBy(xpath = "//button[contains(text(),'CREATE')]")
+    WebElement create_button;
+
+
+
+    public void fillCreateNewUserForm() throws InterruptedException {
+        Random rand = new Random();
+        int randNumber = rand.nextInt(10000);
+
+        user_name.click();
+        user_name.clear();
+        user_name.sendKeys("Test User "+randNumber);
+
+        user_email_id.click();
+        user_email_id.clear();
+        user_email_id.sendKeys(randNumber+"testuser@gmail.com");
+
+        user_phone.click();
+        user_phone.clear();
+        user_phone.sendKeys(randNumber+""+randNumber);
+
+        user_role.click();
+        Thread.sleep(1000);
+       // Actions action = new Actions(driver);
+       // action.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+
+
+        driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div[3]//p[1]//span[1]")).click();
+        Thread.sleep(3000);
+        create_button.click();
+        Thread.sleep(3000);
+    }
+
 
     @FindBy(xpath = "//input[@id='searchInput']")
     WebElement search_input_field;

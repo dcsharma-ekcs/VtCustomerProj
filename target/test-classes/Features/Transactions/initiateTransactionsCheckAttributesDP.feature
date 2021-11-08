@@ -28,7 +28,7 @@ Feature: features to test initiate for digital products transaction and risk man
 
     Examples:
       | ExcelFileName                           | RowNumber |
-      | data_file_for_digital_products_new.xlsx | 1         |
+      | CustomerDetails_XLSX_10.xlsx | 1         |
 
 
   @smoke

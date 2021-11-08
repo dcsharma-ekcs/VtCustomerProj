@@ -20,23 +20,18 @@ Feature: features to test initiate transaction functionality
 
     Examples:
       | url                                   | password |
-      | https://testint24oct.myshopify.com/   | muiffu   |
-      | https://testint25octs7.myshopify.com/ | rtaulu   |
-      | https://testint25octs7.myshopify.com/ | rtaulu   |
-      | https://testint24oct.myshopify.com/   | muiffu   |
-      | https://testint24oct.myshopify.com/   | muiffu   |
-      | https://testint24oct.myshopify.com/   | muiffu   |
-      | https://testint24oct.myshopify.com/   | muiffu   |
-      | https://testint25octs1.myshopify.com/ | Ceolas   |
-      | https://testint25octs1.myshopify.com/ | Ceolas   |
-      | https://testint25octs1.myshopify.com/ | Ceolas   |
-      | https://testint25octs1.myshopify.com/ | Ceolas   |
-      | https://testint25octs7.myshopify.com/ | rtaulu   |
-      | https://testint25octs7.myshopify.com/ | rtaulu   |
-      | https://testint26octs1.myshopify.com/ | eweugg   |
-      | https://testint26octs1.myshopify.com/ | eweugg   |
-      | https://testint26octs1.myshopify.com/ | eweugg   |
-      | https://testint26octs1.myshopify.com/ | eweugg   |
-
-
-
+      | https://testint01octs1.myshopify.com/ | cleipu   |
+      | https://testint01octs1.myshopify.com/ | cleipu   |
+      | https://testint01octs1.myshopify.com/ | cleipu   |
+      | https://testint01octs1.myshopify.com/ | cleipu   |
+      | https://testint01octs1.myshopify.com/ | cleipu   |
+      | https://testint01novs2.myshopify.com/ | febewr   |
+      | https://testint01novs2.myshopify.com/ | febewr   |
+      | https://testint01novs2.myshopify.com/ | febewr   |
+      | https://testint01novs2.myshopify.com/ | febewr   |
+      | https://testint01novs2.myshopify.com/ | febewr   |
+      | https://testint01novs3.myshopify.com/ | hutein   |
+      | https://testint01novs3.myshopify.com/ | hutein   |
+      | https://testint01novs3.myshopify.com/ | hutein   |
+      | https://testint01novs3.myshopify.com/ | hutein   |
+      | https://testint01novs3.myshopify.com/ | hutein   |

@@ -42,7 +42,6 @@ Feature: features to test initiate transaction for physical products functionali
     Examples:
       | ExcelFileName                | RowNumber |
       | CustomerDetails_XLSX_10.xlsx | 1         |
-      | CustomerDetails_XLSX_10.xlsx | 3         |
 
 
   @smoke

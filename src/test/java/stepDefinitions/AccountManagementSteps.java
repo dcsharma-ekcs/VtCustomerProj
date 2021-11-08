@@ -5,7 +5,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import pageFactory.AccountManagementPage_PF;
 import pageFactory.OnBoardingPage_PF;
 import pageFactory.RiskManagementPage_PF;
@@ -13,6 +16,9 @@ import pageFactory.VtCustomerPage_PF;
 import util.UtilFunctions;
 
 import java.util.Locale;
+import java.util.Random;
+
+import static junit.framework.TestCase.fail;
 
 public class AccountManagementSteps {
 
@@ -106,6 +112,22 @@ public class AccountManagementSteps {
 
         String strProductAmount  = accountManagementPageObj.getMerchantProductAmount();
         System.out.println("strProductAmount:"+ strProductAmount);
+    }
+
+    @And("user click on users tab")
+    public void userClickOnUsersTab() throws InterruptedException {
+        Thread.sleep(2000);
+        accountManagementPageObj.clickOnUsersTab();
+    }
+
+    //user click on add new user button
+    @And("user click on add new user button")
+    public void userClickAddNewUserButton() throws InterruptedException {
+        Thread.sleep(2000);
+        accountManagementPageObj.clickAddNewUserButton();
+        Thread.sleep(1000);
+
+        accountManagementPageObj.fillCreateNewUserForm();
     }
 
 
