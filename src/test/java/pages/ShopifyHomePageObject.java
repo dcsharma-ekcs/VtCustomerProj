@@ -43,6 +43,11 @@ public class ShopifyHomePageObject {
     By store_orders_tab = By.xpath("//span[normalize-space()='Orders']");
     By store_search_field = By.xpath("//input[@placeholder='Filter orders']");
     By store_payment_status = By.xpath("//tbody/tr/td/div/div/div/span[1]");
+    By vesta_payment_guarantee_tab = By.xpath("//h3[normalize-space()='Vesta Payment Guarantee-Int']");
+    By view_full_analysis_tab = By.xpath("//button[normalize-space()='View full analysis']");
+    By vesta_full_analysis = By.xpath("//button[@id='Vesta Payment Guarantee-Int1']//span[contains(text(),'Vesta Payment Guarantee-Int')]");
+    By vesta_full_analysis_section = By.xpath("//section[2]");
+
 
     public ShopifyHomePageObject(WebDriver driver, String userEmail, String userPassword) {
         this.driver = driver;
@@ -53,6 +58,35 @@ public class ShopifyHomePageObject {
         js = (JavascriptExecutor) driver;
     }
 
+    public String vestaFullAnalysisSection() throws InterruptedException {
+        Thread.sleep(3000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(vesta_full_analysis_section));
+        String analysisText =  driver.findElement(vesta_full_analysis_section).getText();
+
+        return analysisText;
+    }
+
+    public void clickVestaFullAnalysis() {
+        driver.findElement(vesta_full_analysis).click();
+    }
+
+    public void clickViewFullAnalysisTab() throws InterruptedException {
+        js.executeScript("window.scrollBy(0,1400)", "");
+        Thread.sleep(1000);
+        driver.findElement(view_full_analysis_tab).click();
+    }
+
+    public boolean checkVestaPaymentGuaranteeTab() throws InterruptedException {
+         Thread.sleep(3000);
+         boolean flag = driver.findElement(vesta_payment_guarantee_tab).isDisplayed();
+         return flag;
+    }
+
+
+    public void clickOrderPaymentStatus() {
+        driver.findElement(store_payment_status).click();
+    }
+
 
     public String getOrderPaymentStatus() throws InterruptedException {
         Thread.sleep(3000);
@@ -61,6 +95,8 @@ public class ShopifyHomePageObject {
 
            return paymentStatus;
     }
+
+
 
     public void clickStoreOrdersTab() throws InterruptedException {
         //utilFunctions.waitForXpath(store_orders_tab);

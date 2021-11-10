@@ -30,19 +30,23 @@ public class RiskManagementOrderSummaryPage_PF {
         }
     }
 
-    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div[1]/span[2]")
+    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div[1]/span[2]")
     WebElement risk_score;
     public String getRiskScore(){
         return risk_score.getText();
     }
 
-    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[1]/div[1]/span[1]")
+    public void clickRiskScore(){
+         risk_score.click();
+    }
+
+    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[1]/div[1]/span[1]")
     WebElement positive_attributes_count;
     public String getPositiveAttributesCount(){
         return positive_attributes_count.getText();
     }
 
-    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[1]/div[1]/span[2]")
+    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[1]/div[1]/span[2]")
     WebElement negative_attributes_count;
     public String getNegativeAttributesCount(){
         return negative_attributes_count.getText();
@@ -78,19 +82,19 @@ public class RiskManagementOrderSummaryPage_PF {
         return shoppingCartPurchaser.getText();
     }
 
-    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[2]/span[1]")
+    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[2]/span[1]")
     WebElement purchaserEmail;
     public String getPurchaserEmail(){
         return purchaserEmail.getText();
     }
 
-    @FindBy(xpath = "//div[@id='__next']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//span//b")
+    @FindBy(xpath = "//div[@id='__next']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//span//b")
     WebElement shoppingCartAmount;
     public String getCartAmount(){
         return shoppingCartAmount.getText();
     }
 
-    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]")
+    @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]")
     WebElement cardNumber;
     public String getCardNumber(){
         return cardNumber.getText();
@@ -123,6 +127,7 @@ public class RiskManagementOrderSummaryPage_PF {
     @FindBy(xpath = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div/div/div/div[@coordinates='[object Object],[object Object],[object Object]']/div/div/div/div[@aria-label='Map']/div/div/div[3]/div[2]/img[1]")
     WebElement mapBillingAddPinter;
     public void clickMapBillingAddPinter(){
+
         mapBillingAddPinter.click();
     }
 
@@ -131,9 +136,6 @@ public class RiskManagementOrderSummaryPage_PF {
     public String getMapBillingAddAttributes(){
         return mpBillingAddAttributes.getText();
     }
-
-
-
 
 
 }

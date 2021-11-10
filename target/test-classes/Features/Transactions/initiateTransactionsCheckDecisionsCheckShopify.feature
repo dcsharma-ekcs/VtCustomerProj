@@ -36,6 +36,8 @@ Feature: features to test initiate transaction for physical products functionali
     And click on store tab
     And search order in shopify with order id
     And Check order payment status
+    And click order row in shopify for order detail
+    And check vesta payment guarantee full analysis
 
 
 
@@ -44,7 +46,7 @@ Feature: features to test initiate transaction for physical products functionali
       | CustomerDetails_XLSX_10.xlsx | 1         |
 
 
-  @smoke
+  @smoke1
   Scenario Outline: Transaction buy it now Functionality whit Different Billing and Shipping Address
 
     And user search and add product in card "Chequered Red Shirt" quantity 2
@@ -81,7 +83,7 @@ Feature: features to test initiate transaction for physical products functionali
       | CustomerDetails_XLSX_10.xlsx | 1         | 3          |
 
 
-  @smoke
+  @smoke1
   Scenario Outline: Transaction add to card Functionality
 
     And user search and add product in card "Chequered Red Shirt" quantity 2
@@ -118,7 +120,7 @@ Feature: features to test initiate transaction for physical products functionali
       | CustomerDetails_XLSX_10.xlsx | 3         |
 
 
-  @smoke
+  @smoke1
   Scenario Outline: Transaction add to card Functionality whit Different Billing and Shipping Address
 
     And user search and add product in card "Chequered Red Shirt" quantity 4
@@ -174,6 +176,8 @@ Feature: features to test initiate transaction for physical products functionali
     And click on store tab
     And search order in shopify with order id
     And Check order payment status
+    And click order row in shopify for order detail
+    And check vesta payment guarantee full analysis
 
 
 

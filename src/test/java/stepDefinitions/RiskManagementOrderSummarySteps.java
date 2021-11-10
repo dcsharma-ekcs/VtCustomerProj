@@ -38,18 +38,25 @@ public class RiskManagementOrderSummarySteps {
     }
 
     @And("check attributes positive negative")
-    public void check_attributes_positive_negative() {
-        String positiveCount = smosPF.getPositiveAttributesCount();
+    public void check_attributes_positive_negative() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.switchTo().activeElement();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,2000)", "");
+        Thread.sleep(1000);
 
-        positiveCount = positiveCount.trim().substring(1,positiveCount.length()).trim();
+        String positiveCount = smosPF.getPositiveAttributesCount();
         System.out.println("positiveCount:  "+positiveCount);
+        positiveCount = positiveCount.trim().substring(1,positiveCount.length()).trim();
+
         intPositiveCount = Integer.parseInt(positiveCount);
         System.out.println("intPositiveCount:  "+intPositiveCount);
 
 
         String negativeCount = smosPF.getNegativeAttributesCount();
-        negativeCount = negativeCount.trim().substring(1,negativeCount.length()).trim();
         System.out.println("negativeCount:  "+negativeCount);
+        negativeCount = negativeCount.trim().substring(1,negativeCount.length()).trim();
+
         intNegativeCount = Integer.parseInt(negativeCount);
         System.out.println("intNegativeCount:  "+intNegativeCount);
 
@@ -58,12 +65,14 @@ public class RiskManagementOrderSummarySteps {
     @And("validate risk score and status")
     public void validate_risk_score_and_status() {
 
-        String riskScore = smosPF.getRiskScore();
-        String[] arrRiskScore = riskScore.split(" ");
+        String riskScore = smosPF.getRiskScore().trim().toLowerCase(Locale.ROOT);
+        riskScore = riskScore.substring(4);
+        System.out.println("riskScore:  "+riskScore);
+       // String[] arrRiskScore = riskScore.split("/n");
         String currentOrderStatus = smosPF.getOrderStatus();
         int intRiskScore = 0 ;
-        if(arrRiskScore.length > 1 )
-            intRiskScore = Integer.parseInt(arrRiskScore[1].trim());
+        //if(arrRiskScore.length > 1 )
+           intRiskScore = Integer.parseInt(riskScore.trim());
 
         System.out.println("intRiskScore:  "+intRiskScore);
         System.out.println("currentOrderStatus:  "+currentOrderStatus);
@@ -79,6 +88,8 @@ public class RiskManagementOrderSummarySteps {
        } else if (intRiskScore < 85){
             Assert.assertEquals("Guaranteed".toLowerCase(Locale.ROOT), currentOrderStatus.toLowerCase(Locale.ROOT).trim());
         }
+
+        smosPF.clickRiskScore();
     }
 
     @And("check billing and shipping details")
@@ -132,6 +143,7 @@ public class RiskManagementOrderSummarySteps {
             lastFourDigits = orderCard;
         }
         String summaryCard  = smosPF.getCardNumber();
+        System.out.println("summaryCard:  "+summaryCard);
 
         String lastFourDigitsSummaryCard = "";
         if (orderCard.length() > 4)
@@ -154,7 +166,7 @@ public class RiskManagementOrderSummarySteps {
           System.out.println(".......check_map_information........");
           smosPF.clickMapZoomIn();
           Thread.sleep(1000);
-          //smosPF.clickMapZoomOut();
+          smosPF.clickMapZoomOut();
           Thread.sleep(4000);
           smosPF.clickMapBillingAddPinter();
           Thread.sleep(3000);
@@ -167,10 +179,7 @@ public class RiskManagementOrderSummarySteps {
         }else{
             //Assert.fail("Billing Address and Shipping Address are not same");
         }
-
         smosPF.clickToggleFullScreenView();
-
-
     }
 
     public static String getOrderStatus() { return orderStatus;  }

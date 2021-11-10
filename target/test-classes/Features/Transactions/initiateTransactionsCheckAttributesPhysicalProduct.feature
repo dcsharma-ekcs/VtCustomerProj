@@ -28,6 +28,7 @@ Feature: features to test initiate transaction for physical products functionali
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary
+    And validate risk score and status
     And check attributes positive negative
     And check billing and shipping details
     And check shopping cart
@@ -41,7 +42,7 @@ Feature: features to test initiate transaction for physical products functionali
       | CustomerDetails_XLSX_10.xlsx | 1         |
 
 
-  @smoke
+  @smoke1
   Scenario Outline: Transaction add to card Functionality
 
     And user search and add product in card "Chequered Red Shirt" quantity 2
@@ -61,6 +62,7 @@ Feature: features to test initiate transaction for physical products functionali
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary
+    And validate risk score and status
     And check attributes positive negative
     And check billing and shipping details
     And check shopping cart
@@ -81,8 +83,8 @@ Feature: features to test initiate transaction for physical products functionali
     And navigate to risk management list page
     And search order with order id
     And click for transaction summary
-    And check attributes positive negative
     And validate risk score and status
+    And check attributes positive negative
     Then user logout
 
 

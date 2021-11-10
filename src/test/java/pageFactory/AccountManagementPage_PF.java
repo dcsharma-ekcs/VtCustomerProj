@@ -45,7 +45,8 @@ public class AccountManagementPage_PF {
     WebElement users_tab;
     public void clickOnUsersTab() throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(users_tab));
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
+        util.checkProgressbar(retrieving_information_popup);
         users_tab.click();
 
     }
@@ -54,9 +55,8 @@ public class AccountManagementPage_PF {
     WebElement add_new_user;
     public void clickAddNewUserButton() throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(add_new_user));
-        Thread.sleep(1000);
-        util.clickStickyArrow();
-        Thread.sleep(1000);
+        //util.clickStickyArrow();
+        util.checkProgressbar(retrieving_information_popup);
         add_new_user.click();
     }
 
@@ -75,43 +75,56 @@ public class AccountManagementPage_PF {
     @FindBy(xpath = "//button[contains(text(),'CREATE')]")
     WebElement create_button;
 
+    String retrieving_information_popup = "//div[@role='dialog']//div//div//div//label//p";
+    String adminStrId = "//body/div[@id='__next']/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[1]/p[1]/span[1]";
+    String fraudOpsStrId = "//body//div[@id='__next']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div[2]//p[1]//span[1]";
+    String defaultStrId = "//body//div[@id='__next']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div[3]//p[1]//span[1]";
+    String reviewerStrId = "//body//div[@id='__next']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div[3]//p[1]//span[1]";
 
-
-    public void fillCreateNewUserForm() throws InterruptedException {
+    public void fillCreateNewUserForm(String srtRole) throws InterruptedException {
         Random rand = new Random();
         int randNumber = rand.nextInt(10000);
-
+        String roleXPath = adminStrId;
         user_name.click();
         user_name.clear();
         user_name.sendKeys("Test User "+randNumber);
-
         user_email_id.click();
         user_email_id.clear();
         user_email_id.sendKeys(randNumber+"testuser@gmail.com");
-
         user_phone.click();
         user_phone.clear();
         user_phone.sendKeys(randNumber+""+randNumber);
-
         user_role.click();
         Thread.sleep(1000);
-       // Actions action = new Actions(driver);
-       // action.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+        // Actions action = new Actions(driver);
+        // action.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
 
+        System.out.println("srtRole: "+srtRole);
 
-        driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div[3]//p[1]//span[1]")).click();
+        if(srtRole.equalsIgnoreCase("Admin")) roleXPath = adminStrId;
+        if(srtRole.equalsIgnoreCase("Fraud Ops")) roleXPath = fraudOpsStrId;
+        if(srtRole.equalsIgnoreCase("Default")) roleXPath = defaultStrId;
+        if(srtRole.equalsIgnoreCase("Reviewer")) roleXPath = reviewerStrId;
+
+        System.out.println("roleXPath: "+roleXPath);
+
+        driver.findElement(By.xpath(roleXPath)).click();
+
         Thread.sleep(3000);
         create_button.click();
         Thread.sleep(3000);
     }
 
-
+    String strSearchField = "//input[@id='searchInput']";
     @FindBy(xpath = "//input[@id='searchInput']")
     WebElement search_input_field;
     public  void  setSearchText(String searchText) throws InterruptedException {
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(strSearchField)));
         wait.until(ExpectedConditions.elementToBeClickable(search_input_field));
-        wait.until(ExpectedConditions.visibilityOf(search_input_field));
-        Thread.sleep(6000);
+        util.checkProgressbar(retrieving_information_popup);
+        //Thread.sleep(6000);
+
         search_input_field.click();
         search_input_field.clear();
         search_input_field.sendKeys(searchText);
@@ -205,6 +218,29 @@ public class AccountManagementPage_PF {
         wait.until(ExpectedConditions.elementToBeClickable(tabProduct));
         tabProduct.click();
     }
+
+    //////////
+
+    String strHeaderTop = "//div[@class='header-top-nav']";
+    @FindBy(xpath="//div[@class='header-top-nav']")
+    WebElement headerTop;
+    public  String  geHeaderTopNav() throws InterruptedException {
+        return  headerTop.getText().trim().toLowerCase(Locale.ROOT);
+    }
+
+    String strTableHeaderRow = "//div[@class='table-header-row']//ul";
+    @FindBy(xpath="//div[@class='table-header-row']//ul")
+    WebElement tableHeaderRow;
+    public  String  getTableHeaderRow() throws InterruptedException {
+        return  tableHeaderRow.getText().trim().toLowerCase(Locale.ROOT);
+    }
+
+    public  void  checkProgressbarStatus() throws InterruptedException {
+        util.checkProgressbar(retrieving_information_popup);
+    }
+
+//aside[@id='left-panel']//div//div//div//ul
+
 
 
 

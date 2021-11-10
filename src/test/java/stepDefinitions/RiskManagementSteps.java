@@ -41,7 +41,7 @@ public class RiskManagementSteps {
     }
     @And("search order with order id")
     public void search_order_with_order_id() throws InterruptedException {
-            //orderId = "1013";
+            //orderId = "1025";
             riskManagementPagePF.setSearchText(orderId);
             System.out.println("risk ManagementSteps OrderId:  "+orderId);
 
@@ -49,7 +49,7 @@ public class RiskManagementSteps {
     @And("click for transaction summary")
     public void click_for_transaction_summary() throws InterruptedException {
         //td[normalize-space()='1020']
-        //orderId = "1073";
+        //orderId = "1025";
         String strXpath = "//td[normalize-space()='"+orderId+"']";
         System.out.println("strXpath:  "+strXpath);
         Thread.sleep(2000);

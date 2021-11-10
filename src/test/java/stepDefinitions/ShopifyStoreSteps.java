@@ -60,7 +60,7 @@ public class ShopifyStoreSteps {
     @And("search order in shopify with order id")
     public void search_order_in_shopify_with_order_id() throws InterruptedException {
         //shopifyHomePageObject.searchOrder(orderId);
-        //orderId = "1073";
+        //orderId = "1025";
         shopifyHomePageObject.searchOrder(orderId);
     }
 
@@ -89,6 +89,27 @@ public class ShopifyStoreSteps {
     }
 
 
+    @And("click order row in shopify for order detail")
+    public void click_order_row_in_shopify_for_order_detail() throws InterruptedException {
+
+        shopifyHomePageObject.clickOrderPaymentStatus();
+
+    }
+
+    @And("check vesta payment guarantee full analysis")
+    public void check_vesta_payment_guarantee_full_analysis() throws InterruptedException {
+
+        boolean flag = shopifyHomePageObject.checkVestaPaymentGuaranteeTab();
+        if(!flag) Assert.fail("Vesta Payment Guarantee Tab Not Found");
+        shopifyHomePageObject.clickViewFullAnalysisTab();
+
+        shopifyHomePageObject.clickVestaFullAnalysis();
+
+        String text = shopifyHomePageObject.vestaFullAnalysisSection();
+        System.out.println("text: " +text);
+        if(text.length() < 10 ) Assert.fail("Vesta Payment Guarantee Indicators Found");
+
+    }
 
 
 }

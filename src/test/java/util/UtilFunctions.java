@@ -103,7 +103,7 @@ public class UtilFunctions {
     public void checkProgressbar(String strXpath) throws InterruptedException {
 
         for (int second = 0; ; second++) {
-            if (second >= 120)  fail("timeout");
+            if (second >= 30)  fail("timeout");
             try {
                 if (!isElementPresent(By.xpath(strXpath))) break;
             } catch (Exception e) {

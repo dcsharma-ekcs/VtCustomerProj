@@ -15,8 +15,7 @@ import pageFactory.RiskManagementPage_PF;
 import pageFactory.VtCustomerPage_PF;
 import util.UtilFunctions;
 
-import java.util.Locale;
-import java.util.Random;
+import java.util.*;
 
 import static junit.framework.TestCase.fail;
 
@@ -30,12 +29,14 @@ public class AccountManagementSteps {
     public void userClickOnAccountManagementTab() throws InterruptedException {
         driver = VtLoginSteps_PF.getDriver();
         accountManagementPageObj = new AccountManagementPage_PF(driver);
-        Thread.sleep(6000);
+       // Thread.sleep(6000);
+        accountManagementPageObj.checkProgressbarStatus();
         accountManagementPageObj.clickOnAccountManagementTab();
     }
 
     @And("^user search merchant (.*) by search field$")
     public void user_search_merchant_by_search_field(String merchantName) throws InterruptedException {
+        Thread.sleep(3000);
         accountManagementPageObj.setSearchText(merchantName);
 
     }
@@ -120,15 +121,21 @@ public class AccountManagementSteps {
         accountManagementPageObj.clickOnUsersTab();
     }
 
-    //user click on add new user button
     @And("user click on add new user button")
     public void userClickAddNewUserButton() throws InterruptedException {
         Thread.sleep(2000);
         accountManagementPageObj.clickAddNewUserButton();
-        Thread.sleep(1000);
 
-        accountManagementPageObj.fillCreateNewUserForm();
     }
+
+    @And("^user fill add user form with role (.*) and save$")
+    public void userFillAddUserFormAndSave(String srtRole) throws InterruptedException {
+
+        Thread.sleep(1000);
+        accountManagementPageObj.fillCreateNewUserForm(srtRole);
+    }
+
+
 
 
 }

@@ -1,6 +1,7 @@
 Feature: features to test on boarding functionality
 
   @positiveScenario
+    @smoke1
   Scenario Outline: On Boarding Functionality
 
     Given vt user is on customer portal login page
@@ -21,8 +22,8 @@ Feature: features to test on boarding functionality
     And user check payment processor <paymentProcessor>
 
     Examples:
-      | merchantName    | strStatus | merchantVertical | merchantSubVertical | paymentProcessor |
-      | DevTest01102021 | Now Live  | Event Tickets    | Virtual             | Atome            |
+      | merchantName   | strStatus | merchantVertical | merchantSubVertical | paymentProcessor |
+      | TestInt09NovS2 | Now Live  | Event Tickets    | Virtual             | Atome            |
 
 
   @smoke
@@ -40,7 +41,7 @@ Feature: features to test on boarding functionality
     And user check payment processor <paymentProcessor>
 
     Examples:
-      | merchantName    | strStatus | merchantVertical | merchantSubVertical | paymentProcessor |
-      | DevTest01102021 | Now Live  | Event Tickets    | Virtual             | Atome            |
+      | merchantName   | strStatus | merchantVertical | merchantSubVertical | paymentProcessor  |
+      | TestInt09NovS2 | Now Live  | Telco            | Carrier - Top Up    | WorldPay (Direct) |
 
 
