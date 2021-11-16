@@ -239,7 +239,15 @@ public class AccountManagementPage_PF {
         util.checkProgressbar(retrieving_information_popup);
     }
 
-//aside[@id='left-panel']//div//div//div//ul
+    String srtManagementDetailArrow = "//tbody/tr[1]/td[8]/span[1]//*[name()='svg']";
+    public boolean isManagementDetailPresent() throws InterruptedException {
+        return util.isElementPresent(By.xpath(srtManagementDetailArrow));
+    }
+
+    String srtAddUserButton = "//body//div[@id='__next']//div[@id='customUserDiv']//div//div//div//div//div//span[1]";
+    public boolean isAddUserButtonPresent() throws InterruptedException {
+        return util.isElementPresent(By.xpath(srtAddUserButton));
+    }
 
 
 

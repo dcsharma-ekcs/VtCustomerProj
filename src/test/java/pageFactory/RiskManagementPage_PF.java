@@ -1,6 +1,7 @@
 package pageFactory;
 
 import dataProviders.ConfigFileReader;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,6 +24,12 @@ public class RiskManagementPage_PF {
         PageFactory.initElements(driver, this);
         util = new UtilFunctions(driver);
         wait  = new WebDriverWait(driver, configFileReader.getFluentWait());
+    }
+
+
+    String retrieving_information_popup = "//div[@role='dialog']//div//div//div//label//p";
+    public  void  checkProgressbarStatus() throws InterruptedException {
+        util.checkProgressbar(retrieving_information_popup);
     }
 
     //li[normalize-space()='Risk Management']
@@ -84,6 +91,18 @@ public class RiskManagementPage_PF {
         search_input_field.clear();
         search_input_field.sendKeys(orderId);
     }
+
+    String srtOrderDetailButton = "//tbody/tr[1]/td[8]/button[1]/span[1]//*[name()='svg']";
+    public boolean isOrderDetailPresent() throws InterruptedException {
+        return util.isElementPresent(By.xpath(srtOrderDetailButton));
+    }
+
+    String srtPNaddButton = "//div[@id='customBreadCrumbs']//div//div[2]//div[1]//div[1]//div[1]//button[1]//span[1]";
+    public boolean isAddPNButtonPresent() throws InterruptedException {
+        return util.isElementPresent(By.xpath(srtPNaddButton));
+    }
+
+
 
 
 }

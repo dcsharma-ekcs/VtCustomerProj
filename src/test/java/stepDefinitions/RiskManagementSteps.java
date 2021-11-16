@@ -35,7 +35,7 @@ public class RiskManagementSteps {
     }
     @And("navigate to risk management list page")
     public void navigate_to_risk_management_list_page() throws InterruptedException {
-
+            riskManagementPagePF.checkProgressbarStatus();
             riskManagementPagePF.clickOnRiskManagementTab();
 
     }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="1" name="stepDefinitions.TestRunner" time="108.291" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="stepDefinitions.TestRunner" time="83.34" errors="0" skipped="0">
   <properties>
-    <property name="idea.version" value="2021.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.12+8-LTS-237"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.12\bin"/>
@@ -21,18 +20,16 @@
     <property name="java.runtime.version" value="11.0.12+8-LTS-237"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
-    <property name="idea.modules.paths.file" value="C:\Users\GUNTAS\AppData\Local\JetBrains\IdeaIC2021.2\Maven\idea-projects-state-bdc9b38d.properties"/>
     <property name="java.io.tmpdir" value="C:\Users\GUNTAS\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2\plugins\maven\lib\maven-event-listener.jar"/>
-    <property name="classworlds.conf" value="C:\Users\GUNTAS\AppData\Local\Temp\idea-5-mvn.conf"/>
+    <property name="classworlds.conf" value="C:\Program Files\apache-maven-3.8.2\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.12\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Java\jdk-11.0.12\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files\nodejs\;C:\Program Files\apache-maven-3.8.2\bin;C:\Users\GUNTAS\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2\bin;;C:\Users\GUNTAS\AppData\Roaming\npm;."/>
-    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2\plugins\maven\lib\maven3/conf"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.12\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Java\jdk-11.0.12\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files\nodejs\;C:\Program Files\apache-maven-3.8.2\bin;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Users\GUNTAS\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2\bin;;C:\Users\GUNTAS\AppData\Roaming\npm;C:\Program Files\Azure Data Studio\bin;."/>
+    <property name="maven.conf" value="C:\Program Files\apache-maven-3.8.2/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="55.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -41,13 +38,13 @@
     <property name="user.home" value="C:\Users\GUNTAS"/>
     <property name="user.timezone" value="Asia/Calcutta"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
-    <property name="file.encoding" value="UTF-8"/>
+    <property name="file.encoding" value="Cp1252"/>
     <property name="java.specification.version" value="11"/>
     <property name="user.name" value="GUNTAS"/>
-    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
+    <property name="java.class.path" value="C:\Program Files\apache-maven-3.8.2\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2021.2"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-11.0.12"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -55,61 +52,18 @@
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.version" value="11.0.12"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2\plugins\maven\lib\maven3"/>
+    <property name="sun.stderr.encoding" value="cp437"/>
+    <property name="maven.home" value="C:\Program Files\apache-maven-3.8.2"/>
     <property name="file.separator" value="\"/>
     <property name="java.version.date" value="2021-07-20"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="java.vendor.version" value="18.9"/>
+    <property name="sun.stdout.encoding" value="cp437"/>
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="features to test add positive entry" name="Add Positive Entry Functionality" time="108.291">
-    <failure message="timeout" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: timeout
-	at junit.framework.Assert.fail(Assert.java:57)
-	at junit.framework.TestCase.fail(TestCase.java:223)
-	at util.utilFunctions.waitAndClickXpath(utilFunctions.java:20)
-	at pageFactory.PositiveNegativeListPage_PF.clickOnRiskManagementTab(PositiveNegativeListPage_PF.java:38)
-	at stepDefinitions.positiveEntrySteps.click_on_risk_management(positiveEntrySteps.java:35)
-	at ✽.click on Risk Management(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Riskmanagement/Configurations/PositiveList/addPositiveEnrty.feature:10)
-</failure>
-    <system-out>
-@positiveScenario
-Scenario Outline: Add Positive Entry Functionality                          # src/test/resources/Features/Riskmanagement/Configurations/PositiveList/addPositiveEnrty.feature:22
-=========VtLoginSteps_PF===========
-  Given vt user on login page                                               # stepDefinitions.VtLoginSteps_PF.vt_user_on_login_page()
-  When vt user is enter vesta_integration@trustvesta.com and !@#asdfASDF123 # stepDefinitions.VtLoginSteps_PF.vt_user_is_enter_user1_and_password1(java.lang.String,java.lang.String)
-  And click on vt login button                                              # stepDefinitions.VtLoginSteps_PF.click_on_vt_login_button()
-=========positiveEntrySteps===========
-Title:....Welcome To Vesta
-  When user on dashboard page                                               # stepDefinitions.positiveEntrySteps.user_on_dashboard_page()
-  And click on Risk Management                                              # stepDefinitions.positiveEntrySteps.click_on_risk_management()
-      junit.framework.AssertionFailedError: timeout
-	at junit.framework.Assert.fail(Assert.java:57)
-	at junit.framework.TestCase.fail(TestCase.java:223)
-	at util.utilFunctions.waitAndClickXpath(utilFunctions.java:20)
-	at pageFactory.PositiveNegativeListPage_PF.clickOnRiskManagementTab(PositiveNegativeListPage_PF.java:38)
-	at stepDefinitions.positiveEntrySteps.click_on_risk_management(positiveEntrySteps.java:35)
-	at ✽.click on Risk Management(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Riskmanagement/Configurations/PositiveList/addPositiveEnrty.feature:10)
-
-  And click on configurations                                               # stepDefinitions.positiveEntrySteps.click_on_configurations()
-  And click on Positive Negative List                                       # stepDefinitions.positiveEntrySteps.click_on_positive_negative_list()
-  When user on Configurations Page                                          # stepDefinitions.positiveEntrySteps.user_on_configurations_page()
-  And click on Add Positive Entry                                           # stepDefinitions.positiveEntrySteps.click_on_add_positive_entry()
-  When open Add New Entry Form                                              # null
-  And user Fill Add New Entry Form                                          # stepDefinitions.positiveEntrySteps.user_fill_add_new_entry_form()
-  And click on Add New Entry Create Button                                  # stepDefinitions.positiveEntrySteps.click_on_add_new_entry_create_button()
-  Then user is navigated to Configurations page                             # stepDefinitions.positiveEntrySteps.user_is_navigated_to_configurations_page()
-</system-out>
-    <system-err>[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 92.0.4515.107 (resolved driver for Chrome 92)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\GUNTAS\.cache\selenium\chromedriver\win32\92.0.4515.107\chromedriver.exe
-Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 26096
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Aug 22, 2021 11:27:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-</system-err>
-  </testcase>
+  <testcase classname="features to test vt login functionality" name="Successful Login with Valid Credentials Functionality" time="49.449"/>
+  <testcase classname="features to test vt login functionality" name="Login with Invalid Credentials Functionality" time="33.891"/>
 </testsuite>
