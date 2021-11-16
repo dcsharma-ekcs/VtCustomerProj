@@ -21,5 +21,5 @@ import org.junit.runner.RunWith;
         ,"junit:target/JunitReports/junitReports.xml"}
 )
 
-public class ATestRunnerUserFeature {
+public class TestRunnerUserFeature {
 }
