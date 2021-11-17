@@ -7,6 +7,7 @@ C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\stepDefinitions\Instal
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\stepDefinitions\RiskManagementOrderSummarySteps.java
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\stepDefinitions\ATestRunnerOnBoarding.java
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\pageFactory\RiskManagementPage_PF.java
+C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\stepDefinitions\TestRunnerUserFeature.java
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\stepDefinitions\TestRunner.java
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\com\vtcustomer\rest\api\AccessToken_GET.java
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\util\UtilFunctions.java
@@ -27,7 +28,6 @@ C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\JavaPackage\MyTest.jav
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\stepDefinitions\ATestRunnerTransactionsWithDecisions.java
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\stepDefinitions\UnInstallAppSteps.java
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\pageFactory\PositiveNegativeListPage_PF.java
-C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\stepDefinitions\ATestRunnerUserFeature.java
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\pageFactory\VtCustomerPage_PF.java
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\stepDefinitions\RiskManagementSteps.java
 C:\Users\GUNTAS\IdeaProjects\VtCustomerProj\src\test\java\pageFactory\OnBoardingPage_PF.java

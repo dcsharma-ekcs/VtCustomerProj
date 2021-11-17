@@ -3,6 +3,7 @@ JavaPackage\ExcelFileRead.class
 stepDefinitions\ATestRunnerTransactionsWithDecisions.class
 stepDefinitions\TestRunner.class
 pageFactory\PositiveNegativeListPage_PF.class
+stepDefinitions\TestRunnerUserFeature.class
 stepDefinitions\ShopifyStoreSteps.class
 pageFactory\VtCustomerPage_PF.class
 pageFactory\RiskManagementPage_PF.class
@@ -32,6 +33,5 @@ stepDefinitions\UserFeatureSteps.class
 stepDefinitions\ATestRunnerDigitalProduct.class
 stepDefinitions\ATestRunnerOnBoarding.class
 pages\ShopifyHomePageObject.class
-stepDefinitions\ATestRunnerUserFeature.class
 stepDefinitions\AccountManagementSteps.class
 stepDefinitions\RiskManagementOrderSummarySteps.class

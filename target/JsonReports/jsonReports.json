@@ -1,0 +1,123 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-11-17T04:38:14.413Z",
+        "line": 18,
+        "name": "User Roles Permissions Functionality",
+        "description": "",
+        "id": "features-to-test-user-roles-permissions;user-roles-permissions-functionality;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 18516763900,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "vt user is on customer portal login page",
+            "match": {
+              "location": "stepDefinitions.VtLoginSteps_PF.vt_user_on_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5964677800,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "vt user is enter username sayafi6424@datakop.com and password -ae\"013(N518!Eu",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sayafi6424@datakop.com",
+                  "offset": 26
+                },
+                {
+                  "val": "-ae\"013(N518!Eu",
+                  "offset": 62
+                }
+              ],
+              "location": "stepDefinitions.VtLoginSteps_PF.vt_user_is_enter_user_and_password(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 7720706300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "click on vt login button",
+            "match": {
+              "location": "stepDefinitions.VtLoginSteps_PF.click_on_vt_login_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16521308900,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user is navigated to the vt home page",
+            "match": {
+              "location": "stepDefinitions.VtLoginSteps_PF.user_is_navigated_to_the_vt_home_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20242390300,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user click on account management tab",
+            "match": {
+              "location": "stepDefinitions.AccountManagementSteps.userClickOnAccountManagementTab()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 72649516800,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user read top level feature for role Default",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Default",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.UserFeatureSteps.userReadTopLevelFeatureForRole(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@positiveScenario"
+          },
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@smoke"
+          }
+        ]
+      }
+    ],
+    "name": "features to test user roles permissions",
+    "description": "",
+    "id": "features-to-test-user-roles-permissions",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/AccountManagement/Merchant/userRolesPermissions.feature",
+    "tags": []
+  }
+]

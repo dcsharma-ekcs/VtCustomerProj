@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="1" name="stepDefinitions.TestRunner" time="59.491" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="stepDefinitions.TestRunnerUserFeature" time="141.697" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.12+8-LTS-237"/>
@@ -66,32 +66,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="features to test vt login functionality" name="Login with Invalid Credentials Functionality" time="59.491">
-    <failure message="Test fail" type="java.lang.AssertionError">java.lang.AssertionError: Test fail
-	at org.junit.Assert.fail(Assert.java:89)
-	at stepDefinitions.VtLoginSteps_PF.error_message_should_throw(VtLoginSteps_PF.java:116)
-	at ✽.error message &quot;Password or e-mail address is incorrect, please try again.&quot; should throw(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Login/vtLogin.feature:19)
-</failure>
-    <system-out>..........VtLoginSteps..........
-exception: org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=95.0.4638.69)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-O214AM8&apos;, ip: &apos;192.168.148.252&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.12&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 95.0.4638.69 (6a1600ed572fe..., userDataDir: C:\Users\GUNTAS\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55696}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 8216fab3cf757045d2c5f0569dc24dbd
-*** Element info: {Using=id, value=passwordHint}
-errorMsg: fail
-</system-out>
-    <system-err>[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 95.0.4638.69 (resolved driver for Chrome 95)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\GUNTAS\.cache\selenium\chromedriver\win32\95.0.4638.69\chromedriver.exe
-Starting ChromeDriver 95.0.4638.69 (6a1600ed572fedecd573b6c2b90a22fe6392a410-refs/branch-heads/4638@{#984}) on port 5625
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Nov 17, 2021 10:07:29 AM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-[1637123885.979][WARNING]: Timed out connecting to Chrome, retrying...
-</system-err>
-  </testcase>
+  <testcase classname="features to test user roles permissions" name="User Roles Permissions Functionality" time="141.697"/>
 </testsuite>

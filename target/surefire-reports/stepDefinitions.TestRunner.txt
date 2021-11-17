@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: stepDefinitions.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 83.789 sec
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 59.911 sec <<< FAILURE!
+Login with Invalid Credentials Functionality(features to test vt login functionality)  Time elapsed: 59.491 sec  <<< FAILURE!
+java.lang.AssertionError: Test fail
+	at org.junit.Assert.fail(Assert.java:89)
+	at stepDefinitions.VtLoginSteps_PF.error_message_should_throw(VtLoginSteps_PF.java:116)
+	at ?.error message "Password or e-mail address is incorrect, please try again." should throw(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Login/vtLogin.feature:19)
+

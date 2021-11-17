@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="141.717">
+<testcase classname="features to test user roles permissions" name="User Roles Permissions Functionality" time="141.665">
+<system-out><![CDATA[Given vt user is on customer portal login page..............................passed
+When vt user is enter username sayafi6424@datakop.com and password -ae"013(N518!Eu.passed
+And click on vt login button................................................passed
+Then user is navigated to the vt home page..................................passed
+When user click on account management tab...................................passed
+And user read top level feature for role Default............................passed
+]]></system-out>
+</testcase>
+</testsuite>
