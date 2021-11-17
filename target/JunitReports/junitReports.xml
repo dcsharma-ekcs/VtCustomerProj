@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="318.432">
-<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction buy it now Functionality" time="318.258">
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="294.747">
+<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction buy it now Functionality" time="294.566">
 <failure message="timeout" type="junit.framework.AssertionFailedError"><![CDATA[Given user on my shopify store page.........................................passed
 When user is login in to store with url and password........................passed
 And click on enter button...................................................passed
