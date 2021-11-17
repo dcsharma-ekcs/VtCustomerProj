@@ -1,6 +1,7 @@
 Feature: features to test vt login functionality
 
   @positiveScenario
+  @smoke
   Scenario: Successful Login with Valid Credentials Functionality
 
     Given vt user is on customer portal login page

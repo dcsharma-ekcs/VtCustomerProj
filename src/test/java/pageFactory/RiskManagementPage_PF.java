@@ -38,8 +38,9 @@ public class RiskManagementPage_PF {
     WebElement risk_management_tab;
     public void clickOnRiskManagementTab() throws InterruptedException {
         //util.waitForXpathElement(srtRiskManagement);
-        wait.until(ExpectedConditions.elementToBeClickable(risk_management_tab));
         Thread.sleep(5000);
+        wait.until(ExpectedConditions.elementToBeClickable(risk_management_tab));
+        //Thread.sleep(5000);
         risk_management_tab.click();
     }
 
