@@ -1,11 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="141.717">
-<testcase classname="features to test user roles permissions" name="User Roles Permissions Functionality" time="141.665">
-<system-out><![CDATA[Given vt user is on customer portal login page..............................passed
-When vt user is enter username sayafi6424@datakop.com and password -ae"013(N518!Eu.passed
-And click on vt login button................................................passed
-Then user is navigated to the vt home page..................................passed
-When user click on account management tab...................................passed
-And user read top level feature for role Default............................passed
-]]></system-out>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="278.802">
+<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction buy it now Functionality" time="278.627">
+<failure message="timeout" type="junit.framework.AssertionFailedError"><![CDATA[Given user on my shopify store page.........................................passed
+When user is login in to store with url and password........................passed
+And click on enter button...................................................passed
+When user is navigated to store home page...................................passed
+And click on catalog........................................................passed
+And user search and add product in card "Chequered Red Shirt" quantity 2....passed
+When click on buy it now....................................................passed
+And user fill checkout email or phone from CustomerDetails_XLSX_10.xlsx and 1.passed
+When user fill contact information from CustomerDetails_XLSX_10.xlsx and 1..passed
+And click on continue to shipping...........................................passed
+When user choose a shipping method..........................................passed
+And click on continue to payment............................................passed
+When user fill credit card detail...........................................passed
+And click on pay now button.................................................passed
+Then user is navigated to order detail page.................................passed
+When user login to vt customer portal url username and password.............passed
+And navigate to risk management list page...................................passed
+And search order with order id..............................................passed
+And click for transaction summary...........................................failed
+And check order status......................................................skipped
+And click decisions tab.....................................................skipped
+And search store for get decisions settings.................................skipped
+And user logout.............................................................skipped
+When user navigate to partners shopify page.................................skipped
+When user login in shopify partners with email and password for store.......skipped
+And shopify search and login in store.......................................skipped
+And click on store tab......................................................skipped
+And search order in shopify with order id...................................skipped
+And Check order payment status..............................................skipped
+And click order row in shopify for order detail.............................skipped
+And check vesta payment guarantee full analysis.............................skipped
+
+StackTrace:
+junit.framework.AssertionFailedError: timeout
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:223)
+	at util.UtilFunctions.waitAndClickXpath5sec(UtilFunctions.java:91)
+	at stepDefinitions.RiskManagementSteps.click_for_transaction_summary(RiskManagementSteps.java:56)
+	at ✽.click for transaction summary(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckDecisionsCheckShopify.feature:28)
+]]></failure>
 </testcase>
 </testsuite>

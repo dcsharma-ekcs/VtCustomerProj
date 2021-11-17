@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/Features/Transactions/initiateTransactionsCheckDecisionsCheckShopify.feature"
         ,glue={"stepDefinitions"}
+        ,tags= "@smoke"
         ,monochrome = true
         ,plugin = {"pretty", "html:target/HtmlReports/initiateTransactionsCheckDecisionsCheckShopify.html"
         ,"json:target/JsonReports/jsonReports.json"

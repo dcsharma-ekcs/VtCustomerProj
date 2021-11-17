@@ -10,7 +10,8 @@ Feature: features to test vt login functionality
 
 
 
-  @negativeScenario @smoke
+  @negativeScenario
+  @smoke
   Scenario: Login with Invalid Credentials Functionality
 
     Given vt user is on customer portal login page

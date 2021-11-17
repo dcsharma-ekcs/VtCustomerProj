@@ -13,9 +13,9 @@ Feature: features to test user roles permissions
 
     @smoke
     Examples:
-      | userName               | password        | userRole  |
+      | userName               | password        | userRole |
       #| wojadi4002@d3ff.com    | d5($5#yG46m3z'Y | Admin     |
-      | sayafi6424@datakop.com | -ae"013(N518!Eu | Default   |
+      | sayafi6424@datakop.com | -ae"013(N518!Eu | Default  |
       #| molah83258@dukeoo.com  | "6,L41t3&)lX9FR | Fraud Ops |
       #| yavig41061@dukeoo.com  | 7V'00+%5Sgp%S32 | Reviewer  |
 
