@@ -37,7 +37,7 @@ public class RiskManagementPage_PF {
     @FindBy(xpath = "//div[@id='__next']//div//header//div//div//img[@id='Risk ManagementId']")
     WebElement risk_management_tab;
     public void clickOnRiskManagementTab() throws InterruptedException {
-        util.waitForXpathElement(srtRiskManagement);
+        //util.waitForXpathElement(srtRiskManagement);
         wait.until(ExpectedConditions.elementToBeClickable(risk_management_tab));
         Thread.sleep(5000);
         risk_management_tab.click();

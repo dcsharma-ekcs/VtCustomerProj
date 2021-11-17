@@ -34,7 +34,7 @@ public class AccountManagementPage_PF {
     @FindBy(xpath = "//div[@id='__next']//div//header//div//div//img[@id='Account ManagementId']")
     WebElement account_management_tab;
     public void clickOnAccountManagementTab() throws InterruptedException {
-        util.waitForXpathElement(srtAccountManagement);
+       // util.waitForXpathElement(srtAccountManagement);
         WebElement tmp = wait.until(ExpectedConditions.elementToBeClickable(account_management_tab));
         Thread.sleep(5000);
         account_management_tab.click();
