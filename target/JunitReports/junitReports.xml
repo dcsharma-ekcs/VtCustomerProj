@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="294.747">
-<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction buy it now Functionality" time="294.566">
-<failure message="timeout" type="junit.framework.AssertionFailedError"><![CDATA[Given user on my shopify store page.........................................passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="258.837">
+<testcase classname="features to test initiate transaction for physical products functionality" name="Transaction buy it now Functionality" time="258.631">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h3[normalize-space()='Vesta Payment Guarantee-Int']&quot;}&#10;  (Session info: chrome=95.0.4638.69)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-O214AM8', ip: '192.168.103.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 95.0.4638.69 (6a1600ed572fe..., userDataDir: C:\Users\GUNTAS\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59253}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 7a671465e8f184a5ec10152c04a48cf2&#10;*** Element info: {Using=xpath, value=//h3[normalize-space()='Vesta Payment Guarantee-Int']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given user on my shopify store page.........................................passed
 When user is login in to store with url and password........................passed
 And click on enter button...................................................passed
 When user is navigated to store home page...................................passed
@@ -18,27 +18,47 @@ Then user is navigated to order detail page.................................pass
 When user login to vt customer portal url username and password.............passed
 And navigate to risk management list page...................................passed
 And search order with order id..............................................passed
-And click for transaction summary...........................................failed
-And check order status......................................................skipped
-And click decisions tab.....................................................skipped
-And search store for get decisions settings.................................skipped
-And user logout.............................................................skipped
-When user navigate to partners shopify page.................................skipped
-When user login in shopify partners with email and password for store.......skipped
-And shopify search and login in store.......................................skipped
-And click on store tab......................................................skipped
-And search order in shopify with order id...................................skipped
-And Check order payment status..............................................skipped
-And click order row in shopify for order detail.............................skipped
-And check vesta payment guarantee full analysis.............................skipped
+And click for transaction summary...........................................passed
+And check order status......................................................passed
+And click decisions tab.....................................................passed
+And search store for get decisions settings.................................passed
+And user logout.............................................................passed
+When user navigate to partners shopify page.................................passed
+When user login in shopify partners with email and password for store.......passed
+And shopify search and login in store.......................................passed
+And click on store tab......................................................passed
+And search order in shopify with order id...................................passed
+And Check order payment status..............................................passed
+And click order row in shopify for order detail.............................passed
+And check vesta payment guarantee full analysis.............................failed
 
 StackTrace:
-junit.framework.AssertionFailedError: timeout
-	at junit.framework.Assert.fail(Assert.java:57)
-	at junit.framework.TestCase.fail(TestCase.java:223)
-	at util.UtilFunctions.waitAndClickXpath5sec(UtilFunctions.java:91)
-	at stepDefinitions.RiskManagementSteps.click_for_transaction_summary(RiskManagementSteps.java:57)
-	at ✽.click for transaction summary(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckDecisionsCheckShopify.feature:28)
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3[normalize-space()='Vesta Payment Guarantee-Int']"}
+  (Session info: chrome=95.0.4638.69)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-O214AM8', ip: '192.168.103.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 95.0.4638.69 (6a1600ed572fe..., userDataDir: C:\Users\GUNTAS\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59253}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 7a671465e8f184a5ec10152c04a48cf2
+*** Element info: {Using=xpath, value=//h3[normalize-space()='Vesta Payment Guarantee-Int']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at pages.ShopifyHomePageObject.checkVestaPaymentGuaranteeTab(ShopifyHomePageObject.java:81)
+	at stepDefinitions.ShopifyStoreSteps.check_vesta_payment_guarantee_full_analysis(ShopifyStoreSteps.java:102)
+	at ✽.check vesta payment guarantee full analysis(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckDecisionsCheckShopify.feature:40)
 ]]></failure>
 </testcase>
 </testsuite>

@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2395888800,
+              "duration": 3305092800,
               "status": "passed"
             },
             "line": 5,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 1200135000,
+              "duration": 1511172300,
               "status": "passed"
             },
             "line": 6,
@@ -35,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 1366765600,
+              "duration": 1547726300,
               "status": "passed"
             },
             "line": 7,
@@ -58,7 +58,7 @@
           },
           {
             "result": {
-              "duration": 6703665100,
+              "duration": 6061657900,
               "status": "passed"
             },
             "line": 9,
@@ -71,7 +71,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-11-17T13:12:53.123Z",
+        "start_timestamp": "2021-11-18T15:28:09.649Z",
         "line": 46,
         "name": "Transaction buy it now Functionality",
         "description": "",
@@ -81,7 +81,7 @@
         "steps": [
           {
             "result": {
-              "duration": 11869085500,
+              "duration": 11690853000,
               "status": "passed"
             },
             "line": 15,
@@ -103,7 +103,7 @@
           },
           {
             "result": {
-              "duration": 3107341700,
+              "duration": 3100626900,
               "status": "passed"
             },
             "line": 16,
@@ -115,7 +115,7 @@
           },
           {
             "result": {
-              "duration": 3933460000,
+              "duration": 3679188400,
               "status": "passed"
             },
             "line": 17,
@@ -137,7 +137,7 @@
           },
           {
             "result": {
-              "duration": 4135227700,
+              "duration": 4165745200,
               "status": "passed"
             },
             "line": 18,
@@ -159,7 +159,7 @@
           },
           {
             "result": {
-              "duration": 8580294900,
+              "duration": 11019570000,
               "status": "passed"
             },
             "line": 19,
@@ -171,7 +171,7 @@
           },
           {
             "result": {
-              "duration": 3000917100,
+              "duration": 3009702100,
               "status": "passed"
             },
             "line": 20,
@@ -183,7 +183,7 @@
           },
           {
             "result": {
-              "duration": 5130196300,
+              "duration": 5380755500,
               "status": "passed"
             },
             "line": 21,
@@ -195,7 +195,7 @@
           },
           {
             "result": {
-              "duration": 4345735200,
+              "duration": 4269520800,
               "status": "passed"
             },
             "line": 22,
@@ -207,7 +207,7 @@
           },
           {
             "result": {
-              "duration": 4081708000,
+              "duration": 4075001600,
               "status": "passed"
             },
             "line": 23,
@@ -219,7 +219,7 @@
           },
           {
             "result": {
-              "duration": 6553859300,
+              "duration": 9893521400,
               "status": "passed"
             },
             "line": 24,
@@ -231,7 +231,7 @@
           },
           {
             "result": {
-              "duration": 11924120600,
+              "duration": 18801845300,
               "status": "passed"
             },
             "line": 25,
@@ -243,7 +243,7 @@
           },
           {
             "result": {
-              "duration": 55122785500,
+              "duration": 68828470100,
               "status": "passed"
             },
             "line": 26,
@@ -255,7 +255,7 @@
           },
           {
             "result": {
-              "duration": 3760959200,
+              "duration": 3799566300,
               "status": "passed"
             },
             "line": 27,
@@ -267,9 +267,8 @@
           },
           {
             "result": {
-              "error_message": "junit.framework.AssertionFailedError: timeout\r\n\tat junit.framework.Assert.fail(Assert.java:57)\r\n\tat junit.framework.TestCase.fail(TestCase.java:223)\r\n\tat util.UtilFunctions.waitAndClickXpath5sec(UtilFunctions.java:91)\r\n\tat stepDefinitions.RiskManagementSteps.click_for_transaction_summary(RiskManagementSteps.java:57)\r\n\tat ✽.click for transaction summary(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckDecisionsCheckShopify.feature:28)\r\n",
-              "duration": 157275125700,
-              "status": "failed"
+              "duration": 3132044500,
+              "status": "passed"
             },
             "line": 28,
             "name": "click for transaction summary",
@@ -280,7 +279,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1466412100,
+              "status": "passed"
             },
             "line": 29,
             "name": "check order status",
@@ -291,7 +291,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2165853700,
+              "status": "passed"
             },
             "line": 30,
             "name": "click decisions tab",
@@ -302,7 +303,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 7535994200,
+              "status": "passed"
             },
             "line": 31,
             "name": "search store for get decisions settings",
@@ -313,7 +315,7 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "status": "passed"
             },
             "line": 32,
             "name": "user logout",
@@ -324,7 +326,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3060737600,
+              "status": "passed"
             },
             "line": 33,
             "name": "user navigate to partners shopify page",
@@ -335,7 +338,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 14252694800,
+              "status": "passed"
             },
             "line": 34,
             "name": "user login in shopify partners with email and password for store",
@@ -346,7 +350,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 10290774000,
+              "status": "passed"
             },
             "line": 35,
             "name": "shopify search and login in store",
@@ -357,7 +362,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 10288524600,
+              "status": "passed"
             },
             "line": 36,
             "name": "click on store tab",
@@ -368,7 +374,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2821059000,
+              "status": "passed"
             },
             "line": 37,
             "name": "search order in shopify with order id",
@@ -379,7 +386,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 6235326900,
+              "status": "passed"
             },
             "line": 38,
             "name": "Check order payment status",
@@ -390,7 +398,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 105705200,
+              "status": "passed"
             },
             "line": 39,
             "name": "click order row in shopify for order detail",
@@ -401,7 +410,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//h3[normalize-space()\u003d\u0027Vesta Payment Guarantee-Int\u0027]\"}\n  (Session info: chrome\u003d95.0.4638.69)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-O214AM8\u0027, ip: \u0027192.168.103.4\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.12\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 95.0.4638.69 (6a1600ed572fe..., userDataDir: C:\\Users\\GUNTAS\\AppData\\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59253}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 7a671465e8f184a5ec10152c04a48cf2\n*** Element info: {Using\u003dxpath, value\u003d//h3[normalize-space()\u003d\u0027Vesta Payment Guarantee-Int\u0027]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pages.ShopifyHomePageObject.checkVestaPaymentGuaranteeTab(ShopifyHomePageObject.java:81)\r\n\tat stepDefinitions.ShopifyStoreSteps.check_vesta_payment_guarantee_full_analysis(ShopifyStoreSteps.java:102)\r\n\tat ✽.check vesta payment guarantee full analysis(file:///C:/Users/GUNTAS/IdeaProjects/VtCustomerProj/src/test/resources/Features/Transactions/initiateTransactionsCheckDecisionsCheckShopify.feature:40)\r\n",
+              "duration": 33062817700,
+              "status": "failed"
             },
             "line": 40,
             "name": "check vesta payment guarantee full analysis",
