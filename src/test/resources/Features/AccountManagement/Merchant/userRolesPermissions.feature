@@ -1,7 +1,7 @@
 Feature: features to test user roles permissions
 
   @positiveScenario
-    @smoke
+    @smoke1
   Scenario Outline: User Roles Permissions Functionality
 
     Given vt user is on customer portal login page
@@ -11,7 +11,7 @@ Feature: features to test user roles permissions
     When user click on account management tab
     And user read top level feature for role <userRole>
 
-    @smoke
+    @smoke1
     Examples:
       | userName               | password        | userRole |
       #| wojadi4002@d3ff.com    | d5($5#yG46m3z'Y | Admin     |
