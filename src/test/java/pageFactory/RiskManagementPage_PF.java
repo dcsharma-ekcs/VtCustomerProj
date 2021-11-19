@@ -37,11 +37,11 @@ public class RiskManagementPage_PF {
     @FindBy(xpath = " //li[normalize-space()='Risk Management']")
     WebElement risk_management_tab;
     public void clickOnRiskManagementTab() throws InterruptedException {
-        util.waitForXpathElement(srtRiskManagement);
-        Thread.sleep(15000);
-        wait.until(ExpectedConditions.elementToBeClickable(risk_management_tab));
+        //util.waitForXpathElement(srtRiskManagement);
+        // Thread.sleep(15000);
+        WebElement ele5 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(srtRiskManagement)));
         Thread.sleep(5000);
-        risk_management_tab.click();
+        ele5.click();
     }
 
 
