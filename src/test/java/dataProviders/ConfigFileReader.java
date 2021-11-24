@@ -10,7 +10,7 @@ public class ConfigFileReader {
 
     private Properties properties;
    // String projectPath = System.getProperty("user.dir");
-    private final String propertyFilePath = "configs/$(server.int).properties";
+    private final String propertyFilePath = "configs/$(System.StageName).properties";
 
 
     public ConfigFileReader() {
