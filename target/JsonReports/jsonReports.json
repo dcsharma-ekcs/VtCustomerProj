@@ -1,0 +1,153 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-11-23T17:50:42.922Z",
+        "line": 5,
+        "name": "Successful Login with Valid Credentials Functionality",
+        "description": "",
+        "id": "features-to-test-vt-login-functionality;successful-login-with-valid-credentials-functionality",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 19463446300,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "vt user is on customer portal login page",
+            "match": {
+              "location": "stepDefinitions.VtLoginSteps_PF.vt_user_on_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8567059500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "vt user is enter username and password",
+            "match": {
+              "location": "stepDefinitions.VtLoginSteps_PF.vt_user_is_enter_user_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2562108700,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "click on vt login button",
+            "match": {
+              "location": "stepDefinitions.VtLoginSteps_PF.click_on_vt_login_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16685186300,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user is navigated to the vt home page",
+            "match": {
+              "location": "stepDefinitions.VtLoginSteps_PF.user_is_navigated_to_the_vt_home_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@positiveScenario"
+          },
+          {
+            "name": "@smoke"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-11-23T17:51:30.284Z",
+        "line": 16,
+        "name": "Login with Invalid Credentials Functionality",
+        "description": "",
+        "id": "features-to-test-vt-login-functionality;login-with-invalid-credentials-functionality",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6678223600,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "vt user is on customer portal login page",
+            "match": {
+              "location": "stepDefinitions.VtLoginSteps_PF.vt_user_on_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 13912203100,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "vt user is enter username and wrong password",
+            "match": {
+              "location": "stepDefinitions.VtLoginSteps_PF.vt_user_is_enter_user_and_wrong_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2323863500,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "click on vt login button",
+            "match": {
+              "location": "stepDefinitions.VtLoginSteps_PF.click_on_vt_login_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6054760700,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "error message \"Password or e-mail address is incorrect, please try again.\" should throw",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Password or e-mail address is incorrect, please try again.\"",
+                  "offset": 14
+                }
+              ],
+              "location": "stepDefinitions.VtLoginSteps_PF.error_message_should_throw(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@negativeScenario"
+          },
+          {
+            "name": "@smoke"
+          }
+        ]
+      }
+    ],
+    "name": "features to test vt login functionality",
+    "description": "",
+    "id": "features-to-test-vt-login-functionality",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/Login/vtLogin.feature",
+    "tags": []
+  }
+]

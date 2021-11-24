@@ -83,7 +83,7 @@ Feature: features to test initiate transaction for physical products functionali
       | CustomerDetails_XLSX_10.xlsx | 1         | 3          |
 
 
-  @smoke1
+  @smoke
   Scenario Outline: Transaction add to card Functionality
 
     And user search and add product in card "Chequered Red Shirt" quantity 2

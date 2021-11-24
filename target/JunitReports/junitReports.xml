@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="76.518">
+<testcase classname="features to test vt login functionality" name="Successful Login with Valid Credentials Functionality" time="47.32">
+<system-out><![CDATA[Given vt user is on customer portal login page..............................passed
+When vt user is enter username and password.................................passed
+And click on vt login button................................................passed
+Then user is navigated to the vt home page..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="features to test vt login functionality" name="Login with Invalid Credentials Functionality" time="28.986">
+<system-out><![CDATA[Given vt user is on customer portal login page..............................passed
+When vt user is enter username and wrong password...........................passed
+And click on vt login button................................................passed
+Then error message "Password or e-mail address is incorrect, please try again." should throw.passed
+]]></system-out>
+</testcase>
+</testsuite>
